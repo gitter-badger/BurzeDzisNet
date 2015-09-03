@@ -13,7 +13,7 @@ use SoapFault;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Client
+class Client implements ClientInterface
 {
 
     /**

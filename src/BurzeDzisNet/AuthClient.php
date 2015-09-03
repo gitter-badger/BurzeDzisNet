@@ -9,11 +9,11 @@ namespace BurzeDzisNet;
 use SoapHeader;
 
 /**
- * Authorized client
+ * Authorized soapClient
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AuthClient
+class AuthClient implements ClientInterface
 {
     /**
      * @var Client
