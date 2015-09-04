@@ -6,8 +6,6 @@
 
 namespace BurzeDzisNet;
 
-use SoapClient;
-
 /**
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
@@ -18,4 +16,14 @@ interface ClientInterface
      * @return \SoapClient
      */
     public function getClient();
+
+    /**
+     * @return string
+     */
+    public function getWSDL();
+
+    /**
+     * @return string
+     */
+    public function getApiKey();
 }
