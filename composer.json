@@ -1,0 +1,24 @@
+{
+  "name": "krzysiekpiasecki/burzedzisnet",
+  "description": "PHP client for burze.dzis.net API",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Krzysztof Piasecki",
+      "email": "krzysiekpiasecki@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "phpunit/phpunit-story": "*",
+    "apigen/apigen": "*",
+    "phploc/phploc": "*"
+  },
+  "autoload": {
+    "psr-4": {"BurzeDzisNet\\": "src/BurzeDzisNet"}
+  }
+}
