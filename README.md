@@ -18,3 +18,17 @@ PHP client for burze.dzis.net API
       25
   );  
 ```
+
+## Class design
+
+- Totally immutable,
+- Declarative over imperative,
+- Without static methods, properties, public consts,
+- No null references
+
+## Resources
+- [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/index.md)
+- [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
+- [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/ClassDiagram.md)
+- [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/SoftwareMetrics.md)
+- [Project licence](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/LICENCE.md)
