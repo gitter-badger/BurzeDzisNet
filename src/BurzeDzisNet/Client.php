@@ -10,6 +10,7 @@ use SoapClient;
 use SoapFault;
 
 /**
+ * Client
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */

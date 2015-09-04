@@ -9,7 +9,7 @@ namespace BurzeDzisNet;
 use SoapHeader;
 
 /**
- * Authorized soapClient
+ * Authorized client
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -25,15 +25,40 @@ class AuthClient implements ClientInterface
      */
     public function __construct(Client $client)
     {
-        $this->client = $client->getClient();
-        $this->client->__setSoapHeaders(new SoapHeader($client->getWSDL(), "KeyAPI", [$client->getApiKey()], false));
+        $this->client = $client;
     }
 
     /**
      * @return Client
+     * @throws SoapFault
      */
     public function getClient()
     {
-        return $this->client;
+        $client = $this->client->getClient();
+        $client->__setSoapHeaders(
+            new SoapHeader(
+                $this->client->getWSDL(),
+                "KeyAPI",
+                [$this->client->getApiKey()],
+                false
+            )
+        );
+        return $client;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->client->getApiKey();
+    }
+
+    /**
+     * @return string
+     */
+    public function getWSDL()
+    {
+        return $this->client->getWSDL();
     }
 }
