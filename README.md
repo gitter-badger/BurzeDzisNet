@@ -27,8 +27,8 @@ PHP client for burze.dzis.net API
 - No null references
 
 ## Resources
-- [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/index.md)
-- [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
-- [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/ClassDiagram.md)
-- [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/SoftwareMetrics.md)
+- [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/index.md)
+- [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/api/API-documentation.zip)
+- [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ClassDiagram.md)
+- [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/SoftwareMetrics.md)
 - [Project licence](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/LICENCE.md)
