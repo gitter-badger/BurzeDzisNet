@@ -36,6 +36,7 @@ class BurzeDzisNet
     /**
      * @param $name
      * @return Location
+     * @throws \SoapFault
      */
     public function getLocation($name)
     {
@@ -49,6 +50,7 @@ class BurzeDzisNet
      * @param Location $location
      * @param int $distance
      * @return Storm
+     * @throws \SoapFault
      */
     public function findStorm(Location $location, $distance)
     {
