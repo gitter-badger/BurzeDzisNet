@@ -21,7 +21,7 @@
     timeoutForMediumTests="10"
     timeoutForLargeTests="60"
     verbose="false"
-    bootstrap="tests/bootstrap.php">
+    bootstrap="test/bootstrap.php">
     <testsuites>
         <testsuite name="BurzeDzisNet">
             <directory>test</directory>
@@ -29,7 +29,7 @@
     </testsuites>
     <filter>
         <blacklist>
-            <file>tests/bootstrap.php</file>
+            <file>test/bootstrap.php</file>
         </blacklist>
     </filter>
     <logging>
