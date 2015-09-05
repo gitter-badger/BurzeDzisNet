@@ -9,40 +9,52 @@ namespace BurzeDzisNet;
 use stdClass;
 
 /**
- * Location
+ * Location represents the coordinates (DMS) for the specified locality
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Location
 {
     /**
-     * @var float
+     * Coordinate X
+     *
+     * @var float coordinate X
      */
     protected $x = 0.0;
 
     /**
-     * @var float
+     * Coordinate Y
+     *
+     * @var float coordinate Y
      */
     protected $y = 0.0;
 
     /**
-     * @var string
+     * Locality name
+     *
+     * @var string locality name
      */
     protected $name = "";
 
     /**
-     * @param $name
-     * @param stdClass $myComplexTypeMiejscowosc
+     * Constructor
+     *
+     * @param stdClass $complexTypeMiejscowosc coordinates x and y
+     * @param $name locality name
      */
-    public function __construct($name, stdClass $myComplexTypeMiejscowosc)
+    public function __construct(stdClass $complexTypeMiejscowosc, $name)
     {
-        $this->x = $myComplexTypeMiejscowosc->x;
-        $this->y = $myComplexTypeMiejscowosc->y;
+        $this->x = $complexTypeMiejscowosc->x;
+        $this->y = $complexTypeMiejscowosc->y;
         $this->name = $name;
     }
 
     /**
-     * @return string
+     * Get string representation
+     *
+     * Location is represented by literal "LocalityName[CoordinateX, CoordinateY]".
+     *
+     * @return string string representation
      */
     public function __toString()
     {
@@ -50,7 +62,25 @@ class Location
     }
 
     /**
-     * @return string
+     * Indicates whether some other Location is equal to this one
+     *
+     * Two equal Locations must have the same:
+     * - locality name,
+     * - coordinate x,
+     * - coordinate y.
+     *
+     * @param Location $location other location
+     * @return bool true if this location is the equal to some other location; false otherwise
+     */
+    public function equals(Location $location)
+    {
+        return $location == (string)$this;
+    }
+
+    /**
+     * Get locality name
+     *
+     * @return string locality name
      */
     public function getName()
     {
@@ -58,7 +88,9 @@ class Location
     }
 
     /**
-     * @return float
+     * Get coordinate X
+     *
+     * @return float coordinate X
      */
     public function getX()
     {
@@ -66,7 +98,9 @@ class Location
     }
 
     /**
-     * @return float
+     * Get coordinate Y
+     *
+     * @return float coordinate Y
      */
     public function getY()
     {
