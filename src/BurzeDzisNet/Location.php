@@ -74,7 +74,7 @@ class Location
      */
     public function equals(Location $location)
     {
-        return $location == (string)$this;
+        return $location == (string) $this;
     }
 
     /**
