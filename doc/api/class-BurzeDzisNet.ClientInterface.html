@@ -90,6 +90,9 @@
 	<h1>Interface ClientInterface</h1>
 
 
+	<div class="description">
+	<p>API client</p>
+	</div>
 
 
 
@@ -114,7 +117,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.ClientInterface.html#9-29" title="Go to source code">BurzeDzisNet/ClientInterface.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.ClientInterface.html#9-37" title="Go to source code">BurzeDzisNet/ClientInterface.php</a>
 		<br>
 	</div>
 
@@ -134,22 +137,26 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getClient">#</a>
-			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#15-18" title="Go to source code">getClient</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#16-22" title="Go to source code">getClient</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Get API client</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Get API client</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						SoapClient
+						SoapClient<br>API client
 					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						SoapFault
+					</div>
 
 
 
@@ -167,20 +174,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getWSDL">#</a>
-			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#20-23" title="Go to source code">getWSDL</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#24-29" title="Go to source code">getWSDL</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Get URI of WSDL file</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Get URI of WSDL file</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						string
+						string<br>URI of WSDL file
 					</div>
 
 
@@ -200,20 +207,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getApiKey">#</a>
-			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#25-28" title="Go to source code">getApiKey</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.ClientInterface.html#31-36" title="Go to source code">getApiKey</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Get API credentials</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Get API credentials</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						string
+						string<br>API credentials
 					</div>
 
 
