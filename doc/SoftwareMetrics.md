@@ -1,14 +1,14 @@
 # Software metrics 
 
 <pre>
-phploc 2.1.4 by Sebastian Bergmann
+phploc 2.1.4 by Sebastian Bergmann.
 
 Size
-  Lines of Code (LOC)                              394
-  Comment Lines of Code (CLOC)                     179 (45.43%)
-  Non-Comment Lines of Code (NCLOC)                215 (54.57%)
-  Logical Lines of Code (LLOC)                      59 (14.97%)
-    Classes                                         48 (81.36%)
+  Lines of Code (LOC)                              438
+  Comment Lines of Code (CLOC)                     216 (49.32%)
+  Non-Comment Lines of Code (NCLOC)                222 (50.68%)
+  Logical Lines of Code (LLOC)                      60 (13.70%)
+    Classes                                         49 (81.67%)
       Average Class Length                           8
         Minimum Class Length                         3
         Maximum Class Length                        15
@@ -17,14 +17,14 @@ Size
         Maximum Method Length                        5
     Functions                                        0 (0.00%)
       Average Function Length                        0
-    Not in classes or functions                     11 (18.64%)
+    Not in classes or functions                     11 (18.33%)
 
 Cyclomatic Complexity
   Average Complexity per LLOC                     0.02
   Average Complexity per Class                    1.17
     Minimum Class Complexity                      1.00
     Maximum Class Complexity                      2.00
-  Average Complexity per Method                   1.05
+  Average Complexity per Method                   1.04
     Minimum Method Complexity                     1.00
     Maximum Method Complexity                     2.00
 
@@ -47,12 +47,12 @@ Structure
   Classes                                            5
     Abstract Classes                                 0 (0.00%)
     Concrete Classes                                 5 (100.00%)
-  Methods                                           25
+  Methods                                           26
     Scope
-      Non-Static Methods                            25 (100.00%)
+      Non-Static Methods                            26 (100.00%)
       Static Methods                                 0 (0.00%)
     Visibility
-      Public Methods                                25 (100.00%)
+      Public Methods                                26 (100.00%)
       Non-Public Methods                             0 (0.00%)
   Functions                                          0
     Named Functions                                  0 (0.00%)
