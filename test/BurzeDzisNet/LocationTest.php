@@ -86,12 +86,11 @@ class LocationTest extends PHPUnit_Framework_TestCase
         $myComplexTypeMiejscowosc = new \stdClass;
         $myComplexTypeMiejscowosc->x = 17.02;
         $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
 
         $myComplexTypeMiejscowosc2 = new \stdClass;
         $myComplexTypeMiejscowosc2->x = 21.02;
         $myComplexTypeMiejscowosc2->y = 52.12;
-
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
         $location2 = new Location($myComplexTypeMiejscowosc2, "Warszawa");
 
         $this->assertTrue($location->equals($location));
@@ -136,7 +135,6 @@ class LocationTest extends PHPUnit_Framework_TestCase
         $myComplexTypeMiejscowosc->y = null;
         $location = new Location($myComplexTypeMiejscowosc, "Invalid location");
         $this->assertFalse($location->isValid());
-
     }
 
 }
