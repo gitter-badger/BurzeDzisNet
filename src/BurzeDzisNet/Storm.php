@@ -47,7 +47,7 @@ class Storm
      * @param Location $location
      * @param stdClass $myComplexTypeBurza
      */
-    public function __construct(Location $location, stdClass $myComplexTypeBurza)
+    public function __construct(stdClass $myComplexTypeBurza, Location $location)
     {
         $this->location = $location;
         $this->number = $myComplexTypeBurza->liczba;

@@ -41,8 +41,8 @@ class BurzeDzisNet
     public function getLocation($name)
     {
         return new Location(
-            $name,
-            $this->endpoint->miejscowosc($name, $this->apikey)
+            $this->endpoint->miejscowosc($name, $this->apikey),
+            $name
         );
     }
 
@@ -55,13 +55,13 @@ class BurzeDzisNet
     public function findStorm(Location $location, $distance)
     {
         return new Storm(
-            $location,
             $this->endpoint->szukaj_burzy(
                 $location->getX(),
                 $location->getY(),
                 $distance,
                 $this->apikey
-            )
+            ),
+            $location
         );
     }
 
