@@ -9,37 +9,49 @@ namespace BurzeDzisNet;
 use SoapHeader;
 
 /**
- * Authorized client
+ * API credential with authorization header
+ *
+ * Calling method {@see getClient} returns {@link \SoapClient http://php.net/manual/en/class.soapclient.php} with
+ * authorization header.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class AuthCredential implements Credibility
 {
     /**
-     * @var Credential
+     * Client credential
+     *
+     * @var Credential client credential
      */
-    protected $client = null;
+    protected $credential = null;
 
     /**
-     * @param Credential $client
+     * Constructor
+     *
+     * @param Credential $client client credential
      */
     public function __construct(Credential $client)
     {
-        $this->client = $client;
+        $this->credential = $client;
     }
 
     /**
-     * @return Credential
-     * @throws SoapFault
+     * Get API credential
+     *
+     * Returns {@link \SoapClient http://php.net/manual/en/class.soapclient.php} with
+     * authorization header.
+     *
+     * @return SoapClient API client with authorization header
+     * @throws SoapFault if the wsdl URI cannot be loaded
      */
     public function getClient()
     {
-        $client = $this->client->getClient();
+        $client = $this->credential->getClient();
         $client->__setSoapHeaders(
             new SoapHeader(
-                $this->client->getWSDL(),
+                $this->credential->getWSDL(),
                 "KeyAPI",
-                [$this->client->getApiKey()],
+                $this->credential->getApiKey(),
                 false
             )
         );
@@ -47,18 +59,23 @@ class AuthCredential implements Credibility
     }
 
     /**
-     * @return string
+     * Get API key
+     *
+     * @return string API key
      */
     public function getApiKey()
     {
-        return $this->client->getApiKey();
+        return $this->credential->getApiKey();
     }
 
     /**
-     * @return string
+     * Get URI of WSDL file
+     *
+     * @return string URI of WSDL file
      */
     public function getWSDL()
     {
-        return $this->client->getWSDL();
+        return $this->credential->getWSDL();
     }
+
 }
