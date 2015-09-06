@@ -9,7 +9,8 @@ namespace BurzeDzisNet;
 use stdClass;
 
 /**
- * Storm
+ * Storm represents information about registered lightnings with a specified radius of monitoring
+ * covered by the given location
  *
  * Storm has properties describing:
  * - number (number of cloud-to-ground lightning in specified radius from a selected location)
