@@ -1,6 +1,6 @@
 # BurzeDzisNet
 
-PHP client for burze.dzis.net
+PHP client for [burze.dzis.net](https://burze.dzis.net)
 
 ## Example of usage (searching storm)
 
@@ -22,9 +22,9 @@ PHP client for burze.dzis.net
 
 ## Class design
 
-- Totally immutable,
+- Completely immutable
 - Declarative over imperative,
-- Without static methods, properties, public consts,
+- No static methods, properties, consts
 - No null references
 
 ## Resources
