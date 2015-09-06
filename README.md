@@ -2,7 +2,7 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-## Example of usage (finding a storm)
+## Example: finding a storm for Wrocław in a range of 50 km
 
 ```php
   namespace BurzeDzisNet;
@@ -16,14 +16,14 @@ PHP client for [burze.dzis.net](https://burze.dzis.net)
   
   $storm = $burzeDzisNet->findStorm(
       $burzeDzisNet->getLocation("Wrocław"),
-      25
+      50
   );  
 ```
 
 ## Class design
 
 - Completely immutable
-- Declarative over imperative,
+- Declarative over imperative
 - No static methods, properties, consts
 - No null references
 
