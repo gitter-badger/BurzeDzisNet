@@ -11,6 +11,12 @@ use stdClass;
 /**
  * Location represents the coordinates (DMS) for the specified locality
  *
+ * Location has a properties describing:
+ * - x (coordinate x of given location)
+ * - y (coordinate y of given location)
+ * - name (location name)
+ *
+ * @link https://en.wikipedia.org/wiki/Decimal_degrees Decimal degrees
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Location
@@ -30,17 +36,20 @@ class Location
     protected $y = 0.0;
 
     /**
-     * Locality name
+     * Location name
      *
-     * @var string locality name
+     * @var string location name
      */
     protected $name = "";
 
     /**
      * Constructor
      *
-     * @param stdClass $complexTypeMiejscowosc coordinates x and y
-     * @param $name locality name
+     * Storm data transfer object $complexTypeMiejscowosc must have properties:
+     * - $complexTypeMiejscowosc->x mapped into x property
+     * - $complexTypeMiejscowosc->y mapped into y property
+     * @param stdClass $complexTypeMiejscowosc Location coordinates
+     * @param $name location name
      */
     public function __construct(stdClass $complexTypeMiejscowosc, $name)
     {
@@ -52,9 +61,9 @@ class Location
     /**
      * Get string representation
      *
-     * Location is represented by literal "LocalityName[CoordinateX, CoordinateY]".
+     * Location is represented by literal "LocationName[x, y]".
      *
-     * @return string string representation
+     * @return string literal representation of this object
      */
     public function __toString()
     {
@@ -62,9 +71,9 @@ class Location
     }
 
     /**
-     * Indicates whether some other Location is equal to this one.
+     * Indicates whether some other Location is equal to this one
      *
-     * Two equal Locations must points to the same coordinates.
+     * Two equal locations must points to the same coordinates.
      *
      * @param Location $location other location
      * @return bool true if this location is the equal to some other location; false otherwise
@@ -75,9 +84,9 @@ class Location
     }
 
     /**
-     * Get locality name
+     * Get Location name
      *
-     * @return string locality name
+     * @return string location name
      */
     public function getName()
     {
