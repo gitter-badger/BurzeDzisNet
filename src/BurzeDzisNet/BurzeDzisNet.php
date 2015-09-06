@@ -50,7 +50,7 @@ class BurzeDzisNet
      * @param $apiKey API key
      * @return bool true if API key is credible; otherwise false
      */
-    public function apiKey($apiKey)
+    public function verifyApiKey($apiKey)
     {
         return $this->client->KeyApi($apiKey);
     }
