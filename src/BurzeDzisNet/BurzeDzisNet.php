@@ -27,9 +27,9 @@ class BurzeDzisNet
     protected $apiKey = null;
 
     /**
-     * @param CredentialInterface $credential
+     * @param Credibility $credential
      */
-    public function __construct(CredentialInterface $credential)
+    public function __construct(Credibility $credential)
     {
         $this->client = $credential->getClient();
         $this->apiKey = $credential instanceof AuthCredential ? null : $credential->getApiKey();

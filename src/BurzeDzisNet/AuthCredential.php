@@ -13,7 +13,7 @@ use SoapHeader;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AuthCredential implements CredentialInterface
+class AuthCredential implements Credibility
 {
     /**
      * @var Credential

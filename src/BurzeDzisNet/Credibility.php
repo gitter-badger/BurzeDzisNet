@@ -7,11 +7,11 @@
 namespace BurzeDzisNet;
 
 /**
- * Client credential
+ * Client credibility
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-interface CredentialInterface
+interface Credibility
 {
     /**
      * Get API client
