@@ -27,14 +27,14 @@ class Storm
     /**
      * The number of cloud-to-ground lightning in specified radius from a selected location
      *
-     * @var int the number of minutes of time period containing the data
+     * @var int number of minutes of time period containing the data
      */
     protected $number = 0;
 
     /**
      * The distance (km) to the nearest registered lightning
      *
-     * @var float the distance to the nearest registered lightning
+     * @var float distance to the nearest registered lightning
      */
     protected $distance = 0.0;
 
@@ -48,14 +48,14 @@ class Storm
     /**
      * The number of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @var int the number of minutes of time period containing the data
+     * @var int number of minutes of time period containing the data
      */
     protected $period = 0;
 
     /**
-     * The radius covered by Location
+     * The radius covered by location
      *
-     * @var int radius covered by Location
+     * @var int radius covered by ;ocation
      */
     protected $radius = 0;
 
@@ -70,20 +70,19 @@ class Storm
      * Constructor
      *
      * Storm data transfer object $myComplexTypeBurza must have properties:
-     * - number => $myComplexTypeBurza->liczba
-     * - distance => $myComplexTypeBurza->odleglosc
-     * - direction = $myComplexTypeBurza->kierunek
-     * - period  $myComplexTypeBurza->okres
+     * - $myComplexTypeBurza->liczba mapped into number property
+     * - $myComplexTypeBurza->odleglosc mapped into distance property
+     * - $myComplexTypeBurza->kierunek mapped into direction property
+     * - $myComplexTypeBurza->okres mapped into period property
      *
      * @param stdClass $myComplexTypeBurza storm data transfer object
      * @param Location $location selected location
-     * @param int $radius radius covered by Location
+     * @param int $radius radius covered by location
      */
     public function __construct(stdClass $myComplexTypeBurza, Location $location, $radius)
     {
         $this->location = $location;
         $this->radius = $radius;
-
         $this->number = $myComplexTypeBurza->liczba;
         $this->distance = $myComplexTypeBurza->odleglosc;
         $this->direction = $myComplexTypeBurza->kierunek;
@@ -103,9 +102,9 @@ class Storm
     /**
      * Get the number of cloud-to-ground lightning in specified radius from a selected location
      *
-     * @see getRadius
-     * @see getLocation
-     * @return int the number of cloud-to-ground lightning in specified radius from a selected location
+     * @see getRadius radius covered by Location
+     * @see getLocation seletected location
+     * @return int number of cloud-to-ground lightning in specified radius from a selected location
      */
     public function getNumber()
     {
@@ -115,7 +114,7 @@ class Storm
     /**
      * Get the distance to the nearest registered lightning
      *
-     * @return float The distance to the nearest registered lightning
+     * @return float distance to the nearest registered lightning
      */
     public function getDistance()
     {
@@ -135,7 +134,7 @@ class Storm
     /**
      * Get the number of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @return int the number of minutes of time period containing the data
+     * @return int number of minutes of time period containing the data
      */
     public function getPeriod()
     {
@@ -145,7 +144,8 @@ class Storm
     /**
      * Get radius covered by Location
      *
-     * @return int The radius covered by Location
+     * @see getLocation seletected location
+     * @return int radius covered by location
      */
     public function getRadius()
     {
