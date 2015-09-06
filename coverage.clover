@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1441543721">
-  <project timestamp="1441543721">
+<coverage generated="1441562808">
+  <project timestamp="1441562808">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/AuthCredential.php">
         <class name="AuthCredential" namespace="BurzeDzisNet">
@@ -24,6 +24,30 @@
         <line num="76" type="method" name="getWSDL" crap="1" count="1"/>
         <line num="78" type="stmt" count="1"/>
         <metrics loc="80" ncloc="39" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
+      </file>
+      <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/BurzeDzisNet.php">
+        <class name="BurzeDzisNet" namespace="BurzeDzisNet">
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="18" coveredelements="18"/>
+        </class>
+        <line num="41" type="method" name="__construct" crap="2" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="44" type="stmt" count="2"/>
+        <line num="45" type="stmt" count="2"/>
+        <line num="57" type="method" name="getLocation" crap="1" count="3"/>
+        <line num="59" type="stmt" count="3"/>
+        <line num="60" type="stmt" count="3"/>
+        <line num="62" type="stmt" count="2"/>
+        <line num="76" type="method" name="findStorm" crap="1" count="2"/>
+        <line num="78" type="stmt" count="2"/>
+        <line num="79" type="stmt" count="2"/>
+        <line num="80" type="stmt" count="2"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="83" type="stmt" count="2"/>
+        <line num="84" type="stmt" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="2"/>
+        <metrics loc="89" ncloc="41" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="18" coveredelements="18"/>
       </file>
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Credential.php">
         <class name="Credential" namespace="BurzeDzisNet">
@@ -207,6 +231,6 @@
       <line num="16" type="stmt" count="0"/>
       <metrics loc="18" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
-    <metrics files="7" loc="782" ncloc="374" classes="5" methods="35" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="131" coveredstatements="41" elements="166" coveredelements="62"/>
+    <metrics files="8" loc="871" ncloc="415" classes="6" methods="38" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="146" coveredstatements="56" elements="184" coveredelements="80"/>
   </project>
 </coverage>
