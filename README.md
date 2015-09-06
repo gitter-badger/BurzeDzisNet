@@ -10,7 +10,7 @@ PHP client for burze.dzis.net
   $burzeDzisNet = new BurzeDzisNet(
       new Credential(
           'https://www.burze.dzis.net/soap.php?WSDL',
-          'Your credentials'
+          'Your API key'
       )
   );
   
