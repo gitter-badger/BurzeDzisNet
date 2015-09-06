@@ -1,8 +1,9 @@
 # BurzeDzisNet
 
-PHP credential for burze.dzis.net API
+PHP client for burze.dzis.net
 
-## Example of usage
+## Example of usage (searching storm)
+
 ```php
   namespace BurzeDzisNet;
 
