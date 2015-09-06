@@ -65,8 +65,8 @@ Structure
 
 # Scrutinizer 
 
-[![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/Gravatar/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/Gravatar/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/build.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/Gravatar/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/build.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/build-status/master)
 
 See project on [Scrutinizer](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/)
