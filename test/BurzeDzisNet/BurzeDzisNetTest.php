@@ -19,6 +19,23 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
 {
 
     /**
+     * Location data object
+     *
+     * @var stdClass location data object
+     */
+    protected $complexTypeLocation = null;
+
+    /**
+     * Set up the test
+     */
+    public function setUp()
+    {
+        $this->complexTypeLocation = new stdClass();
+        $this->complexTypeLocation->x = 25.17;
+        $this->complexTypeLocation->y = 54.41;
+    }
+
+    /**
      * @covers BurzeDzisNet\BurzeDzisNet::__construct
      */
     public function test__construct()
@@ -84,14 +101,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testGetLocation()
     {
-        $complexTypeLocation = new stdClass;
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["miejscowosc"])
             ->getMock();
-        $client->method("miejscowosc")->willReturn($complexTypeLocation);
+        $client->method("miejscowosc")->willReturn($this->complexTypeLocation);
         $client->expects($this->once())->method("miejscowosc")->with("Wrocław", "MyApiKey");
         $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
             ->disableOriginalConstructor()
@@ -133,14 +147,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testGetLocationWithAuthCredential()
     {
-        $complexTypeLocation = new stdClass;
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["miejscowosc"])
             ->getMock();
-        $client->method("miejscowosc")->willReturn($complexTypeLocation);
+        $client->method("miejscowosc")->willReturn($this->complexTypeLocation);
         $client->expects($this->once())->method("miejscowosc")->with("Wrocław", null);
         $credential = $this->getMockBuilder("BurzeDzisNet\AuthCredential")
             ->disableOriginalConstructor()
@@ -161,14 +172,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStorm()
     {
-        $complexTypeLocation = new stdClass;
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
-        $location = new Location($complexTypeLocation, "Wrocław");
+        $location = new Location($this->complexTypeLocation, "Wrocław");
         $complexTypeStorm = new stdClass;
         $complexTypeStorm->liczba = 14;
         $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = NE;
+        $complexTypeStorm->kierunek = "NE";
         $complexTypeStorm->okres = 10;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
@@ -197,14 +205,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStormWitAuthCredential()
     {
-        $complexTypeLocation = new stdClass;
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
-        $location = new Location($complexTypeLocation, "Wrocław");
+        $location = new Location($this->complexTypeLocation, "Wrocław");
         $complexTypeStorm = new stdClass;
         $complexTypeStorm->liczba = 14;
         $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = NE;
+        $complexTypeStorm->kierunek = "NE";
         $complexTypeStorm->okres = 10;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
@@ -234,11 +239,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStormSoapFault()
     {
-
-        $complexTypeLocation = new stdClass;
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
-        $location = new Location($complexTypeLocation, "Wrocław");
+        $location = new Location($this->complexTypeLocation, "Wrocław");
         $soapFault = $this->getMockBuilder("SoapFault")->disableOriginalConstructor()->getMock();
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
