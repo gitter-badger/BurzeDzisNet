@@ -7,6 +7,7 @@
 namespace BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
+use stdClass;
 
 /**
  * {@see Location} test
@@ -28,7 +29,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->myComplexTypeMiejscowosc = new \stdClass();
+        $this->myComplexTypeMiejscowosc = new stdClass();
         $this->myComplexTypeMiejscowosc->x = 17.02;
         $this->myComplexTypeMiejscowosc->y = 51.07;
     }
