@@ -138,24 +138,25 @@
 </span><span id="50" class="l"><a href="#50">50 </a>
 </span><span id="51" class="l"><a href="#51">51 </a>    <span class="php-comment">/**
 </span></span><span id="52" class="l"><a href="#52">52 </a><span class="php-comment">     * @param Location $location
-</span></span><span id="53" class="l"><a href="#53">53 </a><span class="php-comment">     * @param int $distance
+</span></span><span id="53" class="l"><a href="#53">53 </a><span class="php-comment">     * @param int $radius By default, 25 km
 </span></span><span id="54" class="l"><a href="#54">54 </a><span class="php-comment">     * @return Storm
 </span></span><span id="55" class="l"><a href="#55">55 </a><span class="php-comment">     * @throws \SoapFault
 </span></span><span id="56" class="l"><a href="#56">56 </a><span class="php-comment">     */</span>
-</span><span id="57" class="l"><a href="#57">57 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> findStorm(Location <span class="php-var">$location</span>, <span class="php-var">$distance</span>)
+</span><span id="57" class="l"><a href="#57">57 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> findStorm(Location <span class="php-var">$location</span>, <span class="php-var">$radius</span> = <span class="php-num">25</span>)
 </span><span id="58" class="l"><a href="#58">58 </a>    {
 </span><span id="59" class="l"><a href="#59">59 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Storm(
 </span><span id="60" class="l"><a href="#60">60 </a>            <span class="php-var">$this</span>-&gt;client-&gt;szukaj_burzy(
-</span><span id="61" class="l"><a href="#61">61 </a>                <span class="php-var">$location</span>-&gt;getX(),
-</span><span id="62" class="l"><a href="#62">62 </a>                <span class="php-var">$location</span>-&gt;getY(),
-</span><span id="63" class="l"><a href="#63">63 </a>                <span class="php-var">$distance</span>,
+</span><span id="61" class="l"><a href="#61">61 </a>                <span class="php-var">$location</span>-&gt;getY(),
+</span><span id="62" class="l"><a href="#62">62 </a>                <span class="php-var">$location</span>-&gt;getX(),
+</span><span id="63" class="l"><a href="#63">63 </a>                <span class="php-var">$radius</span>,
 </span><span id="64" class="l"><a href="#64">64 </a>                <span class="php-var">$this</span>-&gt;apiKey
 </span><span id="65" class="l"><a href="#65">65 </a>            ),
-</span><span id="66" class="l"><a href="#66">66 </a>            <span class="php-var">$location</span>
-</span><span id="67" class="l"><a href="#67">67 </a>        );
-</span><span id="68" class="l"><a href="#68">68 </a>    }
-</span><span id="69" class="l"><a href="#69">69 </a>
-</span><span id="70" class="l"><a href="#70">70 </a>}</span></code></pre>
+</span><span id="66" class="l"><a href="#66">66 </a>            <span class="php-var">$location</span>,
+</span><span id="67" class="l"><a href="#67">67 </a>            <span class="php-var">$radius</span>
+</span><span id="68" class="l"><a href="#68">68 </a>        );
+</span><span id="69" class="l"><a href="#69">69 </a>    }
+</span><span id="70" class="l"><a href="#70">70 </a>
+</span><span id="71" class="l"><a href="#71">71 </a>}</span></code></pre>
 	</div>
 
 	<div id="footer">
