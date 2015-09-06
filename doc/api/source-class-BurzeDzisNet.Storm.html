@@ -158,24 +158,24 @@
 </span><span id="70" class="l"><a href="#70"> 70 </a>    <span class="php-comment">/**
 </span></span><span id="71" class="l"><a href="#71"> 71 </a><span class="php-comment">     * Constructor
 </span></span><span id="72" class="l"><a href="#72"> 72 </a><span class="php-comment">     *
-</span></span><span id="73" class="l"><a href="#73"> 73 </a><span class="php-comment">     * Storm data transfer object $myComplexTypeBurza must have properties:
-</span></span><span id="74" class="l"><a href="#74"> 74 </a><span class="php-comment">     * - $myComplexTypeBurza-&gt;liczba mapped into number property
-</span></span><span id="75" class="l"><a href="#75"> 75 </a><span class="php-comment">     * - $myComplexTypeBurza-&gt;odleglosc mapped into distance property
-</span></span><span id="76" class="l"><a href="#76"> 76 </a><span class="php-comment">     * - $myComplexTypeBurza-&gt;kierunek mapped into direction property
-</span></span><span id="77" class="l"><a href="#77"> 77 </a><span class="php-comment">     * - $myComplexTypeBurza-&gt;okres mapped into period property
+</span></span><span id="73" class="l"><a href="#73"> 73 </a><span class="php-comment">     * Storm data transfer object $complexTypeBurza must have properties:
+</span></span><span id="74" class="l"><a href="#74"> 74 </a><span class="php-comment">     * - $complexTypeBurza-&gt;liczba mapped into number property
+</span></span><span id="75" class="l"><a href="#75"> 75 </a><span class="php-comment">     * - $complexTypeBurza-&gt;odleglosc mapped into distance property
+</span></span><span id="76" class="l"><a href="#76"> 76 </a><span class="php-comment">     * - $complexTypeBurza-&gt;kierunek mapped into direction property
+</span></span><span id="77" class="l"><a href="#77"> 77 </a><span class="php-comment">     * - $complexTypeBurza-&gt;okres mapped into period property
 </span></span><span id="78" class="l"><a href="#78"> 78 </a><span class="php-comment">     *
-</span></span><span id="79" class="l"><a href="#79"> 79 </a><span class="php-comment">     * @param stdClass $myComplexTypeBurza storm data transfer object
+</span></span><span id="79" class="l"><a href="#79"> 79 </a><span class="php-comment">     * @param stdClass $complexTypeBurza storm data transfer object
 </span></span><span id="80" class="l"><a href="#80"> 80 </a><span class="php-comment">     * @param Location $location selected location
 </span></span><span id="81" class="l"><a href="#81"> 81 </a><span class="php-comment">     * @param int $radius radius covered by location
 </span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     */</span>
-</span><span id="83" class="l"><a href="#83"> 83 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(stdClass <span class="php-var">$myComplexTypeBurza</span>, Location <span class="php-var">$location</span>, <span class="php-var">$radius</span>)
+</span><span id="83" class="l"><a href="#83"> 83 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(stdClass <span class="php-var">$complexTypeBurza</span>, Location <span class="php-var">$location</span>, <span class="php-var">$radius</span>)
 </span><span id="84" class="l"><a href="#84"> 84 </a>    {
 </span><span id="85" class="l"><a href="#85"> 85 </a>        <span class="php-var">$this</span>-&gt;location = <span class="php-var">$location</span>;
 </span><span id="86" class="l"><a href="#86"> 86 </a>        <span class="php-var">$this</span>-&gt;radius = <span class="php-var">$radius</span>;
-</span><span id="87" class="l"><a href="#87"> 87 </a>        <span class="php-var">$this</span>-&gt;number = <span class="php-var">$myComplexTypeBurza</span>-&gt;liczba;
-</span><span id="88" class="l"><a href="#88"> 88 </a>        <span class="php-var">$this</span>-&gt;distance = <span class="php-var">$myComplexTypeBurza</span>-&gt;odleglosc;
-</span><span id="89" class="l"><a href="#89"> 89 </a>        <span class="php-var">$this</span>-&gt;direction = <span class="php-var">$myComplexTypeBurza</span>-&gt;kierunek;
-</span><span id="90" class="l"><a href="#90"> 90 </a>        <span class="php-var">$this</span>-&gt;period = <span class="php-var">$myComplexTypeBurza</span>-&gt;okres;
+</span><span id="87" class="l"><a href="#87"> 87 </a>        <span class="php-var">$this</span>-&gt;number = <span class="php-var">$complexTypeBurza</span>-&gt;liczba;
+</span><span id="88" class="l"><a href="#88"> 88 </a>        <span class="php-var">$this</span>-&gt;distance = <span class="php-var">$complexTypeBurza</span>-&gt;odleglosc;
+</span><span id="89" class="l"><a href="#89"> 89 </a>        <span class="php-var">$this</span>-&gt;direction = <span class="php-var">$complexTypeBurza</span>-&gt;kierunek;
+</span><span id="90" class="l"><a href="#90"> 90 </a>        <span class="php-var">$this</span>-&gt;period = <span class="php-var">$complexTypeBurza</span>-&gt;okres;
 </span><span id="91" class="l"><a href="#91"> 91 </a>    }
 </span><span id="92" class="l"><a href="#92"> 92 </a>
 </span><span id="93" class="l"><a href="#93"> 93 </a>    <span class="php-comment">/**

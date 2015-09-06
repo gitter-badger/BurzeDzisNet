@@ -70,24 +70,24 @@ class Storm
     /**
      * Constructor
      *
-     * Storm data transfer object $myComplexTypeBurza must have properties:
-     * - $myComplexTypeBurza->liczba mapped into number property
-     * - $myComplexTypeBurza->odleglosc mapped into distance property
-     * - $myComplexTypeBurza->kierunek mapped into direction property
-     * - $myComplexTypeBurza->okres mapped into period property
+     * Storm data transfer object $complexTypeBurza must have properties:
+     * - $complexTypeBurza->liczba mapped into number property
+     * - $complexTypeBurza->odleglosc mapped into distance property
+     * - $complexTypeBurza->kierunek mapped into direction property
+     * - $complexTypeBurza->okres mapped into period property
      *
-     * @param stdClass $myComplexTypeBurza storm data transfer object
+     * @param stdClass $complexTypeBurza storm data transfer object
      * @param Location $location selected location
      * @param int $radius radius covered by location
      */
-    public function __construct(stdClass $myComplexTypeBurza, Location $location, $radius)
+    public function __construct(stdClass $complexTypeBurza, Location $location, $radius)
     {
         $this->location = $location;
         $this->radius = $radius;
-        $this->number = $myComplexTypeBurza->liczba;
-        $this->distance = $myComplexTypeBurza->odleglosc;
-        $this->direction = $myComplexTypeBurza->kierunek;
-        $this->period = $myComplexTypeBurza->okres;
+        $this->number = $complexTypeBurza->liczba;
+        $this->distance = $complexTypeBurza->odleglosc;
+        $this->direction = $complexTypeBurza->kierunek;
+        $this->period = $complexTypeBurza->okres;
     }
 
     /**
