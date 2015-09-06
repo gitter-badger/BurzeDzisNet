@@ -10,7 +10,9 @@ use SoapClient;
 use SoapFault;
 
 /**
- * Client credential
+ * API credential
+ *
+ * Calling method {@see getClient} returns {@link \SoapClient http://php.net/manual/en/class.soapclient.php}.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -32,7 +34,7 @@ class Credential implements Credibility
     protected $apiKey = "";
 
     /**
-     * Client Credential
+     * Constructor
      *
      * @param string $wsdl URI of WSDL file
      * @param string $apiKey API key
@@ -44,9 +46,9 @@ class Credential implements Credibility
     }
 
     /**
-     * Get API client
+     * Get API credential
      *
-     * @return SoapClient API client
+     * @return SoapClient API credential
      * @throws SoapFault if the wsdl URI cannot be loaded
      */
     public function getClient()
@@ -73,4 +75,5 @@ class Credential implements Credibility
     {
         return $this->apiKey;
     }
+    
 }
