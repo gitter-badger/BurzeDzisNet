@@ -100,4 +100,43 @@ class LocationTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($location2->equals($location));
     }
 
+    /**
+     * @covers BurzeDzisNet\Location::isValid
+     */
+    public function testIsValid()
+    {
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = 17.02;
+        $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+
+        $this->assertTrue($location->isValid());
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = 0;
+        $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "Some valid location");
+        $this->assertTrue($location->isValid());
+
+        $this->assertTrue($location->isValid());
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = 51;
+        $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "");
+        $this->assertTrue($location->isValid());
+
+        $this->assertTrue($location->isValid());
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = null;
+        $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "Invalid location");
+        $this->assertFalse($location->isValid());
+
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = null;
+        $myComplexTypeMiejscowosc->y = null;
+        $location = new Location($myComplexTypeMiejscowosc, "Invalid location");
+        $this->assertFalse($location->isValid());
+
+    }
+
 }
