@@ -1,4 +1,4 @@
-# ApiKey
+# verifyApiKey
 
 ```php
   namespace BurzeDzisNet;
@@ -10,5 +10,5 @@
       )
   );
   
-  $credible = $burzeDzisNet->apiKey("Some other Api Key");
+  $credible = $burzeDzisNet->verifyApiKey("Some other Api Key");
 ```

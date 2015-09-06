@@ -1,7 +1,7 @@
 # Documentation
 
 Remote calls:
-1. [apiKey](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ApiKey.md)
-2. [getLocation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Location.md)
-3. [findStorm](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Storm.md)
+- 1. [verifyApiKey](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/VerifyApiKey.md)
+- 2. [getLocation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/GetLocation.md)
+- 3. [searchStorm](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/SearchStorm.md)
 

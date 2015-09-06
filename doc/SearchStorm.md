@@ -1,4 +1,4 @@
-# Storm
+# searchStorm
 
 
 ```php
@@ -11,7 +11,7 @@
       )
   );
   
-  $storm = $burzeDzisNet->findStorm(
+  $storm = $burzeDzisNet->searchStorm(
       $burzeDzisNet->getLocation("Madrid"),
       50
   );  
