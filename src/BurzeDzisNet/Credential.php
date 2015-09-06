@@ -10,7 +10,7 @@ use SoapClient;
 use SoapFault;
 
 /**
- * Credential
+ * Client credential
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -18,23 +18,29 @@ class Credential implements Credibility
 {
 
     /**
-     * @var string
+     * URI of WSDL file
+     *
+     * @var string URI of WSDL file
      */
     protected $wsdl = "";
 
     /**
-     * @var string
+     * API key
+     *
+     * @var string API key
      */
-    protected $apikey = "";
+    protected $apiKey = "";
 
     /**
-     * @param string $wsdl
-     * @param string $apikey
+     * Client Credential
+     *
+     * @param string $wsdl URI of WSDL file
+     * @param string $apiKey API key
      */
-    public function __construct($wsdl, $apikey)
+    public function __construct($wsdl, $apiKey)
     {
         $this->wsdl = $wsdl;
-        $this->apikey = $apikey;
+        $this->apiKey = $apiKey;
     }
 
     /**
@@ -47,7 +53,9 @@ class Credential implements Credibility
     }
 
     /**
-     * @return string
+     * Get URI of WSDL file
+     *
+     * @return string URI of WSDL file
      */
     public function getWSDL()
     {
@@ -55,10 +63,12 @@ class Credential implements Credibility
     }
 
     /**
-     * @return string
+     * Get API key
+     *
+     * @return string API key
      */
     public function getApiKey()
     {
-        return $this->apikey;
+        return $this->apiKey;
     }
 }

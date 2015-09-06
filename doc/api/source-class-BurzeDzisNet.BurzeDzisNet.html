@@ -110,7 +110,7 @@
 </span><span id="22" class="l"><a href="#22">22 </a>    <span class="php-comment">/**
 </span></span><span id="23" class="l"><a href="#23">23 </a><span class="php-comment">     * @var null|string
 </span></span><span id="24" class="l"><a href="#24">24 </a><span class="php-comment">     */</span>
-</span><span id="25" class="l"><a href="#25">25 </a>    <span class="php-keyword1">protected</span> <span class="php-var">$apikey</span> = <span class="php-keyword1">null</span>;
+</span><span id="25" class="l"><a href="#25">25 </a>    <span class="php-keyword1">protected</span> <span class="php-var">$apiKey</span> = <span class="php-keyword1">null</span>;
 </span><span id="26" class="l"><a href="#26">26 </a>
 </span><span id="27" class="l"><a href="#27">27 </a>    <span class="php-comment">/**
 </span></span><span id="28" class="l"><a href="#28">28 </a><span class="php-comment">     * @param Credibility $credential
@@ -118,7 +118,7 @@
 </span><span id="30" class="l"><a href="#30">30 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(Credibility <span class="php-var">$credential</span>)
 </span><span id="31" class="l"><a href="#31">31 </a>    {
 </span><span id="32" class="l"><a href="#32">32 </a>        <span class="php-var">$this</span>-&gt;endpoint = <span class="php-var">$credential</span>-&gt;getClient();
-</span><span id="33" class="l"><a href="#33">33 </a>        <span class="php-var">$this</span>-&gt;apikey = <span class="php-var">$credential</span> <span class="php-keyword1">instanceof</span> AuthCredential ? <span class="php-keyword1">null</span> : <span class="php-var">$credential</span>-&gt;getApiKey();
+</span><span id="33" class="l"><a href="#33">33 </a>        <span class="php-var">$this</span>-&gt;apiKey = <span class="php-var">$credential</span> <span class="php-keyword1">instanceof</span> AuthCredential ? <span class="php-keyword1">null</span> : <span class="php-var">$credential</span>-&gt;getApiKey();
 </span><span id="34" class="l"><a href="#34">34 </a>    }
 </span><span id="35" class="l"><a href="#35">35 </a>
 </span><span id="36" class="l"><a href="#36">36 </a>    <span class="php-comment">/**
@@ -129,7 +129,7 @@
 </span><span id="41" class="l"><a href="#41">41 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getLocation(<span class="php-var">$name</span>)
 </span><span id="42" class="l"><a href="#42">42 </a>    {
 </span><span id="43" class="l"><a href="#43">43 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Location(
-</span><span id="44" class="l"><a href="#44">44 </a>            <span class="php-var">$this</span>-&gt;endpoint-&gt;miejscowosc(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;apikey),
+</span><span id="44" class="l"><a href="#44">44 </a>            <span class="php-var">$this</span>-&gt;endpoint-&gt;miejscowosc(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;apiKey),
 </span><span id="45" class="l"><a href="#45">45 </a>            <span class="php-var">$name</span>
 </span><span id="46" class="l"><a href="#46">46 </a>        );
 </span><span id="47" class="l"><a href="#47">47 </a>    }
@@ -147,7 +147,7 @@
 </span><span id="59" class="l"><a href="#59">59 </a>                <span class="php-var">$location</span>-&gt;getX(),
 </span><span id="60" class="l"><a href="#60">60 </a>                <span class="php-var">$location</span>-&gt;getY(),
 </span><span id="61" class="l"><a href="#61">61 </a>                <span class="php-var">$distance</span>,
-</span><span id="62" class="l"><a href="#62">62 </a>                <span class="php-var">$this</span>-&gt;apikey
+</span><span id="62" class="l"><a href="#62">62 </a>                <span class="php-var">$this</span>-&gt;apiKey
 </span><span id="63" class="l"><a href="#63">63 </a>            ),
 </span><span id="64" class="l"><a href="#64">64 </a>            <span class="php-var">$location</span>
 </span><span id="65" class="l"><a href="#65">65 </a>        );

@@ -62,7 +62,7 @@ class Location
     }
 
     /**
-     * Indicates whether some other Location is equal to this one
+     * Indicates whether some other Location is equal to this one.
      *
      * Two equal Locations must points to the same coordinates.
      *

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1441529578">
-  <project timestamp="1441529578">
+<coverage generated="1441532166">
+  <project timestamp="1441532166">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Credential.php">
         <class name="Credential" namespace="BurzeDzisNet">
-          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="10" coveredelements="8"/>
+          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
         </class>
         <line num="34" type="method" name="__construct" crap="1" count="1"/>
         <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="1"/>
-        <line num="44" type="method" name="getClient" crap="2" count="0"/>
-        <line num="46" type="stmt" count="0"/>
+        <line num="44" type="method" name="getClient" crap="1" count="2"/>
+        <line num="46" type="stmt" count="2"/>
         <line num="52" type="method" name="getWSDL" crap="1" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="60" type="method" name="getApiKey" crap="1" count="1"/>
         <line num="62" type="stmt" count="1"/>
-        <metrics loc="63" ncloc="34" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="10" coveredelements="8"/>
+        <metrics loc="63" ncloc="34" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
       </file>
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Location.php">
         <class name="Location" namespace="BurzeDzisNet">
@@ -181,6 +181,6 @@
       <line num="16" type="stmt" count="0"/>
       <metrics loc="18" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="621" ncloc="326" classes="4" methods="30" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="116" coveredstatements="14" elements="146" coveredelements="23"/>
+    <metrics files="6" loc="621" ncloc="326" classes="4" methods="30" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="116" coveredstatements="15" elements="146" coveredelements="25"/>
   </project>
 </coverage>
