@@ -68,7 +68,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     /**
      * @covers BurzeDzisNet\BurzeDzisNet::verifyApiKey
      */
-    public function testCheckApiKey()
+    public function testVerifyApiKey()
     {
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
