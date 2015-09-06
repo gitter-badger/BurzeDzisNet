@@ -6,6 +6,8 @@
 
 namespace BurzeDzisNet;
 
+use SoapFault;
+
 /**
  * Burze.Dzis.Net credential
  *
@@ -22,7 +24,7 @@ class BurzeDzisNet
     /**
      * @var null|string
      */
-    protected $apikey = null;
+    protected $apiKey = null;
 
     /**
      * @param CredentialInterface $credential
@@ -30,7 +32,7 @@ class BurzeDzisNet
     public function __construct(CredentialInterface $credential)
     {
         $this->client = $credential->getClient();
-        $this->apikey = $credential instanceof AuthCredential ? null : $credential->getApiKey();
+        $this->apiKey = $credential instanceof AuthCredential ? null : $credential->getApiKey();
     }
 
     /**
@@ -41,7 +43,7 @@ class BurzeDzisNet
     public function getLocation($name)
     {
         return new Location(
-            $this->client->miejscowosc($name, $this->apikey),
+            $this->client->miejscowosc($name, $this->apiKey),
             $name
         );
     }
@@ -59,7 +61,7 @@ class BurzeDzisNet
                 $location->getX(),
                 $location->getY(),
                 $distance,
-                $this->apikey
+                $this->apiKey
             ),
             $location
         );

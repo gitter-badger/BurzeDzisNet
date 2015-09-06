@@ -7,7 +7,7 @@
 namespace BurzeDzisNet;
 
 /**
- * API client
+ * Client credential
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -17,7 +17,7 @@ interface CredentialInterface
      * Get API client
      *
      * @return \SoapClient API client
-     * @throws \SoapFault
+     * @throws \SoapFault if the wsdl URI cannot be loaded
      */
     public function getClient();
 
@@ -29,9 +29,9 @@ interface CredentialInterface
     public function getWSDL();
 
     /**
-     * Get API credentials
+     * Get API key
      *
-     * @return string API credentials
+     * @return string API key
      */
     public function getApiKey();
 }
