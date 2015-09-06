@@ -7,7 +7,7 @@
 namespace BurzeDzisNet;
 
 /**
- * Burze.Dzis.Net endpoint
+ * Burze.Dzis.Net credential
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -17,7 +17,7 @@ class BurzeDzisNet
     /**
      * @var \SoapClient
      */
-    protected $endpoint = null;
+    protected $client = null;
 
     /**
      * @var null|string
@@ -25,12 +25,12 @@ class BurzeDzisNet
     protected $apikey = null;
 
     /**
-     * @param CredentialInterface $client
+     * @param CredentialInterface $credential
      */
-    public function __construct(CredentialInterface $client)
+    public function __construct(CredentialInterface $credential)
     {
-        $this->endpoint = $client->getClient();
-        $this->apikey = $client instanceof AuthCredential ? null : $client->getApiKey();
+        $this->client = $credential->getClient();
+        $this->apikey = $credential instanceof AuthCredential ? null : $credential->getApiKey();
     }
 
     /**
@@ -41,7 +41,7 @@ class BurzeDzisNet
     public function getLocation($name)
     {
         return new Location(
-            $this->endpoint->miejscowosc($name, $this->apikey),
+            $this->client->miejscowosc($name, $this->apikey),
             $name
         );
     }
@@ -55,7 +55,7 @@ class BurzeDzisNet
     public function findStorm(Location $location, $distance)
     {
         return new Storm(
-            $this->endpoint->szukaj_burzy(
+            $this->client->szukaj_burzy(
                 $location->getX(),
                 $location->getY(),
                 $distance,

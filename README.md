@@ -1,6 +1,6 @@
 # BurzeDzisNet
 
-PHP client for burze.dzis.net API
+PHP credential for burze.dzis.net API
 
 ## Example of usage
 ```php
