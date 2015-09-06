@@ -17,9 +17,16 @@ class StormTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers BurzeDzisNet\Storm::getLocation
+     * Test storm object
+     *
+     * @var Storm
      */
-    public function testGetLocation()
+    protected $storm = null;
+
+    /**
+     * Setup test
+     */
+    public function setUp()
     {
         $myComplexTypeMiejscowosc = new \stdClass;
         $myComplexTypeMiejscowosc->x = 17.02;
@@ -30,9 +37,20 @@ class StormTest extends PHPUnit_Framework_TestCase
         $myComplexTypeBurza->kierunek = "NE";
         $myComplexTypeBurza->odleglosc = 80.72;
         $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
+        $this->storm = new Storm($myComplexTypeBurza, $location, 100);
+    }
 
-        $this->assertTrue($storm->getLocation()->equals($location));
+    /**
+     * @covers BurzeDzisNet\Storm::getLocation
+     */
+    public function testGetLocation()
+    {
+
+        $myComplexTypeMiejscowosc = new \stdClass;
+        $myComplexTypeMiejscowosc->x = 17.02;
+        $myComplexTypeMiejscowosc->y = 51.07;
+        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $this->assertTrue($this->storm->getLocation()->equals($location));
     }
 
     /**
@@ -40,18 +58,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetNumber()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertSame(14, $storm->getNumber());
+        $this->assertSame(14, $this->storm->getNumber());
     }
 
     /**
@@ -59,18 +66,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetDirection()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertSame("NE", $storm->getDirection());
+        $this->assertSame("NE", $this->storm->getDirection());
     }
 
     /**
@@ -78,18 +74,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetDistance()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertSame(80.72, $storm->getDistance());
+        $this->assertSame(80.72, $this->storm->getDistance());
     }
 
     /**
@@ -97,18 +82,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetPeriod()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertSame(10, $storm->getPeriod());
+        $this->assertSame(10, $this->storm->getPeriod());
     }
 
     /**
@@ -116,18 +90,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetRadius()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertSame(100, $storm->getRadius());
+        $this->assertSame(100, $this->storm->getRadius());
     }
 
     /**
@@ -139,18 +102,11 @@ class StormTest extends PHPUnit_Framework_TestCase
         $myComplexTypeMiejscowosc->x = 17.02;
         $myComplexTypeMiejscowosc->y = 51.07;
         $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
-        $myComplexTypeBurza = new \stdClass;
-        $myComplexTypeBurza->liczba = 14;
-        $myComplexTypeBurza->kierunek = "NE";
-        $myComplexTypeBurza->odleglosc = 80.72;
-        $myComplexTypeBurza->okres = 10;
-        $storm = new Storm($myComplexTypeBurza, $location, 100);
-
-        $this->assertTrue($storm->getLocation()->equals($location));
-        $this->assertSame(14, $storm->getNumber());
-        $this->assertSame("NE", $storm->getDirection());
-        $this->assertSame(80.72, $storm->getDistance());
-        $this->assertSame(10, $storm->getPeriod());
-        $this->assertSame(100, $storm->getRadius());
+        $this->assertTrue($this->storm->getLocation()->equals($location));
+        $this->assertSame(14, $this->storm->getNumber());
+        $this->assertSame("NE", $this->storm->getDirection());
+        $this->assertSame(80.72, $this->storm->getDistance());
+        $this->assertSame(10, $this->storm->getPeriod());
+        $this->assertSame(100, $this->storm->getRadius());
     }
 }
