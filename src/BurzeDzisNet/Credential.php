@@ -44,8 +44,10 @@ class Credential implements Credibility
     }
 
     /**
-     * @return SoapClient
-     * @throws SoapFault
+     * Get API client
+     *
+     * @return SoapClient API client
+     * @throws SoapFault if the wsdl URI cannot be loaded
      */
     public function getClient()
     {
