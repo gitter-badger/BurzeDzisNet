@@ -45,6 +45,17 @@ class BurzeDzisNet
     }
 
     /**
+     * Indicates whether given API key is credible
+     *
+     * @param $apiKey API key
+     * @return bool true if API key is credible; otherwise false
+     */
+    public function apiKey($apiKey)
+    {
+        return $this->client->KeyApi($apiKey);
+    }
+
+    /**
      * Get {@see Location}
      *
      * If location does not exists in a remote database returned object will be point to location with

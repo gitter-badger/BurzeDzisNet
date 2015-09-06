@@ -36,6 +36,30 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers BurzeDzisNet\BurzeDzisNet::apiKey
+     */
+    public function testApiKey()
+    {
+        $client = $this->getMockBuilder("SoapClient")
+            ->disableOriginalConstructor()
+            ->setMethods(["KeyApi"])
+            ->getMock();
+        $map = [
+            ["Valid", true],
+            ["Invalid", false]
+        ];
+        $client->method("KeyApi")->will($this->returnValueMap($map));
+        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient"])
+            ->getMock();
+        $credential->method("getClient")->willReturn($client);
+        $burzeDzisNet = new BurzeDzisNet($credential);
+        $this->assertTrue($burzeDzisNet->apiKey("Valid"));
+        $this->assertFalse($burzeDzisNet->apiKey("Invalid"));
+    }
+
+    /**
      * @covers BurzeDzisNet\BurzeDzisNet::__construct
      */
     public function test__constructWithAuthCredential()
