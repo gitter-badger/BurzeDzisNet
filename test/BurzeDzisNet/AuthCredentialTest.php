@@ -57,7 +57,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
         $headerKeyApi = new SoapHeader(
             \sprintf("%s%sExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
             "KeyAPI",
-            "MyApiKey",
+            ["MyApiKey"],
             false
         );
         foreach ($client->__default_headers as $header) {
