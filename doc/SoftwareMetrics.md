@@ -4,20 +4,20 @@
 phploc 2.1.4 by Sebastian Bergmann.
 
 Size
-  Lines of Code (LOC)                              469
-  Comment Lines of Code (CLOC)                     243 (51.81%)
-  Non-Comment Lines of Code (NCLOC)                226 (48.19%)
-  Logical Lines of Code (LLOC)                      61 (13.01%)
-    Classes                                         49 (80.33%)
+  Lines of Code (LOC)                              566
+  Comment Lines of Code (CLOC)                     326 (57.60%)
+  Non-Comment Lines of Code (NCLOC)                240 (42.40%)
+  Logical Lines of Code (LLOC)                      65 (11.48%)
+    Classes                                         53 (81.54%)
       Average Class Length                           8
         Minimum Class Length                         3
-        Maximum Class Length                        15
+        Maximum Class Length                        18
       Average Method Length                          1
         Minimum Method Length                        1
-        Maximum Method Length                        5
+        Maximum Method Length                        6
     Functions                                        0 (0.00%)
       Average Function Length                        0
-    Not in classes or functions                     12 (19.67%)
+    Not in classes or functions                     12 (18.46%)
 
 Cyclomatic Complexity
   Average Complexity per LLOC                     0.02
@@ -33,11 +33,11 @@ Dependencies
     Global Constants                                 0 (0.00%)
     Global Variables                                 0 (0.00%)
     Super-Global Variables                           0 (0.00%)
-  Attribute Accesses                                44
-    Non-Static                                      44 (100.00%)
+  Attribute Accesses                                47
+    Non-Static                                      47 (100.00%)
     Static                                           0 (0.00%)
-  Method Calls                                      14
-    Non-Static                                      14 (100.00%)
+  Method Calls                                      15
+    Non-Static                                      15 (100.00%)
     Static                                           0 (0.00%)
 
 Structure
@@ -47,12 +47,12 @@ Structure
   Classes                                            5
     Abstract Classes                                 0 (0.00%)
     Concrete Classes                                 5 (100.00%)
-  Methods                                           26
+  Methods                                           28
     Scope
-      Non-Static Methods                            26 (100.00%)
+      Non-Static Methods                            28 (100.00%)
       Static Methods                                 0 (0.00%)
     Visibility
-      Public Methods                                26 (100.00%)
+      Public Methods                                28 (100.00%)
       Non-Public Methods                             0 (0.00%)
   Functions                                          0
     Named Functions                                  0 (0.00%)
