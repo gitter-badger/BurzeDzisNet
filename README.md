@@ -7,7 +7,7 @@ PHP client for burze.dzis.net API
   namespace BurzeDzisNet;
 
   $burzeDzisNet = new BurzeDzisNet(
-      new Client(
+      new Credential(
           'https://www.burze.dzis.net/soap.php?WSDL',
           'Your credentials'
       )

@@ -25,12 +25,12 @@ class BurzeDzisNet
     protected $apikey = null;
 
     /**
-     * @param ClientInterface $client
+     * @param CredentialInterface $client
      */
-    public function __construct(ClientInterface $client)
+    public function __construct(CredentialInterface $client)
     {
         $this->endpoint = $client->getClient();
-        $this->apikey = $client instanceof AuthClient ? null : $client->getApiKey();
+        $this->apikey = $client instanceof AuthCredential ? null : $client->getApiKey();
     }
 
     /**

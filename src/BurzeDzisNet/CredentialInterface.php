@@ -11,7 +11,7 @@ namespace BurzeDzisNet;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-interface ClientInterface
+interface CredentialInterface
 {
     /**
      * Get API client

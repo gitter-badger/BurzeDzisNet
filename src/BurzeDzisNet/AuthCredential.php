@@ -13,23 +13,23 @@ use SoapHeader;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AuthClient implements ClientInterface
+class AuthCredential implements CredentialInterface
 {
     /**
-     * @var Client
+     * @var Credential
      */
     protected $client = null;
 
     /**
-     * @param Client $client
+     * @param Credential $client
      */
-    public function __construct(Client $client)
+    public function __construct(Credential $client)
     {
         $this->client = $client;
     }
 
     /**
-     * @return Client
+     * @return Credential
      * @throws SoapFault
      */
     public function getClient()

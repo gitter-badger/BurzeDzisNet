@@ -10,11 +10,11 @@ use SoapClient;
 use SoapFault;
 
 /**
- * Client
+ * Credential
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Client implements ClientInterface
+class Credential implements CredentialInterface
 {
 
     /**
