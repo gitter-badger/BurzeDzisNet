@@ -17,14 +17,28 @@ class LocationTest extends PHPUnit_Framework_TestCase
 {
 
     /**
+     * Location data object
+     *
+     * @var stdClass
+     */
+    protected $myComplexTypeMiejscowosc = null;
+
+    /**
+     * Set up the test
+     */
+    public function setUp()
+    {
+        $this->myComplexTypeMiejscowosc = new \stdClass();
+        $this->myComplexTypeMiejscowosc->x = 17.02;
+        $this->myComplexTypeMiejscowosc->y = 51.07;
+    }
+
+    /**
      * @covers BurzeDzisNet\Location::getX
      */
     public function testGetX()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
         $this->assertSame(17.02, $location->getX());
     }
 
@@ -33,10 +47,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function testGetY()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
         $this->assertSame(51.07, $location->getY());
     }
 
@@ -45,10 +56,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function test__toString()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
         $this->assertSame("Wrocław[17.02, 51.07]", $location->__toString());
     }
 
@@ -57,10 +65,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
         $this->assertSame("Wrocław", $location->getName());
         $this->assertSame(51.07, $location->getY());
         $this->assertSame(17.02, $location->getX());
@@ -71,10 +76,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function testGetName()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
         $this->assertSame($location->getName(), "Wrocław");
     }
 
@@ -83,10 +85,7 @@ class LocationTest extends PHPUnit_Framework_TestCase
      */
     public function testEquals()
     {
-        $myComplexTypeMiejscowosc = new \stdClass;
-        $myComplexTypeMiejscowosc->x = 17.02;
-        $myComplexTypeMiejscowosc->y = 51.07;
-        $location = new Location($myComplexTypeMiejscowosc, "Wrocław");
+        $location = new Location($this->myComplexTypeMiejscowosc, "Wrocław");
 
         $myComplexTypeMiejscowosc2 = new \stdClass;
         $myComplexTypeMiejscowosc2->x = 21.02;

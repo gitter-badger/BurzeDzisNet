@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1441562808">
-  <project timestamp="1441562808">
+<coverage generated="1441564899">
+  <project timestamp="1441564899">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/AuthCredential.php">
         <class name="AuthCredential" namespace="BurzeDzisNet">
