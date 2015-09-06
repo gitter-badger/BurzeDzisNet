@@ -78,19 +78,6 @@ class Location
     }
 
     /**
-     * Indicates whether location is valid
-     *
-     * Location is valid when it has numeric coordinates. Existing location can be invalid, when remote system
-     * can't locate it (not in a remote database or non-existent location).
-     *
-     * @return bool true if location is valid; otherwise false
-     */
-    public function isValid()
-    {
-        return $this->x !== null && $this->y !== null;
-    }
-
-    /**
      * Get locality name
      *
      * @return string locality name
