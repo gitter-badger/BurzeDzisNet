@@ -50,20 +50,21 @@ class BurzeDzisNet
 
     /**
      * @param Location $location
-     * @param int $distance
+     * @param int $radius By default, 25 km
      * @return Storm
      * @throws \SoapFault
      */
-    public function findStorm(Location $location, $distance)
+    public function findStorm(Location $location, $radius = 25)
     {
         return new Storm(
             $this->client->szukaj_burzy(
-                $location->getX(),
                 $location->getY(),
-                $distance,
+                $location->getX(),
+                $radius,
                 $this->apiKey
             ),
-            $location
+            $location,
+            $radius
         );
     }
 
