@@ -4,11 +4,11 @@
 phploc 2.1.4 by Sebastian Bergmann.
 
 Size
-  Lines of Code (LOC)                              438
-  Comment Lines of Code (CLOC)                     216 (49.32%)
-  Non-Comment Lines of Code (NCLOC)                222 (50.68%)
-  Logical Lines of Code (LLOC)                      60 (13.70%)
-    Classes                                         49 (81.67%)
+  Lines of Code (LOC)                              469
+  Comment Lines of Code (CLOC)                     243 (51.81%)
+  Non-Comment Lines of Code (NCLOC)                226 (48.19%)
+  Logical Lines of Code (LLOC)                      61 (13.01%)
+    Classes                                         49 (80.33%)
       Average Class Length                           8
         Minimum Class Length                         3
         Maximum Class Length                        15
@@ -17,7 +17,7 @@ Size
         Maximum Method Length                        5
     Functions                                        0 (0.00%)
       Average Function Length                        0
-    Not in classes or functions                     11 (18.33%)
+    Not in classes or functions                     12 (19.67%)
 
 Cyclomatic Complexity
   Average Complexity per LLOC                     0.02
@@ -33,11 +33,11 @@ Dependencies
     Global Constants                                 0 (0.00%)
     Global Variables                                 0 (0.00%)
     Super-Global Variables                           0 (0.00%)
-  Attribute Accesses                                42
-    Non-Static                                      42 (100.00%)
+  Attribute Accesses                                44
+    Non-Static                                      44 (100.00%)
     Static                                           0 (0.00%)
-  Method Calls                                      12
-    Non-Static                                      12 (100.00%)
+  Method Calls                                      14
+    Non-Static                                      14 (100.00%)
     Static                                           0 (0.00%)
 
 Structure
