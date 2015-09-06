@@ -51,7 +51,7 @@ class AuthCredential implements Credibility
             new SoapHeader(
                 $this->credential->getWSDL(),
                 "KeyAPI",
-                $this->credential->getApiKey(),
+                [$this->credential->getApiKey()],
                 false
             )
         );
