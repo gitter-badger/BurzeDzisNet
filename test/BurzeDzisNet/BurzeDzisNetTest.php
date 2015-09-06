@@ -26,6 +26,13 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected $complexTypeLocation = null;
 
     /**
+     * Storm data object
+     *
+     * @var stdClass storm data object
+     */
+    protected $complexTypeStorm = null;
+
+    /**
      * Set up the test
      */
     public function setUp()
@@ -33,6 +40,12 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->complexTypeLocation = new stdClass();
         $this->complexTypeLocation->x = 25.17;
         $this->complexTypeLocation->y = 54.41;
+
+        $this->complexTypeStorm = new stdClass;
+        $this->complexTypeStorm->liczba = 14;
+        $this->complexTypeStorm->odleglosc = 80.72;
+        $this->complexTypeStorm->kierunek = "NE";
+        $this->complexTypeStorm->okres = 10;
     }
 
     /**
@@ -173,16 +186,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     public function testFindStorm()
     {
         $location = new Location($this->complexTypeLocation, "Wrocław");
-        $complexTypeStorm = new stdClass;
-        $complexTypeStorm->liczba = 14;
-        $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = "NE";
-        $complexTypeStorm->okres = 10;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
-        $client->method("szukaj_burzy")->willReturn($complexTypeStorm);
+        $client->method("szukaj_burzy")->willReturn($this->complexTypeStorm);
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
         $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
             ->disableOriginalConstructor()
@@ -206,16 +214,11 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     public function testFindStormWitAuthCredential()
     {
         $location = new Location($this->complexTypeLocation, "Wrocław");
-        $complexTypeStorm = new stdClass;
-        $complexTypeStorm->liczba = 14;
-        $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = "NE";
-        $complexTypeStorm->okres = 10;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
-        $client->method("szukaj_burzy")->willReturn($complexTypeStorm);
+        $client->method("szukaj_burzy")->willReturn($this->complexTypeStorm);
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, null);
         $credential = $this->getMockBuilder("BurzeDzisNet\AuthCredential")
             ->disableOriginalConstructor()
