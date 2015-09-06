@@ -64,17 +64,14 @@ class Location
     /**
      * Indicates whether some other Location is equal to this one
      *
-     * Two equal Locations must have the same:
-     * - locality name,
-     * - coordinate x,
-     * - coordinate y.
+     * Two equal Locations must points to the same coordinates.
      *
      * @param Location $location other location
      * @return bool true if this location is the equal to some other location; false otherwise
      */
     public function equals(Location $location)
     {
-        return $location == (string) $this;
+        return ($this->x + $this->y) === ($location->getX() + $location->getY());
     }
 
     /**
