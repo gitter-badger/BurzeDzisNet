@@ -30,6 +30,7 @@
     <filter>
         <blacklist>
             <file>test/bootstrap.php</file>
+            <directory>vendor</directory>
         </blacklist>
     </filter>
     <logging>
