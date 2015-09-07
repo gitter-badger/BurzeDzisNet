@@ -2,8 +2,7 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-## Example of usage 
-Finding a storm near Wrocław in a range of 50 km
+## Finding a storm
 
 ```php
   namespace BurzeDzisNet;
