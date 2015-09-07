@@ -17,61 +17,59 @@ class EndpointTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers BurzeDzisNet\Credential::getApiKey
+     * @covers BurzeDzisNet\Endpoint::getApiKey
      */
     public function testGetApiKey()
     {
-        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
-        $this->assertSame("MyApiKey", $credential->getApiKey());
+        $endpoint = new Endpoint("MyApiKey");
+        $this->assertSame("MyApiKey", $endpoint->getApiKey());
     }
 
     /**
-     * @covers BurzeDzisNet\Credential::getWSDL
+     * @covers BurzeDzisNet\Endpoint::getWSDL
      */
     public function testGetWSDL()
     {
-        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
-        $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
+        $endpoint = new Endpoint("MyApiKey");
+        $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $endpoint->getWSDL());
     }
 
     /**
-     * @covers BurzeDzisNet\Credential::getClient
+     * @covers BurzeDzisNet\Endpoint::getClient
      */
     public function testGetClient()
     {
-        $credential = new Endpoint(
-            \sprintf("%s%sExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
-            "MyApiKey"
-        );
-        $client = $credential->getClient();
-        $client2 = $credential->getClient();
+        $endpoint = new Endpoint("MyApiKey");
+        $client = $endpoint->getClient();
+        $client2 = $endpoint->getClient();
         $this->assertInstanceOf("SoapClient", $client);
         $this->assertEquals($client, $client2);
         $this->assertNotSame($client, $client2);
     }
 
     /**
-     * @covers BurzeDzisNet\Credential::getClient
+     * @covers BurzeDzisNet\Endpoint::getClient
      *
      * @expectedException SoapFault
      */
     public function testGetClientInvalidWSDL()
     {
-        $credential = new Endpoint(
-            \sprintf("%s%sInvalidExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
-            "MyApiKey"
-        );
-        $credential->getClient();
+        $endpoint = $this->getMockBuilder("Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getWSDL", "getClient"])
+            ->getMock();
+        $endpoint->method("getWSDL")->willReturn(\sprintf("%s%sInvalidExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR));
+        $this->assertTrue($endpoint->getClient());
     }
 
     /**
-     * @covers BurzeDzisNet\Credential::__construct
+     * @covers BurzeDzisNet\Endpoint::__construct
      */
     public function test__construct()
     {
-        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
-        $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
-        $this->assertSame("MyApiKey", $credential->getApiKey());
+        $endpoint = new Endpoint("MyApiKey");
+        $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $endpoint->getWSDL());
+        $this->assertSame("MyApiKey", $endpoint->getApiKey());
     }
 
 }

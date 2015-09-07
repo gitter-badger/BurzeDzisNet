@@ -65,14 +65,14 @@
 			<ul>
 				<li><a href="class-BurzeDzisNet.AuthCredential.html">BurzeDzisNet\AuthCredential</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet\BurzeDzisNet</a></li>
-				<li><a href="class-BurzeDzisNet.Credential.html">BurzeDzisNet\Credential</a></li>
+				<li><a href="class-BurzeDzisNet.Credential.html">BurzeDzisNet\Endpoint</a></li>
 				<li><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.Credibility.html">BurzeDzisNet\Credibility</a></li>
+				<li><a href="class-BurzeDzisNet.Credibility.html">BurzeDzisNet\EndpointInterface</a></li>
 			</ul>
 
 
@@ -124,9 +124,9 @@
 </span></span><span id="36" class="l"><a href="#36"> 36 </a><span class="php-comment">     * If $credential instance of {@see AuthCredential} client will be send authorization header; otherwise API key
 </span></span><span id="37" class="l"><a href="#37"> 37 </a><span class="php-comment">     * will be send with every remote call as an remote argument.
 </span></span><span id="38" class="l"><a href="#38"> 38 </a><span class="php-comment">     *
-</span></span><span id="39" class="l"><a href="#39"> 39 </a><span class="php-comment">     * @param Credibility $credential API credential
+</span></span><span id="39" class="l"><a href="#39"> 39 </a><span class="php-comment">     * @param EndpointInterface $credential API credential
 </span></span><span id="40" class="l"><a href="#40"> 40 </a><span class="php-comment">     */</span>
-</span><span id="41" class="l"><a href="#41"> 41 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(Credibility <span class="php-var">$credential</span>)
+</span><span id="41" class="l"><a href="#41"> 41 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(EndpointInterface <span class="php-var">$credential</span>)
 </span><span id="42" class="l"><a href="#42"> 42 </a>    {
 </span><span id="43" class="l"><a href="#43"> 43 </a>        <span class="php-var">$this</span>-&gt;client = <span class="php-var">$credential</span>-&gt;getClient();
 </span><span id="44" class="l"><a href="#44"> 44 </a>        <span class="php-var">$this</span>-&gt;apiKey = <span class="php-var">$credential</span> <span class="php-keyword1">instanceof</span> AuthCredential ? <span class="php-keyword1">null</span> : <span class="php-var">$credential</span>-&gt;getApiKey();

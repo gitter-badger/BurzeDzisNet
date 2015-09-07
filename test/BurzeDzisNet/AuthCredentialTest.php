@@ -22,7 +22,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetApiKey()
     {
-        $credential = new AuthCredential(new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey"));
+        $credential = new AuthCredential(new Endpoint("MyApiKey"));
         $this->assertSame("MyApiKey", $credential->getApiKey());
     }
 
@@ -31,7 +31,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetWSDL()
     {
-        $credential = new AuthCredential(new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey"));
+        $credential = new AuthCredential(new Endpoint("MyApiKey"));
         $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
     }
 
@@ -41,7 +41,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
     public function testGetClient()
     {
         $credential = new AuthCredential(
-            new Credential(
+            new Endpoint(
                 \sprintf("%s%sExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
                 "MyApiKey"
             )
@@ -77,7 +77,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
     public function testGetClientInvalidWSDL()
     {
         $credential = new AuthCredential(
-            new Credential(
+            new Endpoint(
                 \sprintf("%s%sInvalidExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
                 "MyApiKey"
             )
@@ -90,7 +90,7 @@ class AuthCredentialTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $credential = new AuthCredential(new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey"));
+        $credential = new AuthCredential(new Endpoint("MyApiKey"));
         $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
         $this->assertSame("MyApiKey", $credential->getApiKey());
     }

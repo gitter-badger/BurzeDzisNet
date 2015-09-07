@@ -16,21 +16,21 @@ use SoapHeader;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AuthCredential implements Credibility
+class AuthCredential implements EndpointInterface
 {
     /**
      * Client credential
      *
-     * @var Credential client credential
+     * @var Endpoint client credential
      */
     protected $credential = null;
 
     /**
      * Constructor
      *
-     * @param Credential $client client credential
+     * @param Endpoint $client client credential
      */
-    public function __construct(Credential $client)
+    public function __construct(Endpoint $client)
     {
         $this->credential = $client;
     }

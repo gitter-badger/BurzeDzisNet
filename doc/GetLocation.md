@@ -4,7 +4,7 @@
   namespace BurzeDzisNet;
 
   $burzeDzisNet = new BurzeDzisNet(
-      new Credential(
+      new Endpoint(
           'https://www.burze.dzis.net/soap.php?WSDL',
           'Your API key'
       )

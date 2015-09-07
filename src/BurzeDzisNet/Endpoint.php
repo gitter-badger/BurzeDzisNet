@@ -10,13 +10,11 @@ use SoapClient;
 use SoapFault;
 
 /**
- * API credential
- *
- * Calling method {@see getClient} returns {@link \SoapClient http://php.net/manual/en/class.soapclient.php}.
+ * Endpoint is the entry point to a burze.dzis.net service
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Endpoint implements Credibility
+class Endpoint implements EndpointInterface
 {
 
     /**
@@ -24,7 +22,7 @@ class Endpoint implements Credibility
      *
      * @var string URI of WSDL file
      */
-    protected $wsdl = "";
+    protected $wsdl = "https://burze.dzis.net/soap.php?WSDL";
 
     /**
      * API key
@@ -36,20 +34,19 @@ class Endpoint implements Credibility
     /**
      * Constructor
      *
-     * @param string $wsdl URI of WSDL file
      * @param string $apiKey API key
      */
-    public function __construct($wsdl, $apiKey)
+    public function __construct($apiKey)
     {
-        $this->wsdl = $wsdl;
         $this->apiKey = $apiKey;
     }
 
     /**
-     * Get API credential
+     * Get SoapClient in WSDL mode
      *
-     * @return SoapClient API credential
-     * @throws SoapFault if the wsdl URI cannot be loaded
+     * @see {@link \SoapClient http://php.net/manual/en/class.soapclient.php} SoapClient
+     * @return SoapClient SoapClient in WSDL mode
+     * @throws SoapFault if the WSDL URI cannot be loaded
      */
     public function getClient()
     {
@@ -75,5 +72,5 @@ class Endpoint implements Credibility
     {
         return $this->apiKey;
     }
-    
+
 }

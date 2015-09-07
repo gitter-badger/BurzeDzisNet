@@ -36,9 +36,9 @@ class BurzeDzisNet
      * If $credential instance of {@see AuthCredential} client will be send authorization header; otherwise API key
      * will be send with every remote call as an remote argument.
      *
-     * @param Credibility $credential API credential
+     * @param EndpointInterface $credential API credential
      */
-    public function __construct(Credibility $credential)
+    public function __construct(EndpointInterface $credential)
     {
         $this->client = $credential->getClient();
         $this->apiKey = $credential instanceof AuthCredential ? null : $credential->getApiKey();
