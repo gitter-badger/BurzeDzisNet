@@ -9,10 +9,7 @@ Finding a storm near Wrocław in a range of 50 km
   namespace BurzeDzisNet;
 
   $burzeDzisNet = new BurzeDzisNet(
-      new Credential(
-          'https://www.burze.dzis.net/soap.php?WSDL',
-          'Your API key'
-      )
+      new Enpoint('Your API key')
   );
   
   $storm = $burzeDzisNet->findStorm(
