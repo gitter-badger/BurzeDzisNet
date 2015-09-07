@@ -9,11 +9,11 @@ namespace BurzeDzisNet;
 use PHPUnit_Framework_TestCase;
 
 /**
- * {@see Credential} test
+ * {@see Endpoint} test
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class CredentialTest extends PHPUnit_Framework_TestCase
+class EndpointTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -21,7 +21,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetApiKey()
     {
-        $credential = new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
+        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
         $this->assertSame("MyApiKey", $credential->getApiKey());
     }
 
@@ -30,7 +30,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetWSDL()
     {
-        $credential = new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
+        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
         $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
     }
 
@@ -39,7 +39,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetClient()
     {
-        $credential = new Credential(
+        $credential = new Endpoint(
             \sprintf("%s%sExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
             "MyApiKey"
         );
@@ -57,7 +57,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
      */
     public function testGetClientInvalidWSDL()
     {
-        $credential = new Credential(
+        $credential = new Endpoint(
             \sprintf("%s%sInvalidExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR),
             "MyApiKey"
         );
@@ -69,7 +69,7 @@ class CredentialTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $credential = new Credential("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
+        $credential = new Endpoint("https://burze.dzis.net/soap.php?WSDL", "MyApiKey");
         $this->assertSame("https://burze.dzis.net/soap.php?WSDL", $credential->getWSDL());
         $this->assertSame("MyApiKey", $credential->getApiKey());
     }

@@ -16,7 +16,7 @@ use SoapFault;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Credential implements Credibility
+class Endpoint implements Credibility
 {
 
     /**
