@@ -6,17 +6,14 @@
 
 namespace BurzeDzisNet;
 
-use stdClass;
-
 /**
  * Location represents the coordinates (DMS) for the specified locality
  *
- * Location has a properties describing:
- * - x (coordinate x of given location)
- * - y (coordinate y of given location)
- * - name (location name)
+ * Location has a properties describing it's:
+ * - coordinate x
+ * - coordinate y
+ * - name
  *
- * @link https://en.wikipedia.org/wiki/Decimal_degrees Decimal degrees
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Location
@@ -43,10 +40,11 @@ class Location
     protected $name = "";
 
     /**
-     * Constructor
+     * New Location
      *
-     * @param stdClass $complexTypeMiejscowosc Location coordinates
-     * @param $name location name
+     * @param int $x coordinate x
+     * @param int $y coordinate y
+     * @param string $name location name
      */
     public function __construct($x, $y, $name)
     {
@@ -58,26 +56,13 @@ class Location
     /**
      * Get string representation
      *
-     * Location is represented by literal "LocationName[x, y]".
+     * Location is represented as a literal "Name[x, y]".
      *
-     * @return string literal representation of this object
+     * @return string literal representation of this location
      */
     public function __toString()
     {
-        return \sprintf("%s[%s, %s]", $this->name, $this->x, $this->y);
-    }
-
-    /**
-     * Indicates whether some other Location is equal to this one
-     *
-     * Two equal locations must points to the same coordinates.
-     *
-     * @param Location $location other location
-     * @return bool true if this location is the equal to some other location; false otherwise
-     */
-    public function equals(Location $location)
-    {
-        return ($this->x + $this->y) === ($location->getX() + $location->getY());
+        return \sprintf("%s[%s, %s]", $this->getName(), $this->getX(), $this->getY());
     }
 
     /**
@@ -108,6 +93,19 @@ class Location
     public function getY()
     {
         return $this->y;
+    }
+
+    /**
+     * Indicates whether some other Location is equal to this one
+     *
+     * Two locations points to the same coordinates are considered equal.
+     *
+     * @param Location $location other location
+     * @return bool true if this location is the equal to some other location; false otherwise
+     */
+    public function equals(Location $location)
+    {
+        return ($this->getX() + $this->getY()) === ($location->getX() + $location->getY());
     }
 
 }

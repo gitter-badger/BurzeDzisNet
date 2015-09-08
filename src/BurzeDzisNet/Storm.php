@@ -6,8 +6,6 @@
 
 namespace BurzeDzisNet;
 
-use stdClass;
-
 /**
  * Storm represents information about registered lightnings with a specified radius of monitoring
  * covered by the given location
@@ -56,7 +54,7 @@ class Storm
     /**
      * The radius covered by location
      *
-     * @var int radius covered by ;ocation
+     * @var int radius covered by location
      */
     protected $radius = 0;
 
@@ -68,17 +66,14 @@ class Storm
     protected $location = null;
 
     /**
-     * Constructor
+     * New Storm
      *
-     * Storm data transfer object $complexTypeBurza must have properties:
-     * - $complexTypeBurza->liczba mapped into number property
-     * - $complexTypeBurza->odleglosc mapped into distance property
-     * - $complexTypeBurza->kierunek mapped into direction property
-     * - $complexTypeBurza->okres mapped into period property
-     *
-     * @param stdClass $complexTypeBurza storm data transfer object
-     * @param Location $location selected location
+     * @param int $number number of cloud-to-ground lightning in specified radius from a selected location
+     * @param float $distance distance (km) to the nearest registered lightning
+     * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
+     * @param int $period number of minutes of time period containing the data (10, 15, 20 minutes)
      * @param int $radius radius covered by location
+     * @param Location $location selected location
      */
     public function __construct($number, $distance, $direction, $period, $radius, Location $location)
     {

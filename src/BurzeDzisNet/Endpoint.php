@@ -10,7 +10,7 @@ use SoapClient;
 use SoapFault;
 
 /**
- * Endpoint is the entry point to a burze.dzis.net service
+ * Endpoint interface is the entry point to a burze.dzis.net service
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -42,11 +42,11 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * Get SoapClient in WSDL mode
+     * Get Soap client in WSDL mode
      *
      * @see {@link \SoapClient http://php.net/manual/en/class.soapclient.php} SoapClient
      * @return SoapClient SoapClient in WSDL mode
-     * @throws SoapFault if the WSDL URI cannot be loaded
+     * @throws SoapFault if the WSDL URI cannot be loaded or parsed
      */
     public function getClient()
     {

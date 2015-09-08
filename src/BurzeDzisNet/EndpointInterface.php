@@ -13,9 +13,8 @@ namespace BurzeDzisNet;
  */
 interface EndpointInterface
 {
-
     /**
-     * Get Soap client
+     * Get Soap client in WSDL mode
      *
      * @return \SoapClient Soap client in WSDL mode
      * @throws \SoapFault if the WSDL URI cannot be loaded or parsed
@@ -35,5 +34,4 @@ interface EndpointInterface
      * @return string API key
      */
     public function getApiKey();
-
 }

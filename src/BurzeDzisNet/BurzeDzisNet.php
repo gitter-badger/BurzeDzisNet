@@ -9,7 +9,7 @@ namespace BurzeDzisNet;
 use SoapFault;
 
 /**
- * Burze.Dzis.Net
+ * Burze.Dzis.Net service
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -17,26 +17,23 @@ class BurzeDzisNet
 {
 
     /**
-     * API client
+     * Soap client
      *
-     * @var \SoapClient API client
+     * @var \SoapClient Soap client
      */
     protected $client = null;
 
     /**
      * API key
      *
-     * @var null|string API key
+     * @var string API key
      */
     protected $apiKey = null;
 
     /**
-     * Constructor
+     * New Burz.Dzis.Net service
      *
-     * If $endpoint instance of {@see AuthCredential} client will be send authorization header; otherwise API key
-     * will be send with every remote call as an remote argument.
-     *
-     * @param EndpointInterface $endpoint API endpoint
+     * @param EndpointInterface $endpoint entry point to a burze.dzis.net service
      */
     public function __construct(EndpointInterface $endpoint)
     {
@@ -45,10 +42,10 @@ class BurzeDzisNet
     }
 
     /**
-     * Indicates whether given API key is credible
+     * Indicates whether given API key is valid
      *
-     * @param $apiKey API key
-     * @return bool true if API key is credible; otherwise false
+     * @param string $apiKey API key
+     * @return bool true if API key is valid; otherwise false
      */
     public function verifyApiKey($apiKey)
     {
@@ -61,9 +58,9 @@ class BurzeDzisNet
      * If location does not exists in a remote database returned object will be point to location with
      * coordinates (0, 0).
      *
-     * @param $name location name
+     * @param string $name location name
      * @return Location location with coordinates
-     * @throws \SoapFault If server error
+     * @throws \SoapFault
      */
     public function getLocation($name)
     {
