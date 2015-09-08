@@ -2,7 +2,9 @@
 
 PHP client for [Burze.Dzis.Net](https://burze.dzis.net)
 
-## Creating client
+## Example
+
+#### Creating client
 
 ```php
   namespace BurzeDzisNet;
@@ -11,11 +13,11 @@ PHP client for [Burze.Dzis.Net](https://burze.dzis.net)
       new Endpoint('Your API key')
   );
 ```
-## Locating Madrid
+#### Locating Madrid
 ```php
 $Madrid = $burzeDzisNet->getLocation("Madrid");
 ```
-## Finding a storm near Madrid (50 km)
+#### Finding a storm near Madrid (50 km)
 
 ```php
   $storm = $burzeDzisNet->findStorm($Madrid, 50);
