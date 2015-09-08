@@ -45,16 +45,13 @@ class Location
     /**
      * Constructor
      *
-     * Storm data transfer object $complexTypeMiejscowosc must have properties:
-     * - $complexTypeMiejscowosc->x mapped into x property
-     * - $complexTypeMiejscowosc->y mapped into y property
      * @param stdClass $complexTypeMiejscowosc Location coordinates
      * @param $name location name
      */
-    public function __construct(stdClass $complexTypeMiejscowosc, $name)
+    public function __construct($x, $y, $name)
     {
-        $this->x = $complexTypeMiejscowosc->x;
-        $this->y = $complexTypeMiejscowosc->y;
+        $this->x = $x;
+        $this->y = $y;
         $this->name = $name;
     }
 

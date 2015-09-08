@@ -80,14 +80,14 @@ class Storm
      * @param Location $location selected location
      * @param int $radius radius covered by location
      */
-    public function __construct(stdClass $complexTypeBurza, Location $location, $radius)
+    public function __construct($number, $distance, $direction, $period, $radius, Location $location)
     {
-        $this->location = $location;
+        $this->number = $number;
+        $this->distance = $distance;
+        $this->direction = $direction;
+        $this->period = $period;
         $this->radius = $radius;
-        $this->number = $complexTypeBurza->liczba;
-        $this->distance = $complexTypeBurza->odleglosc;
-        $this->direction = $complexTypeBurza->kierunek;
-        $this->period = $complexTypeBurza->okres;
+        $this->location = $location;
     }
 
     /**
