@@ -4,7 +4,7 @@ PHP client for [Burze.Dzis.Net](https://burze.dzis.net)
 
 ## Example
 
-##### Creating client
+##### Finding a storm in a radius of 50 km from Madrid
 
 ```php
 namespace BurzeDzisNet;
@@ -12,22 +12,18 @@ namespace BurzeDzisNet;
 $burzeDzisNet = new BurzeDzisNet(
     new Endpoint('Your API key')
 );
-```
-##### Locating Madrid
-```php
-$Madrid = $burzeDzisNet->getLocation("Madrid");
-```
-##### Finding a storm in a radius of 50 km from Madrid
 
-```php
-$storm = $burzeDzisNet->findStorm($Madrid, 50);
+$storm = $burzeDzisNet->findStorm(
+    $burzeDzisNet->getLocation("Madrid"),
+    50
+);
 ```
 
 ## Class design
 
 - Completely immutable
 - Declarative over imperative
-- No static methods, properties, consts
+- No static methods, static properties, public constants
 - No null references
 
 ## Resources
