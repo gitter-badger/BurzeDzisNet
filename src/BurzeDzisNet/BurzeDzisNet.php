@@ -33,15 +33,15 @@ class BurzeDzisNet
     /**
      * Constructor
      *
-     * If $credential instance of {@see AuthCredential} client will be send authorization header; otherwise API key
+     * If $endpoint instance of {@see AuthCredential} client will be send authorization header; otherwise API key
      * will be send with every remote call as an remote argument.
      *
-     * @param EndpointInterface $credential API credential
+     * @param EndpointInterface $endpoint API endpoint
      */
-    public function __construct(EndpointInterface $credential)
+    public function __construct(EndpointInterface $endpoint)
     {
-        $this->client = $credential->getClient();
-        $this->apiKey = $credential instanceof AuthCredential ? null : $credential->getApiKey();
+        $this->client = $endpoint->getClient();
+        $this->apiKey = $endpoint->getApiKey();
     }
 
     /**
@@ -67,8 +67,10 @@ class BurzeDzisNet
      */
     public function getLocation($name)
     {
+        $dto = $this->client->miejscowosc($name, $this->apiKey);
         return new Location(
-            $this->client->miejscowosc($name, $this->apiKey),
+            $dto->x,
+            $dto->y,
             $name
         );
     }
@@ -86,15 +88,19 @@ class BurzeDzisNet
      */
     public function findStorm(Location $location, $radius = 25)
     {
+        $dto = $this->client->szukaj_burzy(
+            $location->getY(),
+            $location->getX(),
+            $radius,
+            $this->apiKey
+        );
         return new Storm(
-            $this->client->szukaj_burzy(
-                $location->getY(),
-                $location->getX(),
-                $radius,
-                $this->apiKey
-            ),
-            $location,
-            $radius
+            $dto->liczba,
+            $dto->odleglosc,
+            $dto->kierunek,
+            $dto->okres,
+            $radius,
+            $location
         );
     }
 
