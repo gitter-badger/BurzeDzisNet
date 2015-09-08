@@ -2,20 +2,19 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-## Example of usage 
-Finding a storm near Wrocław in a range of 50 km
+## Finding a storm near Madrid
 
 ```php
   namespace BurzeDzisNet;
 
   $burzeDzisNet = new BurzeDzisNet(
-      new Enpoint('Your API key')
+      new Endpoint('Your API key')
   );
   
   $storm = $burzeDzisNet->findStorm(
-      $burzeDzisNet->getLocation("Wrocław"),
-      50
-  );  
+      $burzeDzisNet->getLocation("Madrid"),
+      50 // monitoring radius (km)
+  );
 ```
 
 ## Class design
