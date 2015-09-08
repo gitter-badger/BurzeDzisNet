@@ -7,8 +7,8 @@
 namespace BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
-use stdClass;
 use SoapFault;
+use stdClass;
 
 /**
  * {@see BurzeDzisNet} test
@@ -19,50 +19,17 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * Location data object
-     *
-     * @var stdClass location data object
-     */
-    protected $complexTypeLocation = null;
-
-    /**
-     * Storm data object
-     *
-     * @var stdClass storm data object
-     */
-    protected $complexTypeStorm = null;
-
-    /**
-     * Set up the test
-     */
-    public function setUp()
-    {
-        $this->complexTypeLocation = new stdClass();
-        $this->complexTypeLocation->x = 25.17;
-        $this->complexTypeLocation->y = 54.41;
-
-        $this->complexTypeStorm = new stdClass;
-        $this->complexTypeStorm->liczba = 14;
-        $this->complexTypeStorm->odleglosc = 80.72;
-        $this->complexTypeStorm->kierunek = "NE";
-        $this->complexTypeStorm->okres = 10;
-    }
-
-    /**
      * @covers BurzeDzisNet\BurzeDzisNet::__construct
      */
     public function test__construct()
     {
-        $client = $this->getMockBuilder("SoapClient")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
-            ->getMock();
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
-            ->setConstructorArgs([$client, "MyApiKey"])
             ->setMethods(["getClient", "getApiKey"])
             ->getMock();
-        $credential->expects($this->once())->method("getClient");
-        $credential->expects($this->once())->method("getApiKey");
-        new BurzeDzisNet($credential);
+        $endpoint->expects($this->once())->method("getClient");
+        $endpoint->expects($this->once())->method("getApiKey");
+        new BurzeDzisNet($endpoint);
     }
 
     /**
@@ -75,38 +42,18 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["KeyApi"])
             ->getMock();
         $map = [
-            ["Valid", true],
-            ["Invalid", false]
+            ["ValidApiKey", true],
+            ["InvalidApiKey", false]
         ];
         $client->method("KeyApi")->will($this->returnValueMap($map));
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(["getClient"])
             ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $burzeDzisNet = new BurzeDzisNet($credential);
-        $this->assertTrue($burzeDzisNet->verifyApiKey("Valid"));
-        $this->assertFalse($burzeDzisNet->verifyApiKey("Invalid"));
-    }
-
-    /**
-     * @covers BurzeDzisNet\BurzeDzisNet::__construct
-     */
-    public function test__constructWithAuthCredential()
-    {
-        $client = $this->getMockBuilder("SoapClient")
-            ->disableOriginalConstructor()
-            ->getMock();
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
-            ->setConstructorArgs([$client, "MyApiKey"])
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
-        $authCredential = $this->getMockBuilder("BurzeDzisNet\AuthCredential")
-            ->setConstructorArgs([$credential])
-            ->setMethods(["getClient"])
-            ->getMock();
-        $authCredential->expects($this->once())->method("getClient");
-        new BurzeDzisNet($authCredential);
+        $endpoint->method("getClient")->willReturn($client);
+        $burzeDzisNet = new BurzeDzisNet($endpoint);
+        $this->assertTrue($burzeDzisNet->verifyApiKey("ValidApiKey"));
+        $this->assertFalse($burzeDzisNet->verifyApiKey("InvalidApiKey"));
     }
 
     /**
@@ -114,19 +61,22 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testGetLocation()
     {
+        $complexTypeLocation = new stdClass();
+        $complexTypeLocation->x = 25.17;
+        $complexTypeLocation->y = 54.41;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["miejscowosc"])
             ->getMock();
-        $client->method("miejscowosc")->willReturn($this->complexTypeLocation);
+        $client->method("miejscowosc")->willReturn($complexTypeLocation);
         $client->expects($this->once())->method("miejscowosc")->with("Wrocław", "MyApiKey");
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(["getClient", "getApiKey"])
             ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $credential->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($credential);
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("MyApiKey");
+        $burzeDzisNet = new BurzeDzisNet($endpoint);
         $location = $burzeDzisNet->getLocation("Wrocław");
         $this->assertInstanceOf("BurzeDzisNet\Location", $location);
         $this->assertSame("Wrocław", $location->getName());
@@ -146,38 +96,13 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["miejscowosc"])
             ->getMock();
         $client->method("miejscowosc")->willThrowException($soapFault);
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(["getClient"])
             ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $burzeDzisNet = new BurzeDzisNet($credential);
+        $endpoint->method("getClient")->willReturn($client);
+        $burzeDzisNet = new BurzeDzisNet($endpoint);
         $burzeDzisNet->getLocation("Wrocław");
-    }
-
-    /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getLocation
-     */
-    public function testGetLocationWithAuthCredential()
-    {
-        $client = $this->getMockBuilder("SoapClient")
-            ->disableOriginalConstructor()
-            ->setMethods(["miejscowosc"])
-            ->getMock();
-        $client->method("miejscowosc")->willReturn($this->complexTypeLocation);
-        $client->expects($this->once())->method("miejscowosc")->with("Wrocław", null);
-        $credential = $this->getMockBuilder("BurzeDzisNet\AuthCredential")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $credential->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($credential);
-        $location = $burzeDzisNet->getLocation("Wrocław");
-        $this->assertInstanceOf("BurzeDzisNet\Location", $location);
-        $this->assertSame("Wrocław", $location->getName());
-        $this->assertSame(25.17, $location->getX());
-        $this->assertSame(54.41, $location->getY());
     }
 
     /**
@@ -185,20 +110,25 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStorm()
     {
-        $location = new Location($this->complexTypeLocation, "Wrocław");
+        $complexTypeStorm = new stdClass;
+        $complexTypeStorm->liczba = 14;
+        $complexTypeStorm->odleglosc = 80.72;
+        $complexTypeStorm->kierunek = "NE";
+        $complexTypeStorm->okres = 10;
+        $location = new Location(25.17, 54.41, "Wrocław");
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
-        $client->method("szukaj_burzy")->willReturn($this->complexTypeStorm);
+        $client->method("szukaj_burzy")->willReturn($complexTypeStorm);
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(["getClient", "getApiKey"])
             ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $credential->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($credential);
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("MyApiKey");
+        $burzeDzisNet = new BurzeDzisNet($endpoint);
         $storm = $burzeDzisNet->findStorm($location, 50);
         $this->assertTrue($storm->getLocation()->equals($location));
         $this->assertSame("NE", $storm->getDirection());
@@ -207,54 +137,29 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->assertSame(14, $storm->getNumber());
         $this->assertSame(10, $storm->getPeriod());
     }
+
 
     /**
      * @covers BurzeDzisNet\BurzeDzisNet::findStorm
-     */
-    public function testFindStormWitAuthCredential()
-    {
-        $location = new Location($this->complexTypeLocation, "Wrocław");
-        $client = $this->getMockBuilder("SoapClient")
-            ->disableOriginalConstructor()
-            ->setMethods(["szukaj_burzy"])
-            ->getMock();
-        $client->method("szukaj_burzy")->willReturn($this->complexTypeStorm);
-        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, null);
-        $credential = $this->getMockBuilder("BurzeDzisNet\AuthCredential")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $credential->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($credential);
-        $storm = $burzeDzisNet->findStorm($location, 50);
-        $this->assertTrue($storm->getLocation()->equals($location));
-        $this->assertSame("NE", $storm->getDirection());
-        $this->assertSame(50, $storm->getRadius());
-        $this->assertSame(80.72, $storm->getDistance());
-        $this->assertSame(14, $storm->getNumber());
-        $this->assertSame(10, $storm->getPeriod());
-    }
-
-    /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getLocation
      * @expectedException SoapFault
      */
     public function testFindStormSoapFault()
     {
-        $location = new Location($this->complexTypeLocation, "Wrocław");
+        $location = new Location(25.17, 54.41, "Wrocław");
         $soapFault = $this->getMockBuilder("SoapFault")->disableOriginalConstructor()->getMock();
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
+        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
         $client->method("szukaj_burzy")->willThrowException($soapFault);
-        $credential = $this->getMockBuilder("BurzeDzisNet\Credential")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
-            ->setMethods(["getClient"])
+            ->setMethods(["getClient", "getApiKey"])
             ->getMock();
-        $credential->method("getClient")->willReturn($client);
-        $burzeDzisNet = new BurzeDzisNet($credential);
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("MyApiKey");
+        $burzeDzisNet = new BurzeDzisNet($endpoint);
         $burzeDzisNet->findStorm($location, 50);
     }
 
