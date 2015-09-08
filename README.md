@@ -1,8 +1,8 @@
 # BurzeDzisNet
 
-PHP client for [burze.dzis.net](https://burze.dzis.net)
+PHP client for [Burze.Dzis.Net](https://burze.dzis.net)
 
-## Finding a storm near Madrid
+## Creating client
 
 ```php
   namespace BurzeDzisNet;
@@ -10,11 +10,15 @@ PHP client for [burze.dzis.net](https://burze.dzis.net)
   $burzeDzisNet = new BurzeDzisNet(
       new Endpoint('Your API key')
   );
-  
-  $storm = $burzeDzisNet->findStorm(
-      $burzeDzisNet->getLocation("Madrid"),
-      50 // monitoring radius (km)
-  );
+```
+## Locating Madrid
+```php
+$Madrid = $burzeDzisNet->getLocation("Madrid");
+```
+## Finding a storm near Madrid (50 km)
+
+```php
+  $storm = $burzeDzisNet->findStorm($Madrid, 50);
 ```
 
 ## Class design
