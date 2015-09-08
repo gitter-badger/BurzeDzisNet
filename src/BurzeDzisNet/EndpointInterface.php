@@ -7,17 +7,18 @@
 namespace BurzeDzisNet;
 
 /**
- * Endpoint interface
+ * Endpoint interface is the entry point to a burze.dzis.net service
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 interface EndpointInterface
 {
+
     /**
-     * Get API client
+     * Get Soap client
      *
-     * @return \SoapClient API client
-     * @throws \SoapFault if the wsdl URI cannot be loaded
+     * @return \SoapClient Soap client in WSDL mode
+     * @throws \SoapFault if the WSDL URI cannot be loaded or parsed
      */
     public function getClient();
 
@@ -34,4 +35,5 @@ interface EndpointInterface
      * @return string API key
      */
     public function getApiKey();
+
 }
