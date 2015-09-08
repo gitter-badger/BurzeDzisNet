@@ -54,12 +54,13 @@ class EndpointTest extends PHPUnit_Framework_TestCase
      */
     public function testGetClientInvalidWSDL()
     {
-        $endpoint = $this->getMockBuilder("Endpoint")
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
-            ->setMethods(["getWSDL", "getClient"])
+            ->setMethods(["getWSDL"])
             ->getMock();
         $endpoint->method("getWSDL")->willReturn(\sprintf("%s%sInvalidExampleWSDL.xml", __DIR__, \DIRECTORY_SEPARATOR));
         $this->assertTrue($endpoint->getClient());
+
     }
 
     /**

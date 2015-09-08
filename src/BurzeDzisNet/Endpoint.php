@@ -50,7 +50,7 @@ class Endpoint implements EndpointInterface
      */
     public function getClient()
     {
-        return new SoapClient($this->wsdl);
+        return new SoapClient($this->getWSDL());
     }
 
     /**
