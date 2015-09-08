@@ -4,23 +4,23 @@ PHP client for [Burze.Dzis.Net](https://burze.dzis.net)
 
 ## Example
 
-#### Creating client
+##### Creating client
 
 ```php
-  namespace BurzeDzisNet;
+namespace BurzeDzisNet;
 
-  $burzeDzisNet = new BurzeDzisNet(
-      new Endpoint('Your API key')
-  );
+$burzeDzisNet = new BurzeDzisNet(
+    new Endpoint('Your API key')
+);
 ```
-#### Locating Madrid
+##### Locating Madrid
 ```php
 $Madrid = $burzeDzisNet->getLocation("Madrid");
 ```
-#### Finding a storm near Madrid (50 km)
+##### Finding a storm in a radius of 50 km from Madrid
 
 ```php
-  $storm = $burzeDzisNet->findStorm($Madrid, 50);
+$storm = $burzeDzisNet->findStorm($Madrid, 50);
 ```
 
 ## Class design
