@@ -2,22 +2,7 @@
 
 The following website is created for users who seek for a solution, which can enable them to receive notification on weather hazards such as: lightnings, tornadoes, strong winds, heavy precipitation and low and high air temperatures.
 
-The website offers API for:
-- Storm information for teritories of:
-    - Poland
-    - Croatia
-    - Czech
-    - Germany
-    - Nederlands
-    - Slovakia
-    - Slovenia
-    - boundries of Europe
-    
-- Weather alert for Poland
-    - intense frost/heat
-    - strong wing
-    - intense participation (rainfall and snowfall),
-    - storms and tornados
+The website offers API for requesting for storm information on __Poland, Croatia, Czech, Germany, Nederlands, Slovakia, Slovenia teritories and boundries of Europe and provides weather alert for Poland__: intense frost/heat, strong wing intense participation (rainfall and snowfall), storms and tornados.
 
 Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
