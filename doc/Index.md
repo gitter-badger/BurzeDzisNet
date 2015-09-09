@@ -1,5 +1,3 @@
-# Documentation
-
 ## About burze.dzis.net website
 
 The following website is created for users who seek for a solution, which can enable them to receive notification on weather hazards such as: lightnings, tornadoes, strong winds, heavy precipitation and low and high air temperatures.
