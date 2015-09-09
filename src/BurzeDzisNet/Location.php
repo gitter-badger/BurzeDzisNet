@@ -42,8 +42,8 @@ class Location
     /**
      * New Location
      *
-     * @param int $x coordinate x
-     * @param int $y coordinate y
+     * @param float $x coordinate x
+     * @param float $y coordinate y
      * @param string $name location name
      */
     public function __construct($x, $y, $name)
