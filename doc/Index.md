@@ -1,6 +1,37 @@
 # Documentation
 
-## Creating remote client
+## About burze.dzis.net website
+
+The following website is created for users who seek for a solution, which can enable them to receive notification on weather hazards such as: lightnings, tornadoes, strong winds, heavy precipitation and low and high air temperatures.
+
+The website offers API for:
+- Storm information for teritories of:
+    - Poland
+    - Croatia
+    - Czech
+    - Germany
+    - Nederlands
+    - Slovakia
+    - Slovenia
+    - boundries of Europe
+    
+- Weather alert for Poland
+    - intense frost/heat
+    - strong wing
+    - intense participation (rainfall and snowfall),
+    - storms and tornados
+
+Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
+
+
+## Access to burze.dzis.net API
+
+To get your credentials create free account on burze.dzis.net and request for API Key for your application.
+
+
+## Remote calls
+
+#### Creating remote client
 
 ```php
 namespace BurzeDzisNet;
@@ -9,8 +40,6 @@ $burzeDzisNet = new BurzeDzisNet(
     new Endpoint('Your API key')
 );
 ```
-
-## Remote calls
 
 #### Getting location
 
@@ -44,7 +73,7 @@ $burzeDzisNet->getStorm(
 
 #### Verifying API key
 
-Check if a given API key is athorized by burze.dzis.net soap server.
+Check if a given API key is authorized by burze.dzis.net soap server.
 
 ```php
 $burzeDzisNet->verifyApiKey("Verified API key");
