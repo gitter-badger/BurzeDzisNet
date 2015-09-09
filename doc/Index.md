@@ -51,7 +51,7 @@ $burzeDzisNet->getLocation("Madrid");
 
 #### Finding a storm
 
-If you're interested in information about Storm - check if a given point with a specified radius of monitoring registered lightnings.
+If you're interested in information about storm - check if a given point with a specified radius of monitoring registered lightnings.
 
 ```php
 $burzeDzisNet->getStorm(
