@@ -110,17 +110,12 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStorm()
     {
-        $complexTypeStorm = new stdClass;
-        $complexTypeStorm->liczba = 14;
-        $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = "NE";
-        $complexTypeStorm->okres = 10;
         $location = new Location(25.17, 54.41, "Wrocław");
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
-        $client->method("szukaj_burzy")->willReturn($complexTypeStorm);
+        $client->method("szukaj_burzy")->willReturn($this->getStormTO());
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
         $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
@@ -163,4 +158,16 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $burzeDzisNet->findStorm($location, 50);
     }
 
+    /**
+     * Get Storm transfer object
+     *
+     * @return stdClass
+     */
+    protected function getStormTO() {
+        $complexTypeStorm = new stdClass;
+        $complexTypeStorm->liczba = 14;
+        $complexTypeStorm->odleglosc = 80.72;
+        $complexTypeStorm->kierunek = "NE";
+        $complexTypeStorm->okres = 10;
+    }
 }
