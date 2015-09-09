@@ -7,7 +7,7 @@ The website offers API for requesting for storm information on __Poland, Croatia
 Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
 
-## Access to burze.dzis.net API
+## Access to burze.dzis.net
 
 To get your credentials create free account on burze.dzis.net and request for API Key for your application.
 
