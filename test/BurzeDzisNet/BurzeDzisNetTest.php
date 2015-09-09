@@ -23,10 +23,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
+        $endpoint = $this->getMockEndpoint();
         $endpoint->expects($this->once())->method("getClient");
         $endpoint->expects($this->once())->method("getApiKey");
         new BurzeDzisNet($endpoint);
@@ -70,10 +67,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->method("miejscowosc")->willReturn($complexTypeLocation);
         $client->expects($this->once())->method("miejscowosc")->with("Wrocław", "MyApiKey");
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
+        $endpoint = $this->getMockEndpoint();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("MyApiKey");
         $burzeDzisNet = new BurzeDzisNet($endpoint);
@@ -117,10 +111,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->method("szukaj_burzy")->willReturn($this->getStormTO());
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
+        $endpoint = $this->getMockEndpoint();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("MyApiKey");
         $burzeDzisNet = new BurzeDzisNet($endpoint);
@@ -148,10 +139,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
         $client->method("szukaj_burzy")->willThrowException($soapFault);
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
+        $endpoint = $this->getMockEndpoint();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("MyApiKey");
         $burzeDzisNet = new BurzeDzisNet($endpoint);
@@ -163,11 +151,26 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      *
      * @return stdClass
      */
-    protected function getStormTO() {
+    protected function getStormTO()
+    {
         $complexTypeStorm = new stdClass;
         $complexTypeStorm->liczba = 14;
         $complexTypeStorm->odleglosc = 80.72;
         $complexTypeStorm->kierunek = "NE";
         $complexTypeStorm->okres = 10;
+        return $complexTypeStorm;
+    }
+
+    /**
+     * Get Endpoint with mocked getClient and getApiKey methods.
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject
+     */
+    protected function getMockEndpoint()
+    {
+        return $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
     }
 }

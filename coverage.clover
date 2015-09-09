@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1441744291">
-  <project timestamp="1441744291">
+<coverage generated="1441831408">
+  <project timestamp="1441831408">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/BurzeDzisNet.php">
         <class name="BurzeDzisNet" namespace="BurzeDzisNet">
@@ -60,13 +60,13 @@
         <line num="54" type="stmt" count="1"/>
         <line num="63" type="method" name="__toString" crap="1" count="1"/>
         <line num="65" type="stmt" count="1"/>
-        <line num="76" type="method" name="equals" crap="1" count="1"/>
-        <line num="78" type="stmt" count="1"/>
-        <line num="86" type="method" name="getName" crap="1" count="1"/>
-        <line num="88" type="stmt" count="1"/>
-        <line num="96" type="method" name="getX" crap="1" count="1"/>
-        <line num="98" type="stmt" count="1"/>
-        <line num="106" type="method" name="getY" crap="1" count="1"/>
+        <line num="73" type="method" name="getName" crap="1" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="83" type="method" name="getX" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="93" type="method" name="getY" crap="1" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="106" type="method" name="equals" crap="1" count="1"/>
         <line num="108" type="stmt" count="1"/>
         <metrics loc="111" ncloc="45" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="15" coveredelements="15"/>
       </file>
