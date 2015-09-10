@@ -101,4 +101,61 @@ class BurzeDzisNet
         );
     }
 
+    /**
+     * @param Location $location
+     * @return WeatherAlert
+     */
+    public function getWeatherAlert(Location $location)
+    {
+        $dto = $this->client->ostrzezenia_pogodowe(
+            $location->getX(),
+            $location->getY(),
+            $this->apiKey
+        );
+        return (new WeatherAlert())
+            ->withAlert(
+                new Alert(
+                    "Frost",
+                    $dto->mroz,
+                    $dto->mroz_od_dnia,
+                    $dto->mroz_do_dnia
+                )
+            )->withAlert(
+                new Alert(
+                    "Heat",
+                    $dto->upal,
+                    $dto->upal_od_dnia,
+                    $dto->upal_do_dnia
+                )
+            )->withAlert(
+                new Alert(
+                    "Wind",
+                    $dto->wiatr,
+                    $dto->wiatr_od_dnia,
+                    $dto->wiatr_do_dnia
+                )
+            )->withAlert(
+                new Alert(
+                    "Storm",
+                    $dto->burza,
+                    $dto->burza_od_dnia,
+                    $dto->burza_do_dnia
+                )
+            )->withAlert(
+                new Alert(
+                    "Tornado",
+                    $dto->traba,
+                    $dto->traba_od_dnia,
+                    $dto->traba_do_dnia
+                )
+            )->withAlert(
+                new Alert(
+                    "Precipitation",
+                    $dto->opad,
+                    $dto->opad_od_dnia,
+                    $dto->opad_do_dnia
+                )
+            );
+    }
+
 }
