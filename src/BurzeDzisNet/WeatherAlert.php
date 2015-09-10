@@ -47,7 +47,7 @@ class WeatherAlert
      */
     public function withAlert(Alert $alert)
     {
-        if ($this->hasAlert($alert->getName()) == true) {
+        if ($this->hasAlert($alert->getName()) === true) {
             throw new \InvalidArgumentException("Key exists!");
         }
         $weatherAlert = clone $this;
@@ -65,7 +65,7 @@ class WeatherAlert
      */
     public function getAlert($name)
     {
-        if (isset($this->alerts[$name]) == true) {
+        if (isset($this->alerts[$name]) === true) {
             return $this->alerts[$name];
         }
         if ($this->weatherAlert != null) {
@@ -107,7 +107,7 @@ class WeatherAlert
      */
     public function hasAlert($name)
     {
-        if (isset($this->alerts[$name]) == true) {
+        if (isset($this->alerts[$name]) === true) {
             return true;
         }
         if ($this->weatherAlert != null) {
