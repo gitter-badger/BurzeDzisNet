@@ -63,16 +63,17 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
+				<li><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
 				<li class="active"><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
-				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li><a href="class-BurzeDzisNet.Location.html">Location</a></li>
+				<li><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
+				<li><a href="class-BurzeDzisNet.Point.html">Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
+				<li><a href="class-BurzeDzisNet.WeatherAlert.html">WeatherAlert</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.Credibility.html">EndpointInterface</a></li>
+				<li><a href="class-BurzeDzisNet.EndpointInterface.html">EndpointInterface</a></li>
 			</ul>
 
 
@@ -91,7 +92,7 @@
 
 
 	<div class="description">
-	<p>Burze.Dzis.Net</p>
+	<p>Burze.Dzis.Net service</p>
 	</div>
 
 
@@ -110,7 +111,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.BurzeDzisNet.html#11-101" title="Go to source code">BurzeDzisNet/BurzeDzisNet.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.BurzeDzisNet.html#11-164" title="Go to source code">BurzeDzisNet/BurzeDzisNet.php</a>
 		<br>
 	</div>
 
@@ -130,23 +131,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#33-45" title="Go to source code">__construct</a>( <span><code><a href="class-BurzeDzisNet.Credibility.html">BurzeDzisNet\EndpointInterface</a></code> <var>$endpoint</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#32-41" title="Go to source code">__construct</a>( <span><code><a href="class-BurzeDzisNet.EndpointInterface.html">BurzeDzisNet\EndpointInterface</a></code> <var>$endpoint</var></span> )</code>
 
 			<div class="description short">
-				<p>Constructor</p>
+				<p>New Burze.Dzis.Net service</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Constructor</p>
-
-<p>If $endpoint instance of <code><a href="class-BurzeDzisNet.AuthCredential.html">BurzeDzisNet\AuthCredential</a></code> client will be send authorization header; otherwise API key
-will be send with every remote call as an remote argument.</p>
+				<p>New Burze.Dzis.Net service</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$endpoint</var></dt>
-						<dd>API endpoint</dd>
+						<dd>entry point to a burze.dzis.net</dd>
 					</dl></div>
 
 
@@ -156,7 +154,7 @@ will be send with every remote call as an remote argument.</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="apiKey" id="_apiKey">
+		<tr data-order="verifyApiKey" id="_verifyApiKey">
 
 			<td class="attributes"><code>
 				 public 
@@ -166,72 +164,75 @@ will be send with every remote call as an remote argument.</p>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_apiKey">#</a>
-			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#47-56" title="Go to source code">apiKey</a>( <span> <var>$apiKey</var></span> )</code>
+			<a class="anchor" href="#_verifyApiKey">#</a>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#43-53" title="Go to source code">verifyApiKey</a>( <span>string <var>$apiKey</var></span> )</code>
 
 			<div class="description short">
-				<p>Indicates whether given API key is credible</p>
+				<p>Indicates whether given API key is valid</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Indicates whether given API key is credible</p>
+				<p>Indicates whether given API key is valid</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$apiKey</var></dt>
-						<dd>key</dd>
+						<dd>API key</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if API key is credible; otherwise false
+						boolean<br>true if API key is valid; otherwise false
 					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						SoapFault<br>soap error
+					</div>
 
 
 
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getLocation" id="_getLocation">
+		<tr data-order="locate" id="_locate">
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code>
+				<code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getLocation">#</a>
-			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#58-74" title="Go to source code">getLocation</a>( <span> <var>$name</var></span> )</code>
+			<a class="anchor" href="#_locate">#</a>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#55-71" title="Go to source code">locate</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
-				<p>Get <code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code></p>
+				<p>Get <code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code></p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get <code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code></p>
+				<p>Get <code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code></p>
 
-<p>If location does not exists in a remote database returned object will be point to location with
-coordinates (0, 0).</p>
+<p>If no location returns coordinates [0,0]</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$name</var></dt>
-						<dd>name</dd>
+						<dd>location name</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code><br>location with coordinates
+						<code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code><br>location coordinates
 					</div>
 
 					<h4>Throws</h4>
 					<div class="list">
-						SoapFault<br>If server error
+						SoapFault<br>soap error
 					</div>
 
 
@@ -239,7 +240,7 @@ coordinates (0, 0).</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="findStorm" id="_findStorm">
+		<tr data-order="getStormReport" id="_getStormReport">
 
 			<td class="attributes"><code>
 				 public 
@@ -249,15 +250,15 @@ coordinates (0, 0).</p>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_findStorm">#</a>
-			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#76-99" title="Go to source code">findStorm</a>( <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code> <var>$location</var></span>, <span>integer <var>$radius</var> = <span class="php-num">25</span></span> )</code>
+			<a class="anchor" href="#_getStormReport">#</a>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#73-99" title="Go to source code">getStormReport</a>( <span><code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code> <var>$point</var></span>, <span>integer <var>$radius</var> = <span class="php-num">25</span></span> )</code>
 
 			<div class="description short">
-				<p>Get <code><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></code></p>
+				<p>Get storm report</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get <code><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></code></p>
+				<p>Get storm report</p>
 
 <p>Storm object provide information about registered lightnings with a specified radius of monitoring
 covered by the given location</p>
@@ -265,7 +266,7 @@ covered by the given location</p>
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$location</var></dt>
+						<dt><var>$point</var></dt>
 						<dd>monitored location</dd>
 						<dt><var>$radius</var></dt>
 						<dd>radius of monitoring (default 25 km)</dd>
@@ -278,8 +279,46 @@ covered by the given location</p>
 
 					<h4>Throws</h4>
 					<div class="list">
-						SoapFault<br>If server error
+						SoapFault<br>soap error
 					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getWeatherAlert" id="_getWeatherAlert">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getWeatherAlert">#</a>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNet.html#101-163" title="Go to source code">getWeatherAlert</a>( <span><code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code> <var>$point</var></span> )</code>
+
+			<div class="description short">
+				<p>Get weather alert for given point</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get weather alert for given point</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$point</var></dt>
+						<dd>location coordinates</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>weather alerts
+					</div>
+
 
 
 
@@ -309,14 +348,14 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.BurzeDzisNet.html#19-24" title="Go to source code"><var>$client</var></a>
+					<a href="source-class-BurzeDzisNet.BurzeDzisNet.html#18-23" title="Go to source code"><var>$client</var></a>
 
 				<div class="description short">
-					<p>API client</p>
+					<p>Soap client</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>API client</p>
+					<p>Soap client</p>
 
 				</div>
 			</td>
@@ -330,11 +369,11 @@ covered by the given location</p>
 		<tr data-order="apiKey" id="$apiKey">
 			<td class="attributes"><code>
 				protected  
-				null|string
+				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.BurzeDzisNet.html#26-31" title="Go to source code"><var>$apiKey</var></a>
+					<a href="source-class-BurzeDzisNet.BurzeDzisNet.html#25-30" title="Go to source code"><var>$apiKey</var></a>
 
 				<div class="description short">
 					<p>API key</p>

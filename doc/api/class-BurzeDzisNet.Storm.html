@@ -63,16 +63,17 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
+				<li><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
-				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li><a href="class-BurzeDzisNet.Location.html">Location</a></li>
+				<li><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
+				<li><a href="class-BurzeDzisNet.Point.html">Point</a></li>
 				<li class="active"><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
+				<li><a href="class-BurzeDzisNet.WeatherAlert.html">WeatherAlert</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.Credibility.html">EndpointInterface</a></li>
+				<li><a href="class-BurzeDzisNet.EndpointInterface.html">EndpointInterface</a></li>
 			</ul>
 
 
@@ -92,15 +93,14 @@
 
 	<div class="description">
 	<p>Storm represents information about registered lightnings with a specified radius of monitoring
-covered by the given location</p>
+covered by the specified location</p>
 
 <p>Storm has properties describing:
 - number (number of cloud-to-ground lightning in specified radius from a selected location)
 - distance (distance to the nearest registered lightning in km)
 - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
 - period (number of minutes of time period containing the data [10, 15, 20 minutes])
-- location (selected location)
-- radius (radius covered by Location in km)</p>
+- radius (radius covered by Point in km)</p>
 	</div>
 
 
@@ -119,7 +119,7 @@ covered by the given location</p>
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Storm.html#11-156" title="Go to source code">BurzeDzisNet/Storm.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.Storm.html#9-128" title="Go to source code">BurzeDzisNet/Storm.php</a>
 		<br>
 	</div>
 
@@ -139,65 +139,30 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#70-91" title="Go to source code">__construct</a>( <span>stdClass <var>$complexTypeBurza</var></span>, <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code> <var>$location</var></span>, <span>integer <var>$radius</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#59-75" title="Go to source code">__construct</a>( <span>integer <var>$number</var></span>, <span>float <var>$distance</var></span>, <span>string <var>$direction</var></span>, <span>integer <var>$period</var></span>, <span>integer <var>$radius</var></span> )</code>
 
 			<div class="description short">
-				<p>Constructor</p>
+				<p>New Storm</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Constructor</p>
-
-<p>Storm data transfer object $complexTypeBurza must have properties:
-- $complexTypeBurza->liczba mapped into number property
-- $complexTypeBurza->odleglosc mapped into distance property
-- $complexTypeBurza->kierunek mapped into direction property
-- $complexTypeBurza->okres mapped into period property</p>
+				<p>New Storm</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$complexTypeBurza</var></dt>
-						<dd>storm data transfer object</dd>
-						<dt><var>$location</var></dt>
-						<dd>selected location</dd>
+						<dt><var>$number</var></dt>
+						<dd>number of cloud-to-ground lightning in specified radius from a selected location</dd>
+						<dt><var>$distance</var></dt>
+						<dd>distance (km) to the nearest registered lightning</dd>
+						<dt><var>$direction</var></dt>
+						<dd>direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)</dd>
+						<dt><var>$period</var></dt>
+						<dd>number of minutes of time period containing the data (10, 15, 20 minutes)</dd>
 						<dt><var>$radius</var></dt>
 						<dd>radius covered by location</dd>
 					</dl></div>
 
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getLocation" id="_getLocation">
-
-			<td class="attributes"><code>
-				 public 
-				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code>
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getLocation">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#93-101" title="Go to source code">getLocation</a>( )</code>
-
-			<div class="description short">
-				<p>Get selected location</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Get selected location</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code><br>Selected location
-					</div>
 
 
 
@@ -216,7 +181,7 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getNumber">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#103-113" title="Go to source code">getNumber</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#77-87" title="Go to source code">getNumber</a>( )</code>
 
 			<div class="description short">
 				<p>Get the number of cloud-to-ground lightning in specified radius from a selected location</p>
@@ -235,7 +200,7 @@ covered by the given location</p>
 
 					<h4>See</h4>
 					<div class="list">
-							getRadius radius covered by Location<br>
+							getRadius radius covered by Point<br>
 							getLocation seletected location<br>
 					</div>
 
@@ -254,7 +219,7 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getDistance">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#115-123" title="Go to source code">getDistance</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#89-97" title="Go to source code">getDistance</a>( )</code>
 
 			<div class="description short">
 				<p>Get the distance to the nearest registered lightning</p>
@@ -287,7 +252,7 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getDirection">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#125-133" title="Go to source code">getDirection</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#99-107" title="Go to source code">getDirection</a>( )</code>
 
 			<div class="description short">
 				<p>Get direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)</p>
@@ -320,7 +285,7 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getPeriod">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#135-143" title="Go to source code">getPeriod</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#109-117" title="Go to source code">getPeriod</a>( )</code>
 
 			<div class="description short">
 				<p>Get the number of minutes of time period containing the data (10, 15, 20 minutes)</p>
@@ -353,14 +318,14 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getRadius">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#145-154" title="Go to source code">getRadius</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#119-127" title="Go to source code">getRadius</a>( )</code>
 
 			<div class="description short">
-				<p>Get radius covered by Location</p>
+				<p>Get radius covered by specified location</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get radius covered by Location</p>
+				<p>Get radius covered by specified location</p>
 
 
 
@@ -370,10 +335,6 @@ covered by the given location</p>
 					</div>
 
 
-					<h4>See</h4>
-					<div class="list">
-							getLocation seletected location<br>
-					</div>
 
 
 			</div>
@@ -402,14 +363,14 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#28-33" title="Go to source code"><var>$number</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#24-29" title="Go to source code"><var>$number</var></a>
 
 				<div class="description short">
-					<p>The number of cloud-to-ground lightning in specified radius from a selected location</p>
+					<p>The number of cloud-to-ground lightning in specified radius from a specified location</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The number of cloud-to-ground lightning in specified radius from a selected location</p>
+					<p>The number of cloud-to-ground lightning in specified radius from a specified location</p>
 
 				</div>
 			</td>
@@ -427,7 +388,7 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#35-40" title="Go to source code"><var>$distance</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#31-36" title="Go to source code"><var>$distance</var></a>
 
 				<div class="description short">
 					<p>The distance (km) to the nearest registered lightning</p>
@@ -452,7 +413,7 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#42-47" title="Go to source code"><var>$direction</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#38-43" title="Go to source code"><var>$direction</var></a>
 
 				<div class="description short">
 					<p>The direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)</p>
@@ -477,7 +438,7 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#49-54" title="Go to source code"><var>$period</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#45-50" title="Go to source code"><var>$period</var></a>
 
 				<div class="description short">
 					<p>The number of minutes of time period containing the data (10, 15, 20 minutes)</p>
@@ -502,14 +463,14 @@ covered by the given location</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#56-61" title="Go to source code"><var>$radius</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#52-57" title="Go to source code"><var>$radius</var></a>
 
 				<div class="description short">
-					<p>The radius covered by location</p>
+					<p>The radius covered by specified location</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The radius covered by location</p>
+					<p>The radius covered by specified location</p>
 
 				</div>
 			</td>
@@ -517,31 +478,6 @@ covered by the given location</p>
 				<div>
 					<a href="#$radius" class="anchor">#</a>
 					<code><span class="php-num">0</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="location" id="$location">
-			<td class="attributes"><code>
-				protected  
-				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code>
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#63-68" title="Go to source code"><var>$location</var></a>
-
-				<div class="description short">
-					<p>Selected location</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Selected location</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$location" class="anchor">#</a>
-					<code><span class="php-keyword1">null</span></code>
 				</div>
 			</td>
 		</tr>

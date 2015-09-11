@@ -63,16 +63,17 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
+				<li><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
-				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li><a href="class-BurzeDzisNet.Location.html">Location</a></li>
+				<li><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
+				<li><a href="class-BurzeDzisNet.Point.html">Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
+				<li><a href="class-BurzeDzisNet.WeatherAlert.html">WeatherAlert</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li class="active"><a href="class-BurzeDzisNet.Credibility.html">EndpointInterface</a></li>
+				<li class="active"><a href="class-BurzeDzisNet.EndpointInterface.html">EndpointInterface</a></li>
 			</ul>
 
 
@@ -91,7 +92,7 @@
 
 
 	<div class="description">
-	<p>Client credibility</p>
+	<p>Endpoint interface is the entry point to a burze.dzis.net service</p>
 	</div>
 
 
@@ -101,8 +102,7 @@
 	<div>
 		<h3>Direct known implementers</h3>
 		<p class="elementList">
-			<code><a href="class-BurzeDzisNet.AuthCredential.html">BurzeDzisNet\AuthCredential</a></code>, 
-			<code><a href="class-BurzeDzisNet.Credential.html">BurzeDzisNet\Endpoint</a></code>
+			<code><a href="class-BurzeDzisNet.Endpoint.html">BurzeDzisNet\Endpoint</a></code>
 		</p>
 	</div>
 
@@ -117,7 +117,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Credibility.html#9-37" title="Go to source code">BurzeDzisNet/EndpointInterface.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.EndpointInterface.html#9-37" title="Go to source code">BurzeDzisNet/EndpointInterface.php</a>
 		<br>
 	</div>
 
@@ -137,25 +137,25 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getClient">#</a>
-			<code><a href="source-class-BurzeDzisNet.Credibility.html#16-22" title="Go to source code">getClient</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.EndpointInterface.html#16-22" title="Go to source code">getClient</a>( )</code>
 
 			<div class="description short">
-				<p>Get API client</p>
+				<p>Get Soap client in WSDL mode</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get API client</p>
+				<p>Get Soap client in WSDL mode</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						SoapClient<br>API client
+						SoapClient<br>Soap client in WSDL mode
 					</div>
 
 					<h4>Throws</h4>
 					<div class="list">
-						SoapFault<br>if the wsdl URI cannot be loaded
+						SoapFault<br>if the WSDL URI cannot be loaded or parsed
 					</div>
 
 
@@ -174,7 +174,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getWSDL">#</a>
-			<code><a href="source-class-BurzeDzisNet.Credibility.html#24-29" title="Go to source code">getWSDL</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.EndpointInterface.html#24-29" title="Go to source code">getWSDL</a>( )</code>
 
 			<div class="description short">
 				<p>Get URI of WSDL file</p>
@@ -207,7 +207,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getApiKey">#</a>
-			<code><a href="source-class-BurzeDzisNet.Credibility.html#31-36" title="Go to source code">getApiKey</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.EndpointInterface.html#31-36" title="Go to source code">getApiKey</a>( )</code>
 
 			<div class="description short">
 				<p>Get API key</p>

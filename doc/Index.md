@@ -24,7 +24,7 @@ $burzeDzisNet = new BurzeDzisNet(
 );
 ```
 
-#### Getting location
+#### Getting point
 
 Get the coordinates for the specified locality according to the list of village on the burze.dzis.net website.
 
@@ -43,11 +43,11 @@ $burzeDzisNet->getStorm(
 );
 ```
 
-If you know exactly coordinates of location you are intrested in, you can ommit remote locating call.
+If you know exactly coordinates of point you are intrested in, you can ommit remote locating call.
 
 ```php
 $burzeDzisNet->getStorm(
-    new Location(-3.41, 40.23, "Madrid"),
+    new Point(-3.41, 40.23, "Madrid"),
     50
 );
 ```

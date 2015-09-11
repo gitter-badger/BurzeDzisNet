@@ -17,13 +17,15 @@ use stdClass;
  */
 class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
 {
-
     /**
      * @covers BurzeDzisNet\BurzeDzisNet::__construct
      */
     public function test__construct()
     {
-        $endpoint = $this->getMockEndpoint();
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
         $endpoint->expects($this->once())->method("getClient");
         $endpoint->expects($this->once())->method("getApiKey");
         new BurzeDzisNet($endpoint);
@@ -39,8 +41,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["KeyApi"])
             ->getMock();
         $map = [
-            ["ValidApiKey", true],
-            ["InvalidApiKey", false]
+            ["4d36bcb5c40", true],
+            ["f892dbc042f3", false]
         ];
         $client->method("KeyApi")->will($this->returnValueMap($map));
         $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
@@ -49,37 +51,38 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $endpoint->method("getClient")->willReturn($client);
         $burzeDzisNet = new BurzeDzisNet($endpoint);
-        $this->assertTrue($burzeDzisNet->verifyApiKey("ValidApiKey"));
-        $this->assertFalse($burzeDzisNet->verifyApiKey("InvalidApiKey"));
+        $this->assertTrue($burzeDzisNet->verifyApiKey("4d36bcb5c40"));
+        $this->assertFalse($burzeDzisNet->verifyApiKey("f892dbc042f3"));
     }
 
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getLocation
+     * @covers BurzeDzisNet\BurzeDzisNet::locate
      */
-    public function testGetLocation()
+    public function testLocate()
     {
-        $complexTypeLocation = new stdClass();
-        $complexTypeLocation->x = 25.17;
-        $complexTypeLocation->y = 54.41;
+        $remotePoint = new stdClass();
+        $remotePoint->x = 25.17;
+        $remotePoint->y = 54.41;
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["miejscowosc"])
             ->getMock();
-        $client->method("miejscowosc")->willReturn($complexTypeLocation);
-        $client->expects($this->once())->method("miejscowosc")->with("Wrocław", "MyApiKey");
-        $endpoint = $this->getMockEndpoint();
+        $client->method("miejscowosc")->willReturn($remotePoint);
+        $client->expects($this->once())->method("miejscowosc")->with("Wrocław", "4d36bcb5c40");
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
         $endpoint->method("getClient")->willReturn($client);
-        $endpoint->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($endpoint);
-        $location = $burzeDzisNet->getLocation("Wrocław");
-        $this->assertInstanceOf("BurzeDzisNet\Location", $location);
-        $this->assertSame("Wrocław", $location->getName());
-        $this->assertSame(25.17, $location->getX());
-        $this->assertSame(54.41, $location->getY());
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        $point = (new BurzeDzisNet($endpoint))->locate("Wrocław");
+        $this->assertInstanceOf("BurzeDzisNet\Point", $point);
+        $this->assertSame(25.17, $point->getX());
+        $this->assertSame(54.41, $point->getY());
     }
 
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getLocation
+     * @covers BurzeDzisNet\BurzeDzisNet::locate
      * @expectedException SoapFault
      */
     public function testGetLocationSoapFault()
@@ -95,28 +98,27 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["getClient"])
             ->getMock();
         $endpoint->method("getClient")->willReturn($client);
-        $burzeDzisNet = new BurzeDzisNet($endpoint);
-        $burzeDzisNet->getLocation("Wrocław");
+        (new BurzeDzisNet($endpoint))->locate("Wrocław");
     }
 
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::findStorm
+     * @covers BurzeDzisNet\BurzeDzisNet::getStormReport
      */
-    public function testFindStorm()
+    public function testGetStormReport()
     {
-        $location = new Location(25.17, 54.41, "Wrocław");
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
         $client->method("szukaj_burzy")->willReturn($this->getStormTO());
-        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
-        $endpoint = $this->getMockEndpoint();
+        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "4d36bcb5c40");
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
         $endpoint->method("getClient")->willReturn($client);
-        $endpoint->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($endpoint);
-        $storm = $burzeDzisNet->findStorm($location, 50);
-        $this->assertTrue($storm->getLocation()->equals($location));
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        $storm = (new BurzeDzisNet($endpoint))->getStormReport(new Point(25.17, 54.41), 50);
         $this->assertSame("NE", $storm->getDirection());
         $this->assertSame(50, $storm->getRadius());
         $this->assertSame(80.72, $storm->getDistance());
@@ -124,53 +126,195 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->assertSame(10, $storm->getPeriod());
     }
 
-
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::findStorm
+     * @covers BurzeDzisNet\BurzeDzisNet::getStormReport
      * @expectedException SoapFault
      */
-    public function testFindStormSoapFault()
+    public function testGetStormReportSoapFault()
     {
-        $location = new Location(25.17, 54.41, "Wrocław");
         $soapFault = $this->getMockBuilder("SoapFault")->disableOriginalConstructor()->getMock();
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
             ->getMock();
-        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "MyApiKey");
+        $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "4d36bcb5c40");
         $client->method("szukaj_burzy")->willThrowException($soapFault);
-        $endpoint = $this->getMockEndpoint();
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
         $endpoint->method("getClient")->willReturn($client);
-        $endpoint->method("getApiKey")->willReturn("MyApiKey");
-        $burzeDzisNet = new BurzeDzisNet($endpoint);
-        $burzeDzisNet->findStorm($location, 50);
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        (new BurzeDzisNet($endpoint))->getStormReport(new Point(25.17, 54.41), 50);
     }
 
     /**
-     * Get Storm transfer object
+     * @covers BurzeDzisNet\BurzeDzisNet::getWeatherAlert
+     */
+    public function testGetWeatherAlert()
+    {
+        $client = $this->getMockBuilder("SoapClient")
+            ->disableOriginalConstructor()
+            ->setMethods(["ostrzezenia_pogodowe"])
+            ->getMock();
+        $client->method("ostrzezenia_pogodowe")->willReturn($this->getAlertTO());
+        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(25.17, 54.41, "4d36bcb5c40");
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        $alert = (new BurzeDzisNet($endpoint))->getWeatherAlert(new Point(25.17, 54.41));
+        $this->assertFrost($this->getAlertTO(), $alert->getAlert("frost"));
+        $this->assertHeat($this->getAlertTO(), $alert->getAlert("heat"));
+        $this->assertWind($this->getAlertTO(), $alert->getAlert("wind"));
+        $this->assertStorm($this->getAlertTO(), $alert->getAlert("storm"));
+        $this->assertTornado($this->getAlertTO(), $alert->getAlert("tornado"));
+        $this->assertPrecipitation($this->getAlertTO(), $alert->getAlert("precipitation"));
+    }
+
+    /**
+     * @covers BurzeDzisNet\BurzeDzisNet::getWeatherAlert
+     * @expectedException SoapFault
+     */
+    public function testGetWeatherAlertSoapFault()
+    {
+        $soapFault = $this->getMockBuilder("SoapFault")->disableOriginalConstructor()->getMock();
+        $client = $this->getMockBuilder("SoapClient")
+            ->disableOriginalConstructor()
+            ->setMethods(["ostrzezenia_pogodowe"])
+            ->getMock();
+        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(25.17, 54.41, "4d36bcb5c40");
+        $client->method("ostrzezenia_pogodowe")->willThrowException($soapFault);
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        (new BurzeDzisNet($endpoint))->getWeatherAlert(new Point(25.17, 54.41));
+    }
+
+    /**
+     * Get Storm data object
      *
      * @return stdClass
      */
     protected function getStormTO()
     {
-        $complexTypeStorm = new stdClass;
-        $complexTypeStorm->liczba = 14;
-        $complexTypeStorm->odleglosc = 80.72;
-        $complexTypeStorm->kierunek = "NE";
-        $complexTypeStorm->okres = 10;
-        return $complexTypeStorm;
+        $storm = new stdClass;
+        $storm->liczba = 14;
+        $storm->odleglosc = 80.72;
+        $storm->kierunek = "NE";
+        $storm->okres = 10;
+        return $storm;
     }
 
     /**
-     * Get Endpoint with mocked getClient and getApiKey methods.
+     * Get Alert transfer object
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject
+     * @return stdClass alert transfer object
      */
-    protected function getMockEndpoint()
+    protected function getAlertTO()
     {
-        return $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
+        $alert = new stdClass();
+        $alert->mroz = 1;
+        $alert->mroz_od_dnia = "2015-12-10";
+        $alert->mroz_do_dnia = "2016-02-12";
+        $alert->upal = 2;
+        $alert->upal_od_dnia = "2015-04-14";
+        $alert->upal_do_dnia = "2015-05-20";
+        $alert->wiatr = 3;
+        $alert->wiatr_od_dnia = "2015-06-13";
+        $alert->wiatr_do_dnia = "2015-08-16";
+        $alert->burza = 2;
+        $alert->burza_od_dnia = "2015-11-24";
+        $alert->burza_do_dnia = "2015-12-28";
+        $alert->traba = 5;
+        $alert->traba_od_dnia = "2015-01-02";
+        $alert->traba_do_dnia = "2015-08-09";
+        $alert->opad = 2;
+        $alert->opad_od_dnia = "2015-03-29";
+        $alert->opad_do_dnia = "2015-07-30";
+        return $alert;
+    }
+
+    /**
+     * Assert frost alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $frost frost alert
+     */
+    protected function assertFrost(stdClass $alertTO, Alert $frost)
+    {
+        $this->assertSame($alertTO->mroz, $frost->getLevel());
+        $this->assertSame($alertTO->mroz_od_dnia, $frost->getFrom());
+        $this->assertSame($alertTO->mroz_do_dnia, $frost->getTo());
+    }
+
+    /**
+     * Assert heat alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $heat heat alert
+     */
+    protected function assertHeat(stdClass $alertTO, Alert $heat)
+    {
+        $this->assertSame($alertTO->upal, $heat->getLevel());
+        $this->assertSame($alertTO->upal_od_dnia, $heat->getFrom());
+        $this->assertSame($alertTO->upal_do_dnia, $heat->getTo());
+    }
+
+    /**
+     * Assert wind alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $wind wind alert
+     */
+    protected function assertWind(stdClass $alertTO, Alert $wind)
+    {
+        $this->assertSame($alertTO->wiatr, $wind->getLevel());
+        $this->assertSame($alertTO->wiatr_od_dnia, $wind->getFrom());
+        $this->assertSame($alertTO->wiatr_do_dnia, $wind->getTo());
+    }
+
+    /**
+     * Assert storm alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $storm storm alert
+     */
+    protected function assertStorm(stdClass $alertTO, Alert $storm)
+    {
+        $this->assertSame($alertTO->burza, $storm->getLevel());
+        $this->assertSame($alertTO->burza_od_dnia, $storm->getFrom());
+        $this->assertSame($alertTO->burza_do_dnia, $storm->getTo());
+    }
+
+    /**
+     * Assert tornado alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $tornado tornado alert
+     */
+    protected function assertTornado(stdClass $alertTO, Alert $tornado)
+    {
+        $this->assertSame($alertTO->traba, $tornado->getLevel());
+        $this->assertSame($alertTO->traba_od_dnia, $tornado->getFrom());
+        $this->assertSame($alertTO->traba_do_dnia, $tornado->getTo());
+    }
+
+    /**
+     * Assert precipitation alert
+     *
+     * @param stdClass $alertTO alert transfer object
+     * @param Alert $precipitation precipitation alert
+     */
+    protected function assertPrecipitation(stdClass $alertTO, Alert $precipitation)
+    {
+        $this->assertSame($alertTO->opad, $precipitation->getLevel());
+        $this->assertSame($alertTO->opad_od_dnia, $precipitation->getFrom());
+        $this->assertSame($alertTO->opad_do_dnia, $precipitation->getTo());
     }
 }

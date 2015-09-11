@@ -15,7 +15,6 @@ use SoapFault;
  */
 class BurzeDzisNet
 {
-
     /**
      * Soap client
      *
@@ -31,9 +30,9 @@ class BurzeDzisNet
     protected $apiKey = null;
 
     /**
-     * New Burz.Dzis.Net service
+     * New Burze.Dzis.Net service
      *
-     * @param EndpointInterface $endpoint entry point to a burze.dzis.net service
+     * @param EndpointInterface $endpoint entry point to a burze.dzis.net
      */
     public function __construct(EndpointInterface $endpoint)
     {
@@ -46,6 +45,7 @@ class BurzeDzisNet
      *
      * @param string $apiKey API key
      * @return bool true if API key is valid; otherwise false
+     * @throws \SoapFault soap error
      */
     public function verifyApiKey($apiKey)
     {
@@ -53,41 +53,39 @@ class BurzeDzisNet
     }
 
     /**
-     * Get {@see Location}
+     * Get {@see Point}
      *
-     * If location does not exists in a remote database returned object will be point to location with
-     * coordinates (0, 0).
+     * If no location returns coordinates [0,0]
      *
      * @param string $name location name
-     * @return Location location with coordinates
-     * @throws \SoapFault
+     * @return Point location coordinates
+     * @throws \SoapFault soap error
      */
-    public function getLocation($name)
+    public function locate($name)
     {
         $dto = $this->client->miejscowosc($name, $this->apiKey);
-        return new Location(
+        return new Point(
             $dto->x,
-            $dto->y,
-            $name
+            $dto->y
         );
     }
 
     /**
-     * Get {@see Storm}
+     * Get storm report
      *
      * Storm object provide information about registered lightnings with a specified radius of monitoring
      * covered by the given location
      *
-     * @param Location $location monitored location
+     * @param Point $point monitored location
      * @param int $radius radius of monitoring (default 25 km)
      * @return Storm information about registered lightnings
-     * @throws \SoapFault If server error
+     * @throws \SoapFault soap error
      */
-    public function findStorm(Location $location, $radius = 25)
+    public function getStormReport(Point $point, $radius = 25)
     {
         $dto = $this->client->szukaj_burzy(
-            $location->getY(),
-            $location->getX(),
+            $point->getY(),
+            $point->getX(),
             $radius,
             $this->apiKey
         );
@@ -96,66 +94,71 @@ class BurzeDzisNet
             $dto->odleglosc,
             $dto->kierunek,
             $dto->okres,
-            $radius,
-            $location
+            $radius
         );
     }
 
     /**
-     * @param Location $location
-     * @return WeatherAlert
+     * Get weather alert for given point
+     *
+     * @param Point $point location coordinates
+     * @return WeatherAlert weather alerts
      */
-    public function getWeatherAlert(Location $location)
+    public function getWeatherAlert(Point $point)
     {
         $dto = $this->client->ostrzezenia_pogodowe(
-            $location->getX(),
-            $location->getY(),
+            $point->getX(),
+            $point->getY(),
             $this->apiKey
         );
         return (new WeatherAlert())
             ->withAlert(
+                "frost",
                 new Alert(
-                    "Frost",
                     $dto->mroz,
                     $dto->mroz_od_dnia,
                     $dto->mroz_do_dnia
                 )
+
             )->withAlert(
+                "heat",
                 new Alert(
-                    "Heat",
                     $dto->upal,
                     $dto->upal_od_dnia,
                     $dto->upal_do_dnia
                 )
+
             )->withAlert(
+                "wind",
                 new Alert(
-                    "Wind",
                     $dto->wiatr,
                     $dto->wiatr_od_dnia,
                     $dto->wiatr_do_dnia
                 )
+
             )->withAlert(
+                "storm",
                 new Alert(
-                    "Storm",
                     $dto->burza,
                     $dto->burza_od_dnia,
                     $dto->burza_do_dnia
                 )
+
             )->withAlert(
+                "tornado",
                 new Alert(
-                    "Tornado",
                     $dto->traba,
                     $dto->traba_od_dnia,
                     $dto->traba_do_dnia
                 )
+
             )->withAlert(
+                "precipitation",
                 new Alert(
-                    "Precipitation",
                     $dto->opad,
                     $dto->opad_od_dnia,
                     $dto->opad_do_dnia
                 )
             );
     }
-
 }

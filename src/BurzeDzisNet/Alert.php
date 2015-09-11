@@ -13,27 +13,15 @@ namespace BurzeDzisNet;
  */
 class Alert
 {
-    protected $name = "";
     protected $level = 0;
     protected $from = "";
     protected $to = "";
 
-    public function __construct($name, $level, $from, $to)
+    public function __construct($level, $from, $to)
     {
-        $this->name = $name;
         $this->level = $level;
         $this->from = $from;
         $this->to = $to;
-    }
-
-    public function __toString()
-    {
-        return \sprintf("%s[%d,%s-%s]", $this->getName(), $this->getLevel(), $this->getFrom(), $this->getTo());
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 
     public function getLevel()
@@ -45,6 +33,7 @@ class Alert
     {
         return $this->from;
     }
+
 
     public function getTo()
     {
