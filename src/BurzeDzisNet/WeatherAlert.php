@@ -42,7 +42,7 @@ class WeatherAlert
     /**
      * Get new WeatherAlert extended by the new alerts
      *
-     * @param Alert|null $alert alerts weather alerts
+     * @param Alert $alert alerts weather alerts
      * @return WeatherAlert new weather alerts extended by the new alerts
      */
     public function withAlert(Alert $alert)
@@ -77,7 +77,7 @@ class WeatherAlert
     /**
      * Iterates over alerts
      *
-     * @return \Generator alert generator
+     * @return \Iterator alert generator
      */
     public function getIterator()
     {
@@ -102,7 +102,7 @@ class WeatherAlert
     /**
      * Check if specified alert exists
      *
-     * @param $name string alert name
+     * @param string $name string alert name
      * @return bool if specified alert exists return true; otherwise false
      */
     public function hasAlert($name)
