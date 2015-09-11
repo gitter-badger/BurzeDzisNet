@@ -20,7 +20,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetLocation()
     {
-        $location = new Location(17.02, 51.07, "Wrocław");
+        $location = new Point(17.02, 51.07, "Wrocław");
         $storm = new Storm(14, 80.72, "NE", 10, 50, $location);
         $this->assertTrue($storm->getLocation()->equals($location));
     }
@@ -30,7 +30,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetNumber()
     {
-        $storm = new Storm(14, 80.72, "NE", 10, 50, new Location(17.02, 51.07, "Wrocław"));
+        $storm = new Storm(14, 80.72, "NE", 10, 50, new Point(17.02, 51.07, "Wrocław"));
         $this->assertSame(14, $storm->getNumber());
     }
 
@@ -39,7 +39,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetDirection()
     {
-        $storm = new Storm(14, 80.72, "NE", 10, 50, new Location(17.02, 51.07, "Wrocław"));
+        $storm = new Storm(14, 80.72, "NE", 10, 50, new Point(17.02, 51.07, "Wrocław"));
         $this->assertSame("NE", $storm->getDirection());
     }
 
@@ -48,7 +48,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetDistance()
     {
-        $storm = new Storm(14, 80.72, "NE", 10, 50, new Location(17.02, 51.07, "Wrocław"));
+        $storm = new Storm(14, 80.72, "NE", 10, 50, new Point(17.02, 51.07, "Wrocław"));
         $this->assertSame(80.72, $storm->getDistance());
     }
 
@@ -57,7 +57,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetPeriod()
     {
-        $storm = new Storm(14, 80.72, "NE", 10, 50, new Location(17.02, 51.07, "Wrocław"));
+        $storm = new Storm(14, 80.72, "NE", 10, 50, new Point(17.02, 51.07, "Wrocław"));
         $this->assertSame(10, $storm->getPeriod());
     }
 
@@ -66,7 +66,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function testGetRadius()
     {
-        $storm = new Storm(14, 80.72, "NE", 10, 50, new Location(17.02, 51.07, "Wrocław"));
+        $storm = new Storm(14, 80.72, "NE", 10, 50, new Point(17.02, 51.07, "Wrocław"));
         $this->assertSame(50, $storm->getRadius());
     }
 
@@ -75,7 +75,7 @@ class StormTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $location = new Location(17.02, 51.07, "Wrocław");
+        $location = new Point(17.02, 51.07, "Wrocław");
         $storm = new Storm(14, 80.72, "NE", 10, 50, $location);
         $this->assertTrue($storm->getLocation()->equals($location));
         $this->assertSame(14, $storm->getNumber());

@@ -66,7 +66,7 @@
 				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
 				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li><a href="class-BurzeDzisNet.Location.html">Location</a></li>
+				<li><a href="class-BurzeDzisNet.Location.html">Point</a></li>
 				<li class="active"><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
 			</ul>
 
@@ -92,15 +92,15 @@
 
 	<div class="description">
 	<p>Storm represents information about registered lightnings with a specified radius of monitoring
-covered by the given location</p>
+covered by the given point</p>
 
 <p>Storm has properties describing:
-- number (number of cloud-to-ground lightning in specified radius from a selected location)
+- number (number of cloud-to-ground lightning in specified radius from a selected point)
 - distance (distance to the nearest registered lightning in km)
 - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
 - period (number of minutes of time period containing the data [10, 15, 20 minutes])
-- location (selected location)
-- radius (radius covered by Location in km)</p>
+- point (selected point)
+- radius (radius covered by Point in km)</p>
 	</div>
 
 
@@ -139,7 +139,7 @@ covered by the given location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#70-91" title="Go to source code">__construct</a>( <span>stdClass <var>$complexTypeBurza</var></span>, <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code> <var>$location</var></span>, <span>integer <var>$radius</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#70-91" title="Go to source code">__construct</a>( <span>stdClass <var>$complexTypeBurza</var></span>, <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code> <var>$point</var></span>, <span>integer <var>$radius</var></span> )</code>
 
 			<div class="description short">
 				<p>Constructor</p>
@@ -159,10 +159,10 @@ covered by the given location</p>
 					<div class="list"><dl>
 						<dt><var>$complexTypeBurza</var></dt>
 						<dd>storm data transfer object</dd>
-						<dt><var>$location</var></dt>
-						<dd>selected location</dd>
+						<dt><var>$point</var></dt>
+						<dd>selected point</dd>
 						<dt><var>$radius</var></dt>
-						<dd>radius covered by location</dd>
+						<dd>radius covered by point</dd>
 					</dl></div>
 
 
@@ -176,7 +176,7 @@ covered by the given location</p>
 
 			<td class="attributes"><code>
 				 public 
-				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code>
+				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code>
 				
 				</code>
 			</td>
@@ -186,17 +186,17 @@ covered by the given location</p>
 			<code><a href="source-class-BurzeDzisNet.Storm.html#93-101" title="Go to source code">getLocation</a>( )</code>
 
 			<div class="description short">
-				<p>Get selected location</p>
+				<p>Get selected point</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get selected location</p>
+				<p>Get selected point</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code><br>Selected location
+						<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code><br>Selected point
 					</div>
 
 
@@ -219,24 +219,24 @@ covered by the given location</p>
 			<code><a href="source-class-BurzeDzisNet.Storm.html#103-113" title="Go to source code">getNumber</a>( )</code>
 
 			<div class="description short">
-				<p>Get the number of cloud-to-ground lightning in specified radius from a selected location</p>
+				<p>Get the number of cloud-to-ground lightning in specified radius from a selected point</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get the number of cloud-to-ground lightning in specified radius from a selected location</p>
+				<p>Get the number of cloud-to-ground lightning in specified radius from a selected point</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>number of cloud-to-ground lightning in specified radius from a selected location
+						integer<br>number of cloud-to-ground lightning in specified radius from a selected point
 					</div>
 
 
 					<h4>See</h4>
 					<div class="list">
-							getRadius radius covered by Location<br>
-							getLocation seletected location<br>
+							getRadius radius covered by Point<br>
+							getLocation seletected point<br>
 					</div>
 
 
@@ -356,23 +356,23 @@ covered by the given location</p>
 			<code><a href="source-class-BurzeDzisNet.Storm.html#145-154" title="Go to source code">getRadius</a>( )</code>
 
 			<div class="description short">
-				<p>Get radius covered by Location</p>
+				<p>Get radius covered by Point</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get radius covered by Location</p>
+				<p>Get radius covered by Point</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>radius covered by location
+						integer<br>radius covered by point
 					</div>
 
 
 					<h4>See</h4>
 					<div class="list">
-							getLocation seletected location<br>
+							getLocation seletected point<br>
 					</div>
 
 
@@ -405,11 +405,11 @@ covered by the given location</p>
 					<a href="source-class-BurzeDzisNet.Storm.html#28-33" title="Go to source code"><var>$number</var></a>
 
 				<div class="description short">
-					<p>The number of cloud-to-ground lightning in specified radius from a selected location</p>
+					<p>The number of cloud-to-ground lightning in specified radius from a selected point</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The number of cloud-to-ground lightning in specified radius from a selected location</p>
+					<p>The number of cloud-to-ground lightning in specified radius from a selected point</p>
 
 				</div>
 			</td>
@@ -505,11 +505,11 @@ covered by the given location</p>
 					<a href="source-class-BurzeDzisNet.Storm.html#56-61" title="Go to source code"><var>$radius</var></a>
 
 				<div class="description short">
-					<p>The radius covered by location</p>
+					<p>The radius covered by point</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The radius covered by location</p>
+					<p>The radius covered by point</p>
 
 				</div>
 			</td>
@@ -520,27 +520,27 @@ covered by the given location</p>
 				</div>
 			</td>
 		</tr>
-		<tr data-order="location" id="$location">
+		<tr data-order="point" id="$point">
 			<td class="attributes"><code>
 				protected  
-				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code>
+				<code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#63-68" title="Go to source code"><var>$location</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#63-68" title="Go to source code"><var>$point</var></a>
 
 				<div class="description short">
-					<p>Selected location</p>
+					<p>Selected point</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Selected location</p>
+					<p>Selected point</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$location" class="anchor">#</a>
+					<a href="#$point" class="anchor">#</a>
 					<code><span class="php-keyword1">null</span></code>
 				</div>
 			</td>

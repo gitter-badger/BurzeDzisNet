@@ -29,8 +29,8 @@ object(BurzeDzisNet\Storm)#5 (6) {
   int(15)
   ["radius":protected]=>
   int(50)
-  ["location":protected]=>
-  object(BurzeDzisNet\Location)#3 (3) {
+  ["point":protected]=>
+  object(BurzeDzisNet\Point)#3 (3) {
     ["x":protected]=>
     float(-3.41)
     ["y":protected]=>

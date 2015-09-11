@@ -16,7 +16,7 @@ namespace BurzeDzisNet;
  * - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
  * - period (number of minutes of time period containing the data [10, 15, 20 minutes])
  * - location (selected location)
- * - radius (radius covered by Location in km)
+ * - radius (radius covered by Point in km)
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -61,7 +61,7 @@ class Storm
     /**
      * Selected location
      *
-     * @var Location selected location
+     * @var Point selected location
      */
     protected $location = null;
 
@@ -73,9 +73,9 @@ class Storm
      * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
      * @param int $period number of minutes of time period containing the data (10, 15, 20 minutes)
      * @param int $radius radius covered by location
-     * @param Location $location selected location
+     * @param Point $location selected location
      */
-    public function __construct($number, $distance, $direction, $period, $radius, Location $location)
+    public function __construct($number, $distance, $direction, $period, $radius, Point $location)
     {
         $this->number = $number;
         $this->distance = $distance;
@@ -88,7 +88,7 @@ class Storm
     /**
      * Get selected location
      *
-     * @return Location Selected location
+     * @return Point Selected location
      */
     public function getLocation()
     {
@@ -98,7 +98,7 @@ class Storm
     /**
      * Get the number of cloud-to-ground lightning in specified radius from a selected location
      *
-     * @see getRadius radius covered by Location
+     * @see getRadius radius covered by Point
      * @see getLocation seletected location
      * @return int number of cloud-to-ground lightning in specified radius from a selected location
      */
@@ -138,7 +138,7 @@ class Storm
     }
 
     /**
-     * Get radius covered by Location
+     * Get radius covered by Point
      *
      * @see getLocation seletected location
      * @return int radius covered by location

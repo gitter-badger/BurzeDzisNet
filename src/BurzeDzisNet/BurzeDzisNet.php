@@ -53,19 +53,19 @@ class BurzeDzisNet
     }
 
     /**
-     * Get {@see Location}
+     * Get {@see Point}
      *
      * If location does not exists in a remote database returned object will be point to location with
      * coordinates (0, 0).
      *
      * @param string $name location name
-     * @return Location location with coordinates
+     * @return Point location with coordinates
      * @throws \SoapFault
      */
     public function getLocation($name)
     {
         $dto = $this->client->miejscowosc($name, $this->apiKey);
-        return new Location(
+        return new Point(
             $dto->x,
             $dto->y,
             $name
@@ -78,12 +78,12 @@ class BurzeDzisNet
      * Storm object provide information about registered lightnings with a specified radius of monitoring
      * covered by the given location
      *
-     * @param Location $location monitored location
+     * @param Point $location monitored location
      * @param int $radius radius of monitoring (default 25 km)
      * @return Storm information about registered lightnings
      * @throws \SoapFault If server error
      */
-    public function findStorm(Location $location, $radius = 25)
+    public function findStorm(Point $location, $radius = 25)
     {
         $dto = $this->client->szukaj_burzy(
             $location->getY(),
@@ -102,10 +102,10 @@ class BurzeDzisNet
     }
 
     /**
-     * @param Location $location
+     * @param Point $location
      * @return WeatherAlert
      */
-    public function getWeatherAlert(Location $location)
+    public function getWeatherAlert(Point $location)
     {
         $dto = $this->client->ostrzezenia_pogodowe(
             $location->getX(),

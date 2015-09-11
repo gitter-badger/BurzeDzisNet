@@ -1,4 +1,4 @@
-# Location
+# Point
 
 ```php
   namespace BurzeDzisNet;
@@ -10,11 +10,11 @@
       )
   );
   
-  $location = $burzeDzisNet->getLocation("Madrid");
+  $point = $burzeDzisNet->getLocation("Madrid");
 ```
 
 ```
-object(BurzeDzisNet\Location)#3 (3) {
+object(BurzeDzisNet\Point)#3 (3) {
     ["x":protected]=>
     float(-3.41)
     ["y":protected]=>

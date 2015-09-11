@@ -66,7 +66,7 @@
 				<li><a href="class-BurzeDzisNet.AuthCredential.html">BurzeDzisNet\AuthCredential</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet\BurzeDzisNet</a></li>
 				<li><a href="class-BurzeDzisNet.Credential.html">BurzeDzisNet\Endpoint</a></li>
-				<li><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></li>
+				<li><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></li>
 			</ul>
 
@@ -144,18 +144,18 @@
 </span><span id="56" class="l"><a href="#56"> 56 </a>    }
 </span><span id="57" class="l"><a href="#57"> 57 </a>
 </span><span id="58" class="l"><a href="#58"> 58 </a>    <span class="php-comment">/**
-</span></span><span id="59" class="l"><a href="#59"> 59 </a><span class="php-comment">     * Get {@see Location}
+</span></span><span id="59" class="l"><a href="#59"> 59 </a><span class="php-comment">     * Get {@see Point}
 </span></span><span id="60" class="l"><a href="#60"> 60 </a><span class="php-comment">     *
-</span></span><span id="61" class="l"><a href="#61"> 61 </a><span class="php-comment">     * If location does not exists in a remote database returned object will be point to location with
+</span></span><span id="61" class="l"><a href="#61"> 61 </a><span class="php-comment">     * If point does not exists in a remote database returned object will be point to point with
 </span></span><span id="62" class="l"><a href="#62"> 62 </a><span class="php-comment">     * coordinates (0, 0).
 </span></span><span id="63" class="l"><a href="#63"> 63 </a><span class="php-comment">     *
-</span></span><span id="64" class="l"><a href="#64"> 64 </a><span class="php-comment">     * @param $name location name
-</span></span><span id="65" class="l"><a href="#65"> 65 </a><span class="php-comment">     * @return Location location with coordinates
+</span></span><span id="64" class="l"><a href="#64"> 64 </a><span class="php-comment">     * @param $name point name
+</span></span><span id="65" class="l"><a href="#65"> 65 </a><span class="php-comment">     * @return Point point with coordinates
 </span></span><span id="66" class="l"><a href="#66"> 66 </a><span class="php-comment">     * @throws \SoapFault If server error
 </span></span><span id="67" class="l"><a href="#67"> 67 </a><span class="php-comment">     */</span>
 </span><span id="68" class="l"><a href="#68"> 68 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getLocation(<span class="php-var">$name</span>)
 </span><span id="69" class="l"><a href="#69"> 69 </a>    {
-</span><span id="70" class="l"><a href="#70"> 70 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Location(
+</span><span id="70" class="l"><a href="#70"> 70 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Point(
 </span><span id="71" class="l"><a href="#71"> 71 </a>            <span class="php-var">$this</span>-&gt;client-&gt;miejscowosc(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;apiKey),
 </span><span id="72" class="l"><a href="#72"> 72 </a>            <span class="php-var">$name</span>
 </span><span id="73" class="l"><a href="#73"> 73 </a>        );
@@ -165,23 +165,23 @@
 </span></span><span id="77" class="l"><a href="#77"> 77 </a><span class="php-comment">     * Get {@see Storm}
 </span></span><span id="78" class="l"><a href="#78"> 78 </a><span class="php-comment">     *
 </span></span><span id="79" class="l"><a href="#79"> 79 </a><span class="php-comment">     * Storm object provide information about registered lightnings with a specified radius of monitoring
-</span></span><span id="80" class="l"><a href="#80"> 80 </a><span class="php-comment">     * covered by the given location
+</span></span><span id="80" class="l"><a href="#80"> 80 </a><span class="php-comment">     * covered by the given point
 </span></span><span id="81" class="l"><a href="#81"> 81 </a><span class="php-comment">     *
-</span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     * @param Location $location monitored location
+</span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     * @param Point $point monitored point
 </span></span><span id="83" class="l"><a href="#83"> 83 </a><span class="php-comment">     * @param int $radius radius of monitoring (default 25 km)
 </span></span><span id="84" class="l"><a href="#84"> 84 </a><span class="php-comment">     * @return Storm information about registered lightnings
 </span></span><span id="85" class="l"><a href="#85"> 85 </a><span class="php-comment">     * @throws \SoapFault If server error
 </span></span><span id="86" class="l"><a href="#86"> 86 </a><span class="php-comment">     */</span>
-</span><span id="87" class="l"><a href="#87"> 87 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> findStorm(Location <span class="php-var">$location</span>, <span class="php-var">$radius</span> = <span class="php-num">25</span>)
+</span><span id="87" class="l"><a href="#87"> 87 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> findStorm(Point <span class="php-var">$point</span>, <span class="php-var">$radius</span> = <span class="php-num">25</span>)
 </span><span id="88" class="l"><a href="#88"> 88 </a>    {
 </span><span id="89" class="l"><a href="#89"> 89 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Storm(
 </span><span id="90" class="l"><a href="#90"> 90 </a>            <span class="php-var">$this</span>-&gt;client-&gt;szukaj_burzy(
-</span><span id="91" class="l"><a href="#91"> 91 </a>                <span class="php-var">$location</span>-&gt;getY(),
-</span><span id="92" class="l"><a href="#92"> 92 </a>                <span class="php-var">$location</span>-&gt;getX(),
+</span><span id="91" class="l"><a href="#91"> 91 </a>                <span class="php-var">$point</span>-&gt;getY(),
+</span><span id="92" class="l"><a href="#92"> 92 </a>                <span class="php-var">$point</span>-&gt;getX(),
 </span><span id="93" class="l"><a href="#93"> 93 </a>                <span class="php-var">$radius</span>,
 </span><span id="94" class="l"><a href="#94"> 94 </a>                <span class="php-var">$this</span>-&gt;apiKey
 </span><span id="95" class="l"><a href="#95"> 95 </a>            ),
-</span><span id="96" class="l"><a href="#96"> 96 </a>            <span class="php-var">$location</span>,
+</span><span id="96" class="l"><a href="#96"> 96 </a>            <span class="php-var">$point</span>,
 </span><span id="97" class="l"><a href="#97"> 97 </a>            <span class="php-var">$radius</span>
 </span><span id="98" class="l"><a href="#98"> 98 </a>        );
 </span><span id="99" class="l"><a href="#99"> 99 </a>    }

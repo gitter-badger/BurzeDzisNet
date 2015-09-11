@@ -104,7 +104,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStorm()
     {
-        $location = new Location(25.17, 54.41, "Wrocław");
+        $location = new Point(25.17, 54.41, "Wrocław");
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()
             ->setMethods(["szukaj_burzy"])
@@ -131,7 +131,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     public function testFindStormSoapFault()
     {
-        $location = new Location(25.17, 54.41, "Wrocław");
+        $location = new Point(25.17, 54.41, "Wrocław");
         $soapFault = $this->getMockBuilder("SoapFault")->disableOriginalConstructor()->getMock();
         $client = $this->getMockBuilder("SoapClient")
             ->disableOriginalConstructor()

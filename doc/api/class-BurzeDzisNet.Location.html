@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class BurzeDzisNet\Location</title>
+	<title>Class BurzeDzisNet\Point</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -66,7 +66,7 @@
 				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
 				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li class="active"><a href="class-BurzeDzisNet.Location.html">Location</a></li>
+				<li class="active"><a href="class-BurzeDzisNet.Location.html">Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
 			</ul>
 
@@ -87,16 +87,16 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Location</h1>
+	<h1>Class Point</h1>
 
 
 	<div class="description">
-	<p>Location represents the coordinates (DMS) for the specified locality</p>
+	<p>Point represents the coordinates (DMS) for the specified locality</p>
 
-<p>Location has a properties describing:
-- x (coordinate x of given location)
-- y (coordinate y of given location)
-- name (location name)</p>
+<p>Point has a properties describing:
+- x (coordinate x of given point)
+- y (coordinate y of given point)
+- name (point name)</p>
 	</div>
 
 
@@ -117,7 +117,7 @@
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
 				<b>Link:</b>
 				<a href="https://en.wikipedia.org/wiki/Decimal_degrees">Decimal degrees</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Location.html#11-116" title="Go to source code">BurzeDzisNet/Location.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.Location.html#11-116" title="Go to source code">BurzeDzisNet/Point.php</a>
 		<br>
 	</div>
 
@@ -154,7 +154,7 @@
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$complexTypeMiejscowosc</var></dt>
-						<dd>Location coordinates</dd>
+						<dd>Point coordinates</dd>
 						<dt><var>$name</var></dt>
 						<dd>name</dd>
 					</dl></div>
@@ -186,7 +186,7 @@
 			<div class="description detailed hidden">
 				<p>Get string representation</p>
 
-<p>Location is represented by literal "LocationName[x, y]".</p>
+<p>Point is represented by literal "LocationName[x, y]".</p>
 
 
 
@@ -212,27 +212,27 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_equals">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#73-84" title="Go to source code">equals</a>( <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Location</a></code> <var>$location</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Location.html#73-84" title="Go to source code">equals</a>( <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code> <var>$point</var></span> )</code>
 
 			<div class="description short">
-				<p>Indicates whether some other Location is equal to this one</p>
+				<p>Indicates whether some other Point is equal to this one</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Indicates whether some other Location is equal to this one</p>
+				<p>Indicates whether some other Point is equal to this one</p>
 
 <p>Two equal locations must points to the same coordinates.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$location</var></dt>
-						<dd>other location</dd>
+						<dt><var>$point</var></dt>
+						<dd>other point</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if this location is the equal to some other location; false otherwise
+						boolean<br>true if this point is the equal to some other point; false otherwise
 					</div>
 
 
@@ -255,17 +255,17 @@
 			<code><a href="source-class-BurzeDzisNet.Location.html#86-94" title="Go to source code">getName</a>( )</code>
 
 			<div class="description short">
-				<p>Get Location name</p>
+				<p>Get Point name</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get Location name</p>
+				<p>Get Point name</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						string<br>location name
+						string<br>point name
 					</div>
 
 
@@ -416,11 +416,11 @@
 					<a href="source-class-BurzeDzisNet.Location.html#38-43" title="Go to source code"><var>$name</var></a>
 
 				<div class="description short">
-					<p>Location name</p>
+					<p>Point name</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Location name</p>
+					<p>Point name</p>
 
 				</div>
 			</td>

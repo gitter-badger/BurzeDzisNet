@@ -73,7 +73,7 @@
                 string klucz Key to the service API, optional parameter if the authentication header.
                 Output
                 float x
-                float y Coordinates of a location (DMS).</documentation>
+                float y Coordinates of a point (DMS).</documentation>
             <input message="tns:miejscowoscIn"/>
             <output message="tns:miejscowoscOut"/>
         </operation>
@@ -205,7 +205,7 @@
     </binding>
     <service name="serwerSOAPService">
         <port name="serwerSOAPPort" binding="tns:serwerSOAPBinding">
-            <soap:address location="http://burze.dzis.net/soap.php"/>
+            <soap:address point="http://burze.dzis.net/soap.php"/>
         </port>
     </service>
     <message name="KeyAPIIn">
