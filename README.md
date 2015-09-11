@@ -14,7 +14,7 @@ $burzeDzisNet = new BurzeDzisNet(
 );
 
 $storm = $burzeDzisNet->getStormReport(
-    $burzeDzisNet->getLocation("Madrid"),
+    $burzeDzisNet->locate("Madrid"),
     50
 );
 ```
