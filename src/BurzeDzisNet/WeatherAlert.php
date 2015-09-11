@@ -7,13 +7,14 @@
 namespace BurzeDzisNet;
 
 use OutOfBoundsException;
+use IteratorAggregate;
 
 /**
  * Weather alerts
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class WeatherAlert
+class WeatherAlert implements IteratorAggregate
 {
     /**
      * Alerts
@@ -43,16 +44,17 @@ class WeatherAlert
      * Get new WeatherAlert extended by the new alerts
      *
      * @param Alert $alert alerts weather alerts
+     * @param string $name alert name
      * @return WeatherAlert new weather alerts extended by the new alerts
      */
-    public function withAlert(Alert $alert)
+    public function withAlert($name, Alert $alert)
     {
-        if ($this->hasAlert($alert->getName()) === true) {
-            throw new \InvalidArgumentException("Key exists!");
+        if ($this->hasAlert($name) === true) {
+            throw new \InvalidArgumentException(\sprintf("Alert named %s exists", $name));
         }
         $weatherAlert = clone $this;
         $weatherAlert->weatherAlert = $this;
-        $weatherAlert->alerts = [$alert->getName() => $alert];
+        $weatherAlert->alerts = [$name => $alert];
         return $weatherAlert;
     }
 
@@ -81,8 +83,8 @@ class WeatherAlert
      */
     public function getIterator()
     {
-        foreach ($this->toArray() as $alert) {
-            yield $alert->getName() => $alert;
+        foreach ($this->toArray() as $name => $alert) {
+            yield $name => $alert;
         }
     }
 
