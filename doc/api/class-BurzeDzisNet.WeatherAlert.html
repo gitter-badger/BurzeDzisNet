@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class BurzeDzisNet\Point</title>
+	<title>Class BurzeDzisNet\WeatherAlert</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -63,16 +63,17 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.AuthCredential.html">AuthCredential</a></li>
+				<li><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
-				<li><a href="class-BurzeDzisNet.Credential.html">Endpoint</a></li>
-				<li class="active"><a href="class-BurzeDzisNet.Location.html">Point</a></li>
+				<li><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
+				<li><a href="class-BurzeDzisNet.Point.html">Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
+				<li class="active"><a href="class-BurzeDzisNet.WeatherAlert.html">WeatherAlert</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.Credibility.html">EndpointInterface</a></li>
+				<li><a href="class-BurzeDzisNet.EndpointInterface.html">EndpointInterface</a></li>
 			</ul>
 
 
@@ -87,18 +88,22 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Point</h1>
+	<h1>Class WeatherAlert</h1>
 
 
 	<div class="description">
-	<p>Point represents the coordinates (DMS) for the specified locality</p>
-
-<p>Point has a properties describing:
-- x (coordinate x of given point)
-- y (coordinate y of given point)
-- name (point name)</p>
+	<p>Weather alerts</p>
 	</div>
 
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>BurzeDzisNet\WeatherAlert</span></b>			
+			 implements 
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+	</dl>
 
 
 
@@ -115,9 +120,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-				<b>Link:</b>
-				<a href="https://en.wikipedia.org/wiki/Decimal_degrees">Decimal degrees</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Location.html#11-116" title="Go to source code">BurzeDzisNet/Point.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.WeatherAlert.html#12-120" title="Go to source code">BurzeDzisNet/WeatherAlert.php</a>
 		<br>
 	</div>
 
@@ -137,26 +140,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#45-59" title="Go to source code">__construct</a>( <span>stdClass <var>$complexTypeMiejscowosc</var></span>, <span> <var>$name</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#33-41" title="Go to source code">__construct</a>( <span><code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code> <var>$alerts</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				<p>Constructor</p>
+				<p>New WeatherAlert</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Constructor</p>
-
-<p>Storm data transfer object $complexTypeMiejscowosc must have properties:
-- $complexTypeMiejscowosc->x mapped into x property
-- $complexTypeMiejscowosc->y mapped into y property</p>
+				<p>New WeatherAlert</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$complexTypeMiejscowosc</var></dt>
-						<dd>Point coordinates</dd>
-						<dt><var>$name</var></dt>
-						<dd>name</dd>
+						<dt><var>$alerts</var></dt>
+						<dd>weather alerts</dd>
 					</dl></div>
 
 
@@ -166,33 +163,38 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="__toString" id="___toString">
+		<tr data-order="withAlert" id="_withAlert">
 
 			<td class="attributes"><code>
 				 public 
-				string
+				<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#61-71" title="Go to source code">__toString</a>( )</code>
+			<a class="anchor" href="#_withAlert">#</a>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#43-59" title="Go to source code">withAlert</a>( <span><code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code> <var>$name</var></span>, <span><code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code> <var>$alert</var></span> )</code>
 
 			<div class="description short">
-				<p>Get string representation</p>
+				<p>Get new WeatherAlert extended by the new alerts</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get string representation</p>
-
-<p>Point is represented by literal "LocationName[x, y]".</p>
+				<p>Get new WeatherAlert extended by the new alerts</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>$alert alerts weather alerts</dd>
+						<dt><var>$alert</var></dt>
+						<dd>$name alert name</dd>
+					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						string<br>literal representation of this object
+						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>new weather alerts extended by the new alerts
 					</div>
 
 
@@ -201,7 +203,117 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="equals" id="_equals">
+		<tr data-order="getAlert" id="_getAlert">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAlert">#</a>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#61-77" title="Go to source code">getAlert</a>( <span> <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Get alert by name</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get alert by name</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>name</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code><br>alert
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						OutOfBoundException<br>there is no such an alert
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getIterator" id="_getIterator">
+
+			<td class="attributes"><code>
+				 public 
+				Iterator
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getIterator">#</a>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#79-89" title="Go to source code">getIterator</a>( )</code>
+
+			<div class="description short">
+				<p>Iterates over alerts</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Iterates over alerts</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						Iterator<br>alert generator
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toArray" id="_toArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toArray">#</a>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#91-102" title="Go to source code">toArray</a>( )</code>
+
+			<div class="description short">
+				<p>Get all alerts as array</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get all alerts as array</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>all alerts
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="hasAlert" id="_hasAlert">
 
 			<td class="attributes"><code>
 				 public 
@@ -211,127 +323,26 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_equals">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#73-84" title="Go to source code">equals</a>( <span><code><a href="class-BurzeDzisNet.Location.html">BurzeDzisNet\Point</a></code> <var>$point</var></span> )</code>
+			<a class="anchor" href="#_hasAlert">#</a>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#104-119" title="Go to source code">hasAlert</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
-				<p>Indicates whether some other Point is equal to this one</p>
+				<p>Check if specified alert exists</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Indicates whether some other Point is equal to this one</p>
-
-<p>Two equal locations must points to the same coordinates.</p>
+				<p>Check if specified alert exists</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$point</var></dt>
-						<dd>other point</dd>
+						<dt><var>$name</var></dt>
+						<dd>string alert name</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if this point is the equal to some other point; false otherwise
-					</div>
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getName" id="_getName">
-
-			<td class="attributes"><code>
-				 public 
-				string
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getName">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#86-94" title="Go to source code">getName</a>( )</code>
-
-			<div class="description short">
-				<p>Get Point name</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Get Point name</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						string<br>point name
-					</div>
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getX" id="_getX">
-
-			<td class="attributes"><code>
-				 public 
-				float
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getX">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#96-104" title="Go to source code">getX</a>( )</code>
-
-			<div class="description short">
-				<p>Get coordinate X</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Get coordinate X</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						float<br>coordinate X
-					</div>
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getY" id="_getY">
-
-			<td class="attributes"><code>
-				 public 
-				float
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getY">#</a>
-			<code><a href="source-class-BurzeDzisNet.Location.html#106-114" title="Go to source code">getY</a>( )</code>
-
-			<div class="description short">
-				<p>Get coordinate Y</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Get coordinate Y</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						float<br>coordinate Y
+						boolean<br>if specified alert exists return true; otherwise false
 					</div>
 
 
@@ -356,78 +367,53 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="x" id="$x">
+		<tr data-order="alerts" id="$alerts">
 			<td class="attributes"><code>
 				protected  
-				float
+				array
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Location.html#24-29" title="Go to source code"><var>$x</var></a>
+					<a href="source-class-BurzeDzisNet.WeatherAlert.html#19-24" title="Go to source code"><var>$alerts</var></a>
 
 				<div class="description short">
-					<p>Coordinate X</p>
+					<p>Alerts</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Coordinate X</p>
+					<p>Alerts</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$x" class="anchor">#</a>
-					<code><span class="php-num">0.0</span></code>
+					<a href="#$alerts" class="anchor">#</a>
+					<code>[]</code>
 				</div>
 			</td>
 		</tr>
-		<tr data-order="y" id="$y">
+		<tr data-order="weatherAlert" id="$weatherAlert">
 			<td class="attributes"><code>
 				protected  
-				float
+				<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code>|null
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Location.html#31-36" title="Go to source code"><var>$y</var></a>
+					<a href="source-class-BurzeDzisNet.WeatherAlert.html#26-31" title="Go to source code"><var>$weatherAlert</var></a>
 
 				<div class="description short">
-					<p>Coordinate Y</p>
+					<p>Weather alerts</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Coordinate Y</p>
+					<p>Weather alerts</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$y" class="anchor">#</a>
-					<code><span class="php-num">0.0</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="name" id="$name">
-			<td class="attributes"><code>
-				protected  
-				string
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-BurzeDzisNet.Location.html#38-43" title="Go to source code"><var>$name</var></a>
-
-				<div class="description short">
-					<p>Point name</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Point name</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$name" class="anchor">#</a>
-					<code><span class="php-quote">&quot;&quot;</span></code>
+					<a href="#$weatherAlert" class="anchor">#</a>
+					<code><span class="php-keyword1">null</span></code>
 				</div>
 			</td>
 		</tr>
