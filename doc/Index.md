@@ -27,7 +27,7 @@ $madrid = $burzeDzisNet->locate("Madrid");
 #### Storm report
 
 ```php
-$burzeDzisNet->getStorm($madrid, 50);
+$burzeDzisNet->getStormReport($madrid, 50);
 ```
 
 #### Weather alert
