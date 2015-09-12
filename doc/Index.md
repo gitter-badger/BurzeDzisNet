@@ -10,7 +10,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 
 # Aplication programming interface
 
-#### Remote client
+##### Remote client
 
 ```php
 namespace BurzeDzisNet;
@@ -18,19 +18,19 @@ namespace BurzeDzisNet;
 $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
 ```
 
-#### Coordinates for the locality
+##### Coordinates for the locality
 
 ```php
 $madrid = $burzeDzisNet->locate("Madrid");
 ```
 
-#### Storm report
+##### Storm report
 
 ```php
 $burzeDzisNet->getStormReport($madrid, 50);
 ```
 
-#### Weather alert
+##### Weather alert
 
 
 ```php
