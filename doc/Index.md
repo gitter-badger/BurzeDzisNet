@@ -1,14 +1,14 @@
-## About burze.dzis.net website
+# About burze.dzis.net website
 
 The following website is created for users who seek for a solution, which can enable them to receive notification on weather hazards such as: lightnings, tornadoes, strong winds, heavy precipitation and low and high air temperatures.
 
 Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
-## Access to burze.dzis.net
+# Access to burze.dzis.net
 
 To get your credentials create free account on burze.dzis.net and request for API Key.
 
-## Aplication programming interface
+# Aplication programming interface
 
 #### Remote client
 
@@ -44,11 +44,9 @@ $tornado = $weatherAlert->getAlert('tornado');
 $precipitation $weatherAlert->getAlert('precipitation');
 ```
 
-## Other remote calls
+# Resources for programmers
+- [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/api/API-documentation.zip)
+- [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ClassDiagram.md)
+- [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/SoftwareMetrics.md)
 
-#### Verification of API key
-
-```php
-$authorized = $burzeDzisNet->verifyApiKey("Some API key");
-```
 
