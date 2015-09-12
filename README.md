@@ -15,11 +15,7 @@ $report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
 
 # Class design
 
-- __Completely immutable__
-- Declarative over imperative
-- No static methods, static properties, public constants or other helpers
-- No null references
-- Fully testing
+- __Completely immutable__ - Declarative over imperative - No static methods, static properties, public constants or other helpers - No null references - Fully testing
 
 # Resources
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Index.md)
