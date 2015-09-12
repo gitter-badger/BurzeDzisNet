@@ -41,7 +41,7 @@ $heat = $weatherAlert->getAlert('heat');
 $storm = $weatherAlert->getAlert('storm');
 $wind = $weatherAlert->getAlert('wind');
 $tornado = $weatherAlert->getAlert('tornado');
-$precipitation $weatherAlert->getAlert('precipitation');
+$precipitation = $weatherAlert->getAlert('precipitation');
 ```
 
 # Resources for programmers
