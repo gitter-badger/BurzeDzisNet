@@ -86,7 +86,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
             ->withAlert("storm", new Alert(1, "2015-02-12", "2015-02-13"))
             ->withAlert("wind", new Alert(2, "2015-02-12", "2015-02-13"));
         $iteration = [];
-        foreach($weatherAlert as $name => $alert) {
+        foreach ($weatherAlert as $name => $alert) {
             $iteration[$name] = $alert;
         }
         $this->assertEquals(
