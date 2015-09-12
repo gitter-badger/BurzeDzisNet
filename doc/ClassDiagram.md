@@ -1,10 +1,19 @@
 # Class diagrams
 
-## Overview diagram
-![Class diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ClassDiagram.png)
+## Overview
+![Class diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Overview.png)
 
-## EndpointInterface diagram
-![EndpointInterface diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ClientInterfaceDiagram.png)
+## Endpoint
+![Endpoint diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Endpoint.png)
 
-## Point diagram
-![Point class diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/LocationDiagram.png)
+## BurzeDzisNet
+![BurzeDzisNet diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/BurzeDzisNet.png)
+
+## Point
+![Point diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Point.png)
+
+## Storm
+![Point diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Storm.png)
+
+## WeatherAlert
+![Point diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/WeatherAlert.png)
