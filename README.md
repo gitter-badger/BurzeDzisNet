@@ -7,12 +7,10 @@ PHP client for [burze.dzis.net](https://burze.dzis.net)
 ###### Getting a storm report for the Madrid
 
 ```php
+namespace BurzeDzisNet;
 
-    namespace BurzeDzisNet;
-    
-    $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
-    $report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
-    
+$burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
+$report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
 ```
 
 # Class design
