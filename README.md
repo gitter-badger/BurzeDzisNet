@@ -13,8 +13,8 @@ $burzeDzisNet = new BurzeDzisNet(
     new Endpoint('Your API key')
 );
 
-$storm = $burzeDzisNet->findStorm(
-    $burzeDzisNet->getLocation("Madrid"),
+$storm = $burzeDzisNet->getStormReport(
+    $burzeDzisNet->locate("Madrid"),
     50
 );
 ```
