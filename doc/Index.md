@@ -21,26 +21,18 @@ $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
 #### Getting coordinates for the locality
 
 ```php
-$burzeDzisNet->locate("Madrid");
+$madrid = $burzeDzisNet->locate("Madrid");
 ```
 
 #### Getting storm report
 
-If you're interested in information about storm - check if a given point with a specified radius of monitoring registered lightnings.
-
 ```php
-$burzeDzisNet->getStorm($burzeDzisNet->getLocation("Madrid"), 50);
-```
-
-You can ommit locating call, if you know exactly coordinates of point you are intrested in.
-
-```php
-$burzeDzisNet->getStormReport(new Point(-3.41, 40.23, "Madrid"), 50);
+$burzeDzisNet->getStorm($madrid, 50);
 ```
 
 #### Getting weather alert
 ```php
-$alert = $burzeDzisNet->getWeatherAlert($burzeDzisNet->getLocation("Madrid"));
+$alert = $burzeDzisNet->getWeatherAlert($madrid);
 
 $frost = $alert->getAlert('frost');
 $heat = $alert->getAlert('heat');
@@ -50,24 +42,11 @@ $tornado = $alert->getAlert('tornado');
 $precipitation $alert->getAlert('precipitation');
 ```
 
-#### Iterating over alerts
-```php
-$alert = $burzeDzisNet->getWeatherAlert($burzeDzisNet->getLocation("Madrid"));
-
-foreach($alert as $name => $data) {
-    // string $name alert name
-    // BurzeDzisNet/Alert $data alert data
-}
-```
-
-
 ## Other remote calls
 
 #### Verifying API key
 
-Check if a given API key is authorized by burze.dzis.net soap server.
-
 ```php
-$burzeDzisNet->verifyApiKey("Some API key");
+$authorized = $burzeDzisNet->verifyApiKey("Some API key");
 ```
 
