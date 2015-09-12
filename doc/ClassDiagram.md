@@ -1,10 +1,10 @@
 # Class diagrams
 
-##### Overview diagram
+## Overview
 ![Class diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Overview.png)
 
-##### Endpoint
+## Endpoint
 ![Endpoint diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Endpoint.png)
 
-##### BurzeDzisNet
+## BurzeDzisNet
 ![BurzeDzisNet diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/BurzeDzisNet.png)
