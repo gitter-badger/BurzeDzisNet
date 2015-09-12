@@ -2,7 +2,7 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-## Example
+# Example
 
 ##### Getting a storm report for the Madrid
 
@@ -13,7 +13,7 @@ $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
 $report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
 ```
 
-## Class design
+# Class design
 
 - __Completely immutable__
 - Declarative over imperative
@@ -21,7 +21,7 @@ $report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
 - No null references
 - Fully testing
 
-## Resources
+# Resources
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/Index.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/api/API-documentation.zip)
 - [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/doc/ClassDiagram.md)
