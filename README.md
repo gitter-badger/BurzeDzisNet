@@ -2,9 +2,9 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-# Example
+# Example of usage
 
-##### Getting a storm report for the Madrid
+###### Getting a storm report for the Madrid
 
 ```php
 namespace BurzeDzisNet;
