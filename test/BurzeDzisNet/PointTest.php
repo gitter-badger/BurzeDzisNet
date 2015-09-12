@@ -60,10 +60,10 @@ class PointTest extends PHPUnit_Framework_TestCase
         $point = new Point(17.02, 51.07);
         $point2 = new Point(17.02, 51.07);
         $point3 = new Point(51.07, 17.02);
-        $point4 = new Point(-3.41, 40.23);
         $this->assertTrue($point->equals($point));
         $this->assertTrue($point->equals($point2));
         $this->assertFalse($point->equals($point3));
         $this->assertFalse($point2->equals($point3));
+
     }
 }
