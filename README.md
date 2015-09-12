@@ -21,7 +21,7 @@ $storm = $burzeDzisNet->getStormReport(
 
 ## Class design
 
-- Completely immutable
+- __Completely immutable__
 - Declarative over imperative
 - No static methods, static properties, public constants
 - No null references
