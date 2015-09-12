@@ -7,6 +7,7 @@
 namespace BurzeDzisNet;
 
 use OutOfBoundsException;
+use InvalidArgumentException;
 use IteratorAggregate;
 
 /**
@@ -50,7 +51,7 @@ class WeatherAlert implements IteratorAggregate
     public function withAlert($name, Alert $alert)
     {
         if ($this->hasAlert($name) === true) {
-            throw new \InvalidArgumentException(\sprintf("Alert named %s exists", $name));
+            throw new InvalidArgumentException(\sprintf("Alert named %s exists", $name));
         }
         $weatherAlert = clone $this;
         $weatherAlert->weatherAlert = $this;
