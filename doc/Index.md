@@ -10,7 +10,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 
 ## Aplication programming interface
 
-#### Creating remote client
+#### Remote client
 
 ```php
 namespace BurzeDzisNet;
@@ -18,33 +18,35 @@ namespace BurzeDzisNet;
 $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
 ```
 
-#### Getting coordinates for the locality
+#### Coordinates for the locality
 
 ```php
 $madrid = $burzeDzisNet->locate("Madrid");
 ```
 
-#### Getting storm report
+#### Storm report
 
 ```php
 $burzeDzisNet->getStorm($madrid, 50);
 ```
 
-#### Getting weather alert
-```php
-$alert = $burzeDzisNet->getWeatherAlert($madrid);
+#### Weather alert
 
-$frost = $alert->getAlert('frost');
-$heat = $alert->getAlert('heat');
-$storm = $alert->getAlert('storm');
-$wind = $alert->getAlert('wind');
-$tornado = $alert->getAlert('tornado');
-$precipitation $alert->getAlert('precipitation');
+
+```php
+$weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
+
+$frost = $weatherAlert->getAlert('frost');
+$heat = $weatherAlert->getAlert('heat');
+$storm = $weatherAlert->getAlert('storm');
+$wind = $weatherAlert->getAlert('wind');
+$tornado = $weatherAlert->getAlert('tornado');
+$precipitation $weatherAlert->getAlert('precipitation');
 ```
 
 ## Other remote calls
 
-#### Verifying API key
+#### Verification of API key
 
 ```php
 $authorized = $burzeDzisNet->verifyApiKey("Some API key");
