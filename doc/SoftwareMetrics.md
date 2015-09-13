@@ -4,9 +4,6 @@
 phploc 2.1.4 by Sebastian Bergmann.
 
 Size
-phploc 2.1.4 by Sebastian Bergmann.
-
-Size
   Lines of Code (LOC)                              704
   Comment Lines of Code (CLOC)                     354 (50.28%)
   Non-Comment Lines of Code (NCLOC)                350 (49.72%)
