@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442175773">
-  <project timestamp="1442175773">
+<coverage generated="1442175870">
+  <project timestamp="1442175870">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
