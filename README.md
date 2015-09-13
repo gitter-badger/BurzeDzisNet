@@ -17,7 +17,7 @@ __Getting a storm report for the Madrid__
 
 __Completely immutable__ - Declarative over imperative - Fully tested - Low complexity - No static methods, static properties, public constants - No null references
 
-__Resources__
+##Resources
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/Index.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
 - [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/ClassDiagram.md)
