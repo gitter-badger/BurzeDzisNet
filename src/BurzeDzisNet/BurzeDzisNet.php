@@ -13,7 +13,7 @@ use SoapFault;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class BurzeDzisNet
+class BurzeDzisNet implements BurzeDzisNetInterface
 {
     /**
      * Soap client
@@ -99,7 +99,7 @@ class BurzeDzisNet
     }
 
     /**
-     * Get weather alert for given point
+     * Get weather alert for the given point
      *
      * @param Point $point location coordinates
      * @return WeatherAlert weather alerts
