@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class BurzeDzisNet\Endpoint</title>
+	<title>Class BurzeDzisNet\Alert</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -63,9 +63,9 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
+				<li class="active"><a href="class-BurzeDzisNet.Alert.html">Alert</a></li>
 				<li><a href="class-BurzeDzisNet.BurzeDzisNet.html">BurzeDzisNet</a></li>
-				<li class="active"><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
+				<li><a href="class-BurzeDzisNet.Endpoint.html">Endpoint</a></li>
 				<li><a href="class-BurzeDzisNet.Point.html">Point</a></li>
 				<li><a href="class-BurzeDzisNet.Storm.html">Storm</a></li>
 				<li><a href="class-BurzeDzisNet.WeatherAlert.html">WeatherAlert</a></li>
@@ -73,7 +73,6 @@
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-BurzeDzisNet.BurzeDzisNetInterface.html">BurzeDzisNetInterface</a></li>
 				<li><a href="class-BurzeDzisNet.EndpointInterface.html">EndpointInterface</a></li>
 			</ul>
 
@@ -89,22 +88,13 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Endpoint</h1>
+	<h1>Class Alert</h1>
 
 
 	<div class="description">
-	<p>Endpoint interface is the entry point to a burze.dzis.net service</p>
+	<p>Single weather alert</p>
 	</div>
 
-	<dl class="tree well">
-		<dd style="padding-left:0px">
-<b><span>BurzeDzisNet\Endpoint</span></b>			
-			 implements 
-				<a href="class-BurzeDzisNet.EndpointInterface.html"><span>BurzeDzisNet\EndpointInterface</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -121,7 +111,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Endpoint.html#12-76" title="Go to source code">BurzeDzisNet/Endpoint.php</a>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.Alert.html#9-43" title="Go to source code">BurzeDzisNet/Alert.php</a>
 		<br>
 	</div>
 
@@ -141,21 +131,16 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Endpoint.html#34-42" title="Go to source code">__construct</a>( <span>string <var>$apiKey</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#20-25" title="Go to source code">__construct</a>( <span> <var>$level</var></span>, <span> <var>$from</var></span>, <span> <var>$to</var></span> )</code>
 
 			<div class="description short">
-				<p>Constructor</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Constructor</p>
+				
 
 
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$apiKey</var></dt>
-						<dd>API key</dd>
-					</dl></div>
 
 
 
@@ -164,116 +149,90 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getClient" id="_getClient">
+		<tr data-order="getLevel" id="_getLevel">
 
 			<td class="attributes"><code>
 				 public 
-				SoapClient
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getClient">#</a>
-			<code><a href="source-class-BurzeDzisNet.Endpoint.html#44-54" title="Go to source code">getClient</a>( )</code>
+			<a class="anchor" href="#_getLevel">#</a>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#27-30" title="Go to source code">getLevel</a>( )</code>
 
 			<div class="description short">
-				<p>Get Soap client in WSDL mode</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get Soap client in WSDL mode</p>
+				
 
 
 
-					<h4>Returns</h4>
-					<div class="list">
-						SoapClient<br>SoapClient in WSDL mode
-					</div>
-
-					<h4>Throws</h4>
-					<div class="list">
-						SoapFault<br>if the WSDL URI cannot be loaded or parsed
-					</div>
-
-					<h4>See</h4>
-					<div class="list">
-							\SoapClient http://php.net/manual/en/class.soapclient.php SoapClient<br>
-					</div>
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-BurzeDzisNet.EndpointInterface.html#_getClient">BurzeDzisNet\EndpointInterface::getClient()</a></code></div>
+
+
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getWSDL" id="_getWSDL">
+		<tr data-order="getFrom" id="_getFrom">
 
 			<td class="attributes"><code>
 				 public 
-				string
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getWSDL">#</a>
-			<code><a href="source-class-BurzeDzisNet.Endpoint.html#56-64" title="Go to source code">getWSDL</a>( )</code>
+			<a class="anchor" href="#_getFrom">#</a>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#32-35" title="Go to source code">getFrom</a>( )</code>
 
 			<div class="description short">
-				<p>Get URI of WSDL file</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get URI of WSDL file</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						string<br>URI of WSDL file
-					</div>
+				
 
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-BurzeDzisNet.EndpointInterface.html#_getWSDL">BurzeDzisNet\EndpointInterface::getWSDL()</a></code></div>
+
+
+
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getApiKey" id="_getApiKey">
+		<tr data-order="getTo" id="_getTo">
 
 			<td class="attributes"><code>
 				 public 
-				string
+				
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getApiKey">#</a>
-			<code><a href="source-class-BurzeDzisNet.Endpoint.html#66-74" title="Go to source code">getApiKey</a>( )</code>
+			<a class="anchor" href="#_getTo">#</a>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#38-41" title="Go to source code">getTo</a>( )</code>
 
 			<div class="description short">
-				<p>Get API key</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get API key</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						string<br>API key
-					</div>
+				
 
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-BurzeDzisNet.EndpointInterface.html#_getApiKey">BurzeDzisNet\EndpointInterface::getApiKey()</a></code></div>
+
+
+
 			</div>
 			</div></td>
 		</tr>
@@ -293,52 +252,77 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="wsdl" id="$wsdl">
+		<tr data-order="level" id="$level">
 			<td class="attributes"><code>
 				protected  
-				string
+				integer
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Endpoint.html#20-25" title="Go to source code"><var>$wsdl</var></a>
+					<a href="source-class-BurzeDzisNet.Alert.html#16" title="Go to source code"><var>$level</var></a>
 
 				<div class="description short">
-					<p>URI of WSDL file</p>
+					
 				</div>
 
 				<div class="description detailed hidden">
-					<p>URI of WSDL file</p>
+					
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$wsdl" class="anchor">#</a>
-					<code><span class="php-quote">&quot;https://burze.dzis.net/soap.php?WSDL&quot;</span></code>
+					<a href="#$level" class="anchor">#</a>
+					<code><span class="php-num">0</span></code>
 				</div>
 			</td>
 		</tr>
-		<tr data-order="apiKey" id="$apiKey">
+		<tr data-order="from" id="$from">
 			<td class="attributes"><code>
 				protected  
 				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Endpoint.html#27-32" title="Go to source code"><var>$apiKey</var></a>
+					<a href="source-class-BurzeDzisNet.Alert.html#17" title="Go to source code"><var>$from</var></a>
 
 				<div class="description short">
-					<p>API key</p>
+					
 				</div>
 
 				<div class="description detailed hidden">
-					<p>API key</p>
+					
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$apiKey" class="anchor">#</a>
+					<a href="#$from" class="anchor">#</a>
+					<code><span class="php-quote">&quot;&quot;</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="to" id="$to">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-BurzeDzisNet.Alert.html#18" title="Go to source code"><var>$to</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$to" class="anchor">#</a>
 					<code><span class="php-quote">&quot;&quot;</span></code>
 				</div>
 			</td>
