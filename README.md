@@ -18,6 +18,4 @@ __Completely immutable__ - Declarative over imperative - Fully tested - Low comp
 ##Resources
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/Index.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
-- [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/ClassDiagram.md)
 - [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/SoftwareMetrics.md)
-- [Project licence](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/LICENCE.md)
