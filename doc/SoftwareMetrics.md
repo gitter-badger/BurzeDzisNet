@@ -4,11 +4,14 @@
 phploc 2.1.4 by Sebastian Bergmann.
 
 Size
-  Lines of Code (LOC)                              647
-  Comment Lines of Code (CLOC)                     312 (48.22%)
-  Non-Comment Lines of Code (NCLOC)                335 (51.78%)
-  Logical Lines of Code (LLOC)                      81 (12.52%)
-    Classes                                         69 (85.19%)
+phploc 2.1.4 by Sebastian Bergmann.
+
+Size
+  Lines of Code (LOC)                              704
+  Comment Lines of Code (CLOC)                     354 (50.28%)
+  Non-Comment Lines of Code (NCLOC)                350 (49.72%)
+  Logical Lines of Code (LLOC)                      87 (12.36%)
+    Classes                                         73 (83.91%)
       Average Class Length                           9
         Minimum Class Length                         3
         Maximum Class Length                        17
@@ -17,11 +20,11 @@ Size
         Maximum Method Length                        5
     Functions                                        0 (0.00%)
       Average Function Length                        0
-    Not in classes or functions                     12 (14.81%)
+    Not in classes or functions                     14 (16.09%)
 
 Cyclomatic Complexity
-  Average Complexity per LLOC                     0.10
-  Average Complexity per Class                    2.14
+  Average Complexity per LLOC                     0.09
+  Average Complexity per Class                    2.00
     Minimum Class Complexity                      1.00
     Maximum Class Complexity                      8.00
   Average Complexity per Method                   1.27
@@ -42,17 +45,17 @@ Dependencies
 
 Structure
   Namespaces                                         1
-  Interfaces                                         1
+  Interfaces                                         2
   Traits                                             0
   Classes                                            6
     Abstract Classes                                 0 (0.00%)
     Concrete Classes                                 6 (100.00%)
-  Methods                                           33
+  Methods                                           37
     Scope
-      Non-Static Methods                            33 (100.00%)
+      Non-Static Methods                            37 (100.00%)
       Static Methods                                 0 (0.00%)
     Visibility
-      Public Methods                                33 (100.00%)
+      Public Methods                                37 (100.00%)
       Non-Public Methods                             0 (0.00%)
   Functions                                          0
     Named Functions                                  0 (0.00%)
