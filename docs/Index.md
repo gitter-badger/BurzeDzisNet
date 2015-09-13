@@ -13,36 +13,36 @@ To get your credentials create free account on burze.dzis.net and request for AP
 #### Remote client
 
 ```php
-namespace BurzeDzisNet;
-
-$burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
+    namespace BurzeDzisNet;
+    
+    $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
 ```
 
 
 #### Locality coordinates
 
 ```php
-$madrid = $burzeDzisNet->locate("Madrid");
+    $madrid = $burzeDzisNet->locate("Madrid");
 ```
 
 #### Storm report
 
 ```php
-$burzeDzisNet->getStormReport($madrid);
+    $burzeDzisNet->getStormReport($madrid);
 ```
 
 #### Weather alert
 
 
 ```php
-$weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
-
-$frost = $weatherAlert->getAlert('frost');
-$heat = $weatherAlert->getAlert('heat');
-$storm = $weatherAlert->getAlert('storm');
-$wind = $weatherAlert->getAlert('wind');
-$tornado = $weatherAlert->getAlert('tornado');
-$precipitation = $weatherAlert->getAlert('precipitation');
+    $weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
+    
+    $frost = $weatherAlert->getAlert('frost');
+    $heat = $weatherAlert->getAlert('heat');
+    $storm = $weatherAlert->getAlert('storm');
+    $wind = $weatherAlert->getAlert('wind');
+    $tornado = $weatherAlert->getAlert('tornado');
+    $precipitation = $weatherAlert->getAlert('precipitation');
 ```
 
 # Resources for programmers
