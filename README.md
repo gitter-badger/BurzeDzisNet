@@ -4,8 +4,6 @@ PHP client for [burze.dzis.net](https://burze.dzis.net)
 
 ## Example of usage
 
-__Getting a storm report for the Madrid__
-
 ```php
     namespace BurzeDzisNet;
     
