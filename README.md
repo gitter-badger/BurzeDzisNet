@@ -2,22 +2,22 @@
 
 PHP client for [burze.dzis.net](https://burze.dzis.net)
 
-#### Example of usage
+## Example of usage
 
 __Getting a storm report for the Madrid__
 
 ```php
-namespace BurzeDzisNet;
-
-$burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
-$report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
+    namespace BurzeDzisNet;
+    
+    $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
+    $report = $burzeDzisNet->getStormReport($burzeDzisNet->locate("Madrid"));
 ```
 
-#### Class design
+## Class design
 
 __Completely immutable__ - Declarative over imperative - Fully tested - Low complexity - No static methods, static properties, public constants - No null references
 
-#### Resources
+__Resources__
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/Index.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
 - [UML Class Diagram](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/ClassDiagram.md)
