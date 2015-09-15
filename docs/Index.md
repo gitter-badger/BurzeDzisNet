@@ -6,11 +6,11 @@ Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
 # Access to burze.dzis.net
 
-To get your credentials create free account on burze.dzis.net and request for API Key.
+To get your credentials create free account on burze.dzis.net and request for API key.
 
 # Aplication programming interface
 
-__Remote client__
+####Remote client
 
 ```php
     namespace BurzeDzisNet;
@@ -19,30 +19,30 @@ __Remote client__
 ```
 
 
-__Locality coordinates__
+####Locality coordinates
 
 ```php
     $madrid = $burzeDzisNet->locate("Madrid");
 ```
 
-__Storm report__
+#### Storm report
 
 ```php
-    $burzeDzisNet->getStormReport($madrid);
+    $report = $burzeDzisNet->getStormReport($madrid);
 ```
 
-__Weather alert__
+#### Weather alert
 
 
 ```php
-    $weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
+    $alert = $burzeDzisNet->getWeatherAlert($madrid);
     
-    $frost = $weatherAlert->getAlert('frost');
-    $heat = $weatherAlert->getAlert('heat');
-    $storm = $weatherAlert->getAlert('storm');
-    $wind = $weatherAlert->getAlert('wind');
-    $tornado = $weatherAlert->getAlert('tornado');
-    $precipitation = $weatherAlert->getAlert('precipitation');
+    $frost = $alert->getAlert('frost');
+    $heat = $alert->getAlert('heat');
+    $storm = $alert->getAlert('storm');
+    $wind = $alert->getAlert('wind');
+    $tornado = $alert->getAlert('tornado');
+    $precipitation = $alert->getAlert('precipitation');
 ```
 
 # Resources for programmers
