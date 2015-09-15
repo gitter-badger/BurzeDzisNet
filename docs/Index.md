@@ -10,7 +10,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 
 # Aplication programming interface
 
-__Remote client__
+__REMOTE CLIENT__
 
 ```php
     namespace BurzeDzisNet;
@@ -19,19 +19,19 @@ __Remote client__
 ```
 
 
-__Locality coordinates__
+__LOCALITY COORDINATES__
 
 ```php
     $madrid = $burzeDzisNet->locate("Madrid");
 ```
 
-__Storm report__
+____STORM REPORT__
 
 ```php
     $report = $burzeDzisNet->getStormReport($madrid);
 ```
 
-__Weather alert__
+__WEATHER ALERT__
 
 
 ```php
