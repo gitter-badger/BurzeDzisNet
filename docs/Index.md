@@ -13,7 +13,9 @@ To get your credentials create free account on burze.dzis.net and request for AP
 __Remote client__
 
 ```php
-    $burzeDzisNet = new \BurzeDzisNet\BurzeDzisNet(new Endpoint('Your API key'));
+    $burzeDzisNet = new \BurzeDzisNet\BurzeDzisNet(
+        new \BurzeDzisNet\Endpoint('Your API key')
+    );
 ```
 
 
