@@ -44,12 +44,12 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers BurzeDzisNet\Storm::getPeriod
+     * @covers BurzeDzisNet\Storm::getTimePeriod
      */
     public function testGetPeriod()
     {
         $storm = new Storm(14, 80.72, "NE", 10, 50);
-        $this->assertSame(10, $storm->getPeriod());
+        $this->assertSame(10, $storm->getTimePeriod());
     }
 
     /**
@@ -70,7 +70,7 @@ class StormTest extends PHPUnit_Framework_TestCase
         $this->assertSame(14, $storm->getLightnings());
         $this->assertSame("NE", $storm->getDirection());
         $this->assertSame(80.72, $storm->getDistance());
-        $this->assertSame(10, $storm->getPeriod());
+        $this->assertSame(10, $storm->getTimePeriod());
         $this->assertSame(50, $storm->getRadius());
     }
 }

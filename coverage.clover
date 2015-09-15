@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442337569">
-  <project timestamp="1442337569">
+<coverage generated="1442338200">
+  <project timestamp="1442338200">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
@@ -150,7 +150,7 @@
         <line num="96" type="stmt" count="1"/>
         <line num="104" type="method" name="getDirection" crap="1" count="1"/>
         <line num="106" type="stmt" count="1"/>
-        <line num="114" type="method" name="getPeriod" crap="1" count="1"/>
+        <line num="114" type="method" name="getTimePeriod" crap="1" count="1"/>
         <line num="116" type="stmt" count="1"/>
         <line num="124" type="method" name="getRadius" crap="1" count="1"/>
         <line num="126" type="stmt" count="1"/>

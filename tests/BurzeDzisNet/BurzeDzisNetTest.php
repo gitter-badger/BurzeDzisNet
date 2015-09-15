@@ -123,7 +123,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->assertSame(50, $storm->getRadius());
         $this->assertSame(80.72, $storm->getDistance());
         $this->assertSame(14, $storm->getLightnings());
-        $this->assertSame(10, $storm->getPeriod());
+        $this->assertSame(10, $storm->getTimePeriod());
     }
 
     /**

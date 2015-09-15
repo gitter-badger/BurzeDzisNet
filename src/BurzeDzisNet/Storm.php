@@ -111,7 +111,7 @@ class Storm
      *
      * @return int number of minutes of time period containing the data
      */
-    public function getPeriod()
+    public function getTimePeriod()
     {
         return $this->period;
     }
