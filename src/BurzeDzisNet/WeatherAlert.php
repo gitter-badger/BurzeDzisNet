@@ -11,7 +11,7 @@ use InvalidArgumentException;
 use IteratorAggregate;
 
 /**
- * Weather alerts
+ * Weather alerts represents set of alerts
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -27,26 +27,26 @@ class WeatherAlert implements IteratorAggregate
     /**
      * Weather alerts
      *
-     * @var WeatherAlert|null
+     * @var WeatherAlert|null set of alerts
      */
     protected $weatherAlert = null;
 
     /**
      * New WeatherAlert
      *
-     * @param WeatherAlert|null $alerts weather alerts
+     * @param WeatherAlert|null $alert set of alerts
      */
-    public function __construct(WeatherAlert $alerts = null)
+    public function __construct(WeatherAlert $alert = null)
     {
-        $this->weatherAlert = $alerts;
+        $this->weatherAlert = $alert;
     }
 
     /**
-     * Get new WeatherAlert extended by the new alerts
+     * Get WeatherAlert containing new alert
      *
-     * @param Alert $alert alerts weather alerts
      * @param string $name alert name
-     * @return WeatherAlert new weather alerts extended by the new alerts
+     * @param Alert $alert
+     * @return WeatherAlert new instance of WeatherAlert containing specified alert
      */
     public function withAlert($name, Alert $alert)
     {
@@ -74,7 +74,7 @@ class WeatherAlert implements IteratorAggregate
         if ($this->weatherAlert != null) {
             return $this->weatherAlert->getAlert($name);
         }
-        throw new OutOfBoundsException(\sprintf("There is no such an alert like %s", $name));
+        throw new OutOfBoundsException(\sprintf("There is no such an alert like '%s'", $name));
     }
 
     /**
@@ -90,7 +90,7 @@ class WeatherAlert implements IteratorAggregate
     }
 
     /**
-     * Get all alerts as array
+     * Get all alerts
      *
      * @return array all alerts
      */

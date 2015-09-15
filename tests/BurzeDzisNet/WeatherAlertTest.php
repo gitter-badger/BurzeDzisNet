@@ -68,7 +68,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     /**
      * @covers BurzeDzisNet\WeatherAlert::getAlert
      * @expectedException \OutOfBoundsException
-     * @expectedExceptionMessage There is no such an alert like Storm
+     * @expectedExceptionMessage There is no such an alert like 'Storm'
      */
     public function testGetAlertOutOfBoundsException()
     {
