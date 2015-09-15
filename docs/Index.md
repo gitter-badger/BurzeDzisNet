@@ -4,7 +4,7 @@ The following website is created for users who seek for a solution, which can en
 
 Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
-# Access to burze.dzis.net
+# Access to remote services
 
 To get your credentials create free account on burze.dzis.net and request for API key.
 
