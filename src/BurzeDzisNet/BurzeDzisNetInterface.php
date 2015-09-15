@@ -7,7 +7,7 @@
 namespace BurzeDzisNet;
 
 /**
- * BurzeDzisNetInterface represents services provided by client of burze.dzis.net
+ * BurzeDzisNetInterface represents client of burze.dzis.net
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -25,7 +25,7 @@ interface BurzeDzisNetInterface
     /**
      * Get point representing location coordinates
      *
-     * If no location returns coordinates [0,0]
+     * If no location returns Point with coordinates [0,0].
      *
      * @param string $name location name
      * @return Point location coordinates
@@ -40,17 +40,17 @@ interface BurzeDzisNetInterface
      * covered by the given location
      *
      * @param Point $point monitored location
-     * @param int $radius radius of monitoring (default 25 km)
+     * @param int $radius radius of monitoring
      * @return Storm information about registered lightnings
      * @throws \SoapFault soap error
      */
     public function getStormReport(Point $point, $radius);
 
     /**
-     * Get weather alert for the given point
+     * Get set of weather alerts for the given point
      *
      * @param Point $point location coordinates
-     * @return WeatherAlert weather alerts
+     * @return WeatherAlert set of weather alerts
      */
     public function getWeatherAlert(Point $point);
 }
