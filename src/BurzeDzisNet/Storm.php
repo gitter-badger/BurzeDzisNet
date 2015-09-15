@@ -81,7 +81,7 @@ class Storm
      * @see getLocation seletected location
      * @return int number of cloud-to-ground lightning in specified radius from a selected location
      */
-    public function getNumber()
+    public function getLightnings()
     {
         return $this->number;
     }

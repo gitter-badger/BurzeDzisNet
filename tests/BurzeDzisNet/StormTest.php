@@ -17,12 +17,12 @@ class StormTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers BurzeDzisNet\Storm::getNumber
+     * @covers BurzeDzisNet\Storm::getLightnings
      */
-    public function testGetNumber()
+    public function testGetLightnings()
     {
         $storm = new Storm(14, 80.72, "NE", 10, 50);
-        $this->assertSame(14, $storm->getNumber());
+        $this->assertSame(14, $storm->getLightnings());
     }
 
     /**
@@ -67,7 +67,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     public function test__construct()
     {
         $storm = new Storm(14, 80.72, "NE", 10, 50);
-        $this->assertSame(14, $storm->getNumber());
+        $this->assertSame(14, $storm->getLightnings());
         $this->assertSame("NE", $storm->getDirection());
         $this->assertSame(80.72, $storm->getDistance());
         $this->assertSame(10, $storm->getPeriod());

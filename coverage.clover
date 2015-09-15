@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442175870">
-  <project timestamp="1442175870">
+<coverage generated="1442337441">
+  <project timestamp="1442337441">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
@@ -144,7 +144,7 @@
         <line num="73" type="stmt" count="1"/>
         <line num="74" type="stmt" count="1"/>
         <line num="75" type="stmt" count="1"/>
-        <line num="84" type="method" name="getNumber" crap="1" count="1"/>
+        <line num="84" type="method" name="getLightnings" crap="1" count="1"/>
         <line num="86" type="stmt" count="1"/>
         <line num="94" type="method" name="getDistance" crap="1" count="1"/>
         <line num="96" type="stmt" count="1"/>
