@@ -6,16 +6,14 @@ Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
 # Access to burze.dzis.net
 
-To get your credentials create free account on burze.dzis.net and request for API Key.
+To get your credentials create free account on burze.dzis.net and request for API key.
 
 # Aplication programming interface
 
 __Remote client__
 
 ```php
-    namespace BurzeDzisNet;
-    
-    $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
+    $burzeDzisNet = new \BurzeDzisNet\BurzeDzisNet(new Endpoint('Your API key'));
 ```
 
 
@@ -28,7 +26,7 @@ __Locality coordinates__
 __Storm report__
 
 ```php
-    $burzeDzisNet->getStormReport($madrid);
+    $report = $burzeDzisNet->getStormReport($madrid);
 ```
 
 __Weather alert__
