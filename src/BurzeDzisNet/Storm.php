@@ -22,9 +22,9 @@ namespace BurzeDzisNet;
 class Storm
 {
     /**
-     * The lightnings of cloud-to-ground lightning in specified radius from a specified location
+     * The number of cloud-to-ground lightning in specified radius from a specified location
      *
-     * @var int lightnings of minutes of time period containing the data
+     * @var int number of minutes of time period containing the data
      */
     protected $lightnings = 0;
 
@@ -43,9 +43,9 @@ class Storm
     protected $direction = "";
 
     /**
-     * The lightnings of minutes of time period containing the data (10, 15, 20 minutes)
+     * The number of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @var int lightnings of minutes of time period containing the data
+     * @var int number of minutes of time period containing the data
      */
     protected $period = 0;
 
@@ -59,10 +59,10 @@ class Storm
     /**
      * New Storm
      *
-     * @param int $lightnings lightnings of cloud-to-ground lightning in specified radius from a selected location
+     * @param int $lightnings number of cloud-to-ground lightning in specified radius from a selected location
      * @param float $distance distance (km) to the nearest registered lightning
      * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
-     * @param int $period lightnings of minutes of time period containing the data (10, 15, 20 minutes)
+     * @param int $period number of minutes of time period containing the data (10, 15, 20 minutes)
      * @param int $radius radius covered by location
      */
     public function __construct($lightnings, $distance, $direction, $period, $radius)
@@ -79,7 +79,7 @@ class Storm
      *
      * @see getRadius radius covered by Point
      * @see getLocation seletected location
-     * @return int lightnings of cloud-to-ground lightning in specified radius from a selected location
+     * @return int number of cloud-to-ground lightning in specified radius from a selected location
      */
     public function getLightnings()
     {
@@ -109,7 +109,7 @@ class Storm
     /**
      * Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @return int lightnings of minutes of time period containing the data
+     * @return int number of minutes of time period containing the data
      */
     public function getPeriod()
     {
