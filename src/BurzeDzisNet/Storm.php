@@ -26,7 +26,7 @@ class Storm
      *
      * @var int lightnings of minutes of time period containing the data
      */
-    protected $number = 0;
+    protected $lightnings = 0;
 
     /**
      * The distance (km) to the nearest registered lightning
@@ -67,7 +67,7 @@ class Storm
      */
     public function __construct($lightnings, $distance, $direction, $period, $radius)
     {
-        $this->number = $lightnings;
+        $this->lightnings = $lightnings;
         $this->distance = $distance;
         $this->direction = $direction;
         $this->period = $period;
@@ -83,7 +83,7 @@ class Storm
      */
     public function getLightnings()
     {
-        return $this->number;
+        return $this->lightnings;
     }
 
     /**
