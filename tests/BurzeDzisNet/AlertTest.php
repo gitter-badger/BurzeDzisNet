@@ -17,21 +17,21 @@ use stdClass;
 class AlertTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers BurzeDzisNet\Alert::getFrom
+     * @covers BurzeDzisNet\Alert::getStartDate
      */
-    public function testGetFrom()
+    public function testGetStartDate()
     {
         $alert = new Alert(1, "2015-02-12", "2015-02-18");
-        $this->assertSame("2015-02-12", $alert->getFrom());
+        $this->assertSame("2015-02-12", $alert->getStartDate());
     }
 
     /**
-     * @covers BurzeDzisNet\Alert::getTo
+     * @covers BurzeDzisNet\Alert::getEndDate
      */
-    public function testGetTo()
+    public function testGetEndDate()
     {
         $alert = new Alert(1, "2015-02-12", "2015-02-18");
-        $this->assertSame("2015-02-18", $alert->getTo());
+        $this->assertSame("2015-02-18", $alert->getEndDate());
     }
 
     /**
@@ -50,7 +50,7 @@ class AlertTest extends PHPUnit_Framework_TestCase
     {
         $alert = new Alert(1, "2015-02-12", "2015-02-18");
         $this->assertSame(1, $alert->getLevel());
-        $this->assertSame("2015-02-12", $alert->getFrom());
-        $this->assertSame("2015-02-18", $alert->getTo());
+        $this->assertSame("2015-02-12", $alert->getStartDate());
+        $this->assertSame("2015-02-18", $alert->getEndDate());
     }
 }

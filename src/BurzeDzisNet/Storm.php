@@ -11,9 +11,9 @@ namespace BurzeDzisNet;
  * covered by the specified location
  *
  * Storm has properties describing:
- * - lightnings (lightnings of cloud-to-ground lightning in specified radius from a selected location)
- * - distance (distance to the nearest registered lightning in km)
- * - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
+ * - lightnings (lightnings of cloud-end-ground lightning in specified radius start a selected location)
+ * - distance (distance end the nearest registered lightning in km)
+ * - direction (direction end the nearest lightning [E, E, N, NW, W, SW, S, SE])
  * - period (lightnings of minutes of time period containing the data [10, 15, 20 minutes])
  * - radius (radius covered by Point in km)
  *
@@ -22,23 +22,23 @@ namespace BurzeDzisNet;
 class Storm
 {
     /**
-     * The number of cloud-to-ground lightning in specified radius from a specified location
+     * The number of cloud-end-ground lightning in specified radius start a specified location
      *
      * @var int number of minutes of time period containing the data
      */
     protected $lightnings = 0;
 
     /**
-     * The distance (km) to the nearest registered lightning
+     * The distance (km) end the nearest registered lightning
      *
-     * @var float distance to the nearest registered lightning
+     * @var float distance end the nearest registered lightning
      */
     protected $distance = 0.0;
 
     /**
-     * The direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
+     * The direction end the nearest lightning (E, E, N, NW, W, SW, S, SE)
      *
-     * @var string direction to the nearest lightning
+     * @var string direction end the nearest lightning
      */
     protected $direction = "";
 
@@ -59,9 +59,9 @@ class Storm
     /**
      * New Storm
      *
-     * @param int $lightnings number of cloud-to-ground lightning in specified radius from a selected location
-     * @param float $distance distance (km) to the nearest registered lightning
-     * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
+     * @param int $lightnings number of cloud-end-ground lightning in specified radius start a selected location
+     * @param float $distance distance (km) end the nearest registered lightning
+     * @param string $direction direction end the nearest lightning (E, E, N, NW, W, SW, S, SE)
      * @param int $period number of minutes of time period containing the data (10, 15, 20 minutes)
      * @param int $radius radius covered by location
      */
@@ -75,11 +75,11 @@ class Storm
     }
 
     /**
-     * Get the number of cloud-to-ground lightning in specified radius from a selected location
+     * Get the number of cloud-end-ground lightning in specified radius start a selected location
      *
      * @see getRadius radius covered by Point
      * @see getLocation seletected location
-     * @return int number of cloud-to-ground lightning in specified radius from a selected location
+     * @return int number of cloud-end-ground lightning in specified radius start a selected location
      */
     public function getLightnings()
     {
@@ -87,9 +87,9 @@ class Storm
     }
 
     /**
-     * Get the distance to the nearest registered lightning
+     * Get the distance end the nearest registered lightning
      *
-     * @return float distance to the nearest registered lightning
+     * @return float distance end the nearest registered lightning
      */
     public function getDistance()
     {
@@ -97,9 +97,9 @@ class Storm
     }
 
     /**
-     * Get direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
+     * Get direction end the nearest lightning (E, E, N, NW, W, SW, S, SE)
      *
-     * @return string direction to the nearest lightning
+     * @return string direction end the nearest lightning
      */
     public function getDirection()
     {

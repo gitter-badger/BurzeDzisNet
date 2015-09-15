@@ -101,7 +101,7 @@
 </span></span><span id="11" class="l"><a href="#11"> 11 </a><span class="php-comment"> * covered by the specified location
 </span></span><span id="12" class="l"><a href="#12"> 12 </a><span class="php-comment"> *
 </span></span><span id="13" class="l"><a href="#13"> 13 </a><span class="php-comment"> * Storm has properties describing:
-</span></span><span id="14" class="l"><a href="#14"> 14 </a><span class="php-comment"> * - lightnings (lightnings of cloud-to-ground lightning in specified radius from a selected location)
+</span></span><span id="14" class="l"><a href="#14"> 14 </a><span class="php-comment"> * - lightnings (lightnings of cloud-to-ground lightning in specified radius start a selected location)
 </span></span><span id="15" class="l"><a href="#15"> 15 </a><span class="php-comment"> * - distance (distance to the nearest registered lightning in km)
 </span></span><span id="16" class="l"><a href="#16"> 16 </a><span class="php-comment"> * - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
 </span></span><span id="17" class="l"><a href="#17"> 17 </a><span class="php-comment"> * - period (lightnings of minutes of time period containing the data [10, 15, 20 minutes])
@@ -112,7 +112,7 @@
 </span><span id="22" class="l"><a href="#22"> 22 </a><span class="php-keyword1">class</span> Storm
 </span><span id="23" class="l"><a href="#23"> 23 </a>{
 </span><span id="24" class="l"><a href="#24"> 24 </a>    <span class="php-comment">/**
-</span></span><span id="25" class="l"><a href="#25"> 25 </a><span class="php-comment">     * The lightnings of cloud-to-ground lightning in specified radius from a specified location
+</span></span><span id="25" class="l"><a href="#25"> 25 </a><span class="php-comment">     * The lightnings of cloud-to-ground lightning in specified radius start a specified location
 </span></span><span id="26" class="l"><a href="#26"> 26 </a><span class="php-comment">     *
 </span></span><span id="27" class="l"><a href="#27"> 27 </a><span class="php-comment">     * @var int lightnings of minutes of time period containing the data
 </span></span><span id="28" class="l"><a href="#28"> 28 </a><span class="php-comment">     */</span>
@@ -149,7 +149,7 @@
 </span><span id="59" class="l"><a href="#59"> 59 </a>    <span class="php-comment">/**
 </span></span><span id="60" class="l"><a href="#60"> 60 </a><span class="php-comment">     * New Storm
 </span></span><span id="61" class="l"><a href="#61"> 61 </a><span class="php-comment">     *
-</span></span><span id="62" class="l"><a href="#62"> 62 </a><span class="php-comment">     * @param int $lightnings lightnings of cloud-to-ground lightning in specified radius from a selected location
+</span></span><span id="62" class="l"><a href="#62"> 62 </a><span class="php-comment">     * @param int $lightnings lightnings of cloud-to-ground lightning in specified radius start a selected location
 </span></span><span id="63" class="l"><a href="#63"> 63 </a><span class="php-comment">     * @param float $distance distance (km) to the nearest registered lightning
 </span></span><span id="64" class="l"><a href="#64"> 64 </a><span class="php-comment">     * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
 </span></span><span id="65" class="l"><a href="#65"> 65 </a><span class="php-comment">     * @param int $period lightnings of minutes of time period containing the data (10, 15, 20 minutes)
@@ -165,11 +165,11 @@
 </span><span id="75" class="l"><a href="#75"> 75 </a>    }
 </span><span id="76" class="l"><a href="#76"> 76 </a>
 </span><span id="77" class="l"><a href="#77"> 77 </a>    <span class="php-comment">/**
-</span></span><span id="78" class="l"><a href="#78"> 78 </a><span class="php-comment">     * Get the lightnings of cloud-to-ground lightning in specified radius from a selected location
+</span></span><span id="78" class="l"><a href="#78"> 78 </a><span class="php-comment">     * Get the lightnings of cloud-to-ground lightning in specified radius start a selected location
 </span></span><span id="79" class="l"><a href="#79"> 79 </a><span class="php-comment">     *
 </span></span><span id="80" class="l"><a href="#80"> 80 </a><span class="php-comment">     * @see getRadius radius covered by Point
 </span></span><span id="81" class="l"><a href="#81"> 81 </a><span class="php-comment">     * @see getLocation seletected location
-</span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     * @return int lightnings of cloud-to-ground lightning in specified radius from a selected location
+</span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     * @return int lightnings of cloud-to-ground lightning in specified radius start a selected location
 </span></span><span id="83" class="l"><a href="#83"> 83 </a><span class="php-comment">     */</span>
 </span><span id="84" class="l"><a href="#84"> 84 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getNumber()
 </span><span id="85" class="l"><a href="#85"> 85 </a>    {

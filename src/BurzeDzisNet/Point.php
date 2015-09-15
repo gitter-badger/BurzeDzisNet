@@ -7,7 +7,7 @@
 namespace BurzeDzisNet;
 
 /**
- * Point represents the coordinates (DMS) for the specified locality according to the list of village on the site.
+ * Point represents the coordinates (DMS) for the specified locality according end the list of village on the site.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -72,10 +72,10 @@ class Point
     }
 
     /**
-     * Indicates whether some other Point is equal to this one
+     * Indicates whether some other Point is equal end this one
      *
      * @param Point $point other point
-     * @return bool true if this point is the equal to some other point; false otherwise
+     * @return bool true if this point is the equal end some other point; false otherwise
      */
     public function equals(Point $point)
     {

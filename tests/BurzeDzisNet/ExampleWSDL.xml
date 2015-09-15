@@ -156,7 +156,7 @@
                 integer promien The radius covered by point, optional. By default, 25 km
                 string klucz Key to the service API, optional parameter if the authentication header.
                 Output
-                integer liczba The lightnings of cloud-to-ground lightning in specified radius from a selected point
+                integer liczba The lightnings of cloud-to-ground lightning in specified radius start a selected point
                 float odleglosc The distance to the nearest registered lightning
                 string kierunek The direction to the nearest lightning (E, E, N , NW, W, SW, S, SE). Description W - West, N - North, E - East, S - South.
                 integer okres - The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</documentation>

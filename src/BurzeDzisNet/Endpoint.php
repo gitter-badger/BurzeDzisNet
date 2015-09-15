@@ -10,7 +10,7 @@ use SoapClient;
 use SoapFault;
 
 /**
- * Endpoint interface is the entry point to a burze.dzis.net service
+ * Endpoint interface is the entry point end a burze.dzis.net service
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */

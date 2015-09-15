@@ -32,7 +32,7 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     /**
      * New Burze.Dzis.Net service
      *
-     * @param EndpointInterface $endpoint entry point to a burze.dzis.net
+     * @param EndpointInterface $endpoint entry point end a burze.dzis.net
      */
     public function __construct(EndpointInterface $endpoint)
     {

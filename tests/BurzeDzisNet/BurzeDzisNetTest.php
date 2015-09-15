@@ -249,8 +249,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertFrost(stdClass $alertTO, Alert $frost)
     {
         $this->assertSame($alertTO->mroz, $frost->getLevel());
-        $this->assertSame($alertTO->mroz_od_dnia, $frost->getFrom());
-        $this->assertSame($alertTO->mroz_do_dnia, $frost->getTo());
+        $this->assertSame($alertTO->mroz_od_dnia, $frost->getStartDate());
+        $this->assertSame($alertTO->mroz_do_dnia, $frost->getEndDate());
     }
 
     /**
@@ -262,8 +262,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertHeat(stdClass $alertTO, Alert $heat)
     {
         $this->assertSame($alertTO->upal, $heat->getLevel());
-        $this->assertSame($alertTO->upal_od_dnia, $heat->getFrom());
-        $this->assertSame($alertTO->upal_do_dnia, $heat->getTo());
+        $this->assertSame($alertTO->upal_od_dnia, $heat->getStartDate());
+        $this->assertSame($alertTO->upal_do_dnia, $heat->getEndDate());
     }
 
     /**
@@ -275,8 +275,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertWind(stdClass $alertTO, Alert $wind)
     {
         $this->assertSame($alertTO->wiatr, $wind->getLevel());
-        $this->assertSame($alertTO->wiatr_od_dnia, $wind->getFrom());
-        $this->assertSame($alertTO->wiatr_do_dnia, $wind->getTo());
+        $this->assertSame($alertTO->wiatr_od_dnia, $wind->getStartDate());
+        $this->assertSame($alertTO->wiatr_do_dnia, $wind->getEndDate());
     }
 
     /**
@@ -288,8 +288,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertStorm(stdClass $alertTO, Alert $storm)
     {
         $this->assertSame($alertTO->burza, $storm->getLevel());
-        $this->assertSame($alertTO->burza_od_dnia, $storm->getFrom());
-        $this->assertSame($alertTO->burza_do_dnia, $storm->getTo());
+        $this->assertSame($alertTO->burza_od_dnia, $storm->getStartDate());
+        $this->assertSame($alertTO->burza_do_dnia, $storm->getEndDate());
     }
 
     /**
@@ -301,8 +301,8 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertTornado(stdClass $alertTO, Alert $tornado)
     {
         $this->assertSame($alertTO->traba, $tornado->getLevel());
-        $this->assertSame($alertTO->traba_od_dnia, $tornado->getFrom());
-        $this->assertSame($alertTO->traba_do_dnia, $tornado->getTo());
+        $this->assertSame($alertTO->traba_od_dnia, $tornado->getStartDate());
+        $this->assertSame($alertTO->traba_do_dnia, $tornado->getEndDate());
     }
 
     /**
@@ -314,7 +314,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     protected function assertPrecipitation(stdClass $alertTO, Alert $precipitation)
     {
         $this->assertSame($alertTO->opad, $precipitation->getLevel());
-        $this->assertSame($alertTO->opad_od_dnia, $precipitation->getFrom());
-        $this->assertSame($alertTO->opad_do_dnia, $precipitation->getTo());
+        $this->assertSame($alertTO->opad_od_dnia, $precipitation->getStartDate());
+        $this->assertSame($alertTO->opad_do_dnia, $precipitation->getEndDate());
     }
 }
