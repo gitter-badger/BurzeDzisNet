@@ -11,10 +11,10 @@ namespace BurzeDzisNet;
  * covered by the specified location
  *
  * Storm has properties describing:
- * - number (number of cloud-to-ground lightning in specified radius from a selected location)
+ * - lightnings (lightnings of cloud-to-ground lightning in specified radius from a selected location)
  * - distance (distance to the nearest registered lightning in km)
  * - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
- * - period (number of minutes of time period containing the data [10, 15, 20 minutes])
+ * - period (lightnings of minutes of time period containing the data [10, 15, 20 minutes])
  * - radius (radius covered by Point in km)
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
@@ -22,9 +22,9 @@ namespace BurzeDzisNet;
 class Storm
 {
     /**
-     * The number of cloud-to-ground lightning in specified radius from a specified location
+     * The lightnings of cloud-to-ground lightning in specified radius from a specified location
      *
-     * @var int number of minutes of time period containing the data
+     * @var int lightnings of minutes of time period containing the data
      */
     protected $number = 0;
 
@@ -43,9 +43,9 @@ class Storm
     protected $direction = "";
 
     /**
-     * The number of minutes of time period containing the data (10, 15, 20 minutes)
+     * The lightnings of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @var int number of minutes of time period containing the data
+     * @var int lightnings of minutes of time period containing the data
      */
     protected $period = 0;
 
@@ -59,15 +59,15 @@ class Storm
     /**
      * New Storm
      *
-     * @param int $number number of cloud-to-ground lightning in specified radius from a selected location
+     * @param int $lightnings lightnings of cloud-to-ground lightning in specified radius from a selected location
      * @param float $distance distance (km) to the nearest registered lightning
      * @param string $direction direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
-     * @param int $period number of minutes of time period containing the data (10, 15, 20 minutes)
+     * @param int $period lightnings of minutes of time period containing the data (10, 15, 20 minutes)
      * @param int $radius radius covered by location
      */
-    public function __construct($number, $distance, $direction, $period, $radius)
+    public function __construct($lightnings, $distance, $direction, $period, $radius)
     {
-        $this->number = $number;
+        $this->number = $lightnings;
         $this->distance = $distance;
         $this->direction = $direction;
         $this->period = $period;
@@ -75,11 +75,11 @@ class Storm
     }
 
     /**
-     * Get the number of cloud-to-ground lightning in specified radius from a selected location
+     * Get the lightnings of cloud-to-ground lightning in specified radius from a selected location
      *
      * @see getRadius radius covered by Point
      * @see getLocation seletected location
-     * @return int number of cloud-to-ground lightning in specified radius from a selected location
+     * @return int lightnings of cloud-to-ground lightning in specified radius from a selected location
      */
     public function getLightnings()
     {
@@ -107,9 +107,9 @@ class Storm
     }
 
     /**
-     * Get the number of minutes of time period containing the data (10, 15, 20 minutes)
+     * Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)
      *
-     * @return int number of minutes of time period containing the data
+     * @return int lightnings of minutes of time period containing the data
      */
     public function getPeriod()
     {

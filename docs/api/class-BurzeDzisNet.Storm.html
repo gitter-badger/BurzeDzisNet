@@ -97,10 +97,10 @@
 covered by the specified location</p>
 
 <p>Storm has properties describing:
-- number (number of cloud-to-ground lightning in specified radius from a selected location)
+- lightnings (lightnings of cloud-to-ground lightning in specified radius from a selected location)
 - distance (distance to the nearest registered lightning in km)
 - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
-- period (number of minutes of time period containing the data [10, 15, 20 minutes])
+- period (lightnings of minutes of time period containing the data [10, 15, 20 minutes])
 - radius (radius covered by Point in km)</p>
 	</div>
 
@@ -140,7 +140,7 @@ covered by the specified location</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#59-75" title="Go to source code">__construct</a>( <span>integer <var>$number</var></span>, <span>float <var>$distance</var></span>, <span>string <var>$direction</var></span>, <span>integer <var>$period</var></span>, <span>integer <var>$radius</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#59-75" title="Go to source code">__construct</a>( <span>integer <var>$lightnings</var></span>, <span>float <var>$distance</var></span>, <span>string <var>$direction</var></span>, <span>integer <var>$period</var></span>, <span>integer <var>$radius</var></span> )</code>
 
 			<div class="description short">
 				<p>New Storm</p>
@@ -152,14 +152,14 @@ covered by the specified location</p>
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$number</var></dt>
-						<dd>number of cloud-to-ground lightning in specified radius from a selected location</dd>
+						<dt><var>$lightnings</var></dt>
+						<dd>lightnings of cloud-to-ground lightning in specified radius from a selected location</dd>
 						<dt><var>$distance</var></dt>
 						<dd>distance (km) to the nearest registered lightning</dd>
 						<dt><var>$direction</var></dt>
 						<dd>direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)</dd>
 						<dt><var>$period</var></dt>
-						<dd>number of minutes of time period containing the data (10, 15, 20 minutes)</dd>
+						<dd>lightnings of minutes of time period containing the data (10, 15, 20 minutes)</dd>
 						<dt><var>$radius</var></dt>
 						<dd>radius covered by location</dd>
 					</dl></div>
@@ -185,17 +185,17 @@ covered by the specified location</p>
 			<code><a href="source-class-BurzeDzisNet.Storm.html#77-87" title="Go to source code">getNumber</a>( )</code>
 
 			<div class="description short">
-				<p>Get the number of cloud-to-ground lightning in specified radius from a selected location</p>
+				<p>Get the lightnings of cloud-to-ground lightning in specified radius from a selected location</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get the number of cloud-to-ground lightning in specified radius from a selected location</p>
+				<p>Get the lightnings of cloud-to-ground lightning in specified radius from a selected location</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>number of cloud-to-ground lightning in specified radius from a selected location
+						integer<br>lightnings of cloud-to-ground lightning in specified radius from a selected location
 					</div>
 
 
@@ -289,17 +289,17 @@ covered by the specified location</p>
 			<code><a href="source-class-BurzeDzisNet.Storm.html#109-117" title="Go to source code">getPeriod</a>( )</code>
 
 			<div class="description short">
-				<p>Get the number of minutes of time period containing the data (10, 15, 20 minutes)</p>
+				<p>Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get the number of minutes of time period containing the data (10, 15, 20 minutes)</p>
+				<p>Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>number of minutes of time period containing the data
+						integer<br>lightnings of minutes of time period containing the data
 					</div>
 
 
@@ -357,27 +357,27 @@ covered by the specified location</p>
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="number" id="$number">
+		<tr data-order="lightnings" id="$lightnings">
 			<td class="attributes"><code>
 				protected  
 				integer
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Storm.html#24-29" title="Go to source code"><var>$number</var></a>
+					<a href="source-class-BurzeDzisNet.Storm.html#24-29" title="Go to source code"><var>$lightnings</var></a>
 
 				<div class="description short">
-					<p>The number of cloud-to-ground lightning in specified radius from a specified location</p>
+					<p>The lightnings of cloud-to-ground lightning in specified radius from a specified location</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The number of cloud-to-ground lightning in specified radius from a specified location</p>
+					<p>The lightnings of cloud-to-ground lightning in specified radius from a specified location</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$number" class="anchor">#</a>
+					<a href="#$lightnings" class="anchor">#</a>
 					<code><span class="php-num">0</span></code>
 				</div>
 			</td>
@@ -442,11 +442,11 @@ covered by the specified location</p>
 					<a href="source-class-BurzeDzisNet.Storm.html#45-50" title="Go to source code"><var>$period</var></a>
 
 				<div class="description short">
-					<p>The number of minutes of time period containing the data (10, 15, 20 minutes)</p>
+					<p>The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The number of minutes of time period containing the data (10, 15, 20 minutes)</p>
+					<p>The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
 
 				</div>
 			</td>
