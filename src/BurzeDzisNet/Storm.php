@@ -75,7 +75,7 @@ class Storm
     }
 
     /**
-     * Get the lightnings of cloud-to-ground lightning in specified radius from a selected location
+     * Get the number of cloud-to-ground lightning in specified radius from a selected location
      *
      * @see getRadius radius covered by Point
      * @see getLocation seletected location
@@ -107,7 +107,7 @@ class Storm
     }
 
     /**
-     * Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)
+     * Get the number of minutes of time period containing the data (10, 15, 20 minutes)
      *
      * @return int number of minutes of time period containing the data
      */
