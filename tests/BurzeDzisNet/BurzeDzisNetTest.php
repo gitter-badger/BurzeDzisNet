@@ -102,7 +102,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getStormReport
+     * @covers BurzeDzisNet\BurzeDzisNet::getStorm
      */
     public function testGetStormReport()
     {
@@ -118,7 +118,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
-        $storm = (new BurzeDzisNet($endpoint))->getStormReport(new Point(25.17, 54.41), 50);
+        $storm = (new BurzeDzisNet($endpoint))->getStorm(new Point(25.17, 54.41), 50);
         $this->assertSame("NE", $storm->getDirection());
         $this->assertSame(50, $storm->getRadius());
         $this->assertSame(80.72, $storm->getDistance());
@@ -127,7 +127,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers BurzeDzisNet\BurzeDzisNet::getStormReport
+     * @covers BurzeDzisNet\BurzeDzisNet::getStorm
      * @expectedException SoapFault
      */
     public function testGetStormReportSoapFault()
@@ -145,7 +145,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
-        (new BurzeDzisNet($endpoint))->getStormReport(new Point(25.17, 54.41), 50);
+        (new BurzeDzisNet($endpoint))->getStorm(new Point(25.17, 54.41), 50);
     }
 
     /**

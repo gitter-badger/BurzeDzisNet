@@ -44,7 +44,7 @@ interface BurzeDzisNetInterface
      * @return Storm information about registered lightnings
      * @throws \SoapFault soap error
      */
-    public function getStormReport(Point $point, $radius);
+    public function getStorm(Point $point, $radius);
 
     /**
      * Get set of weather alerts for the given point

@@ -81,7 +81,7 @@ class BurzeDzisNet implements BurzeDzisNetInterface
      * @return Storm information about registered lightnings
      * @throws \SoapFault soap error
      */
-    public function getStormReport(Point $point, $radius = 25)
+    public function getStorm(Point $point, $radius = 25)
     {
         $dto = $this->client->szukaj_burzy(
             $point->getY(),
