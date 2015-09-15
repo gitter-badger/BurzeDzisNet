@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442339281">
-  <project timestamp="1442339281">
+<coverage generated="1442345957">
+  <project timestamp="1442345957">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
           <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
         </class>
-        <line num="42" type="method" name="__construct" crap="1" count="1"/>
-        <line num="44" type="stmt" count="1"/>
-        <line num="45" type="stmt" count="1"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="47" type="stmt" count="1"/>
-        <line num="55" type="method" name="getLevel" crap="1" count="1"/>
-        <line num="57" type="stmt" count="1"/>
-        <line num="65" type="method" name="getStartDate" crap="1" count="1"/>
-        <line num="67" type="stmt" count="1"/>
-        <line num="75" type="method" name="getEndDate" crap="1" count="1"/>
-        <line num="77" type="stmt" count="1"/>
-        <metrics loc="79" ncloc="35" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
+        <line num="46" type="method" name="__construct" crap="1" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="59" type="method" name="getLevel" crap="1" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="69" type="method" name="getStartDate" crap="1" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="79" type="method" name="getEndDate" crap="1" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <metrics loc="83" ncloc="35" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
       </file>
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/BurzeDzisNet.php">
         <class name="BurzeDzisNet" namespace="BurzeDzisNet">
@@ -200,6 +200,6 @@
     <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/EndpointInterface.php">
       <metrics loc="37" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="8" loc="741" ncloc="352" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="125" elements="155" coveredelements="155"/>
+    <metrics files="8" loc="745" ncloc="352" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="125" elements="155" coveredelements="155"/>
   </project>
 </coverage>

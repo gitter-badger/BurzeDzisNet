@@ -16,32 +16,32 @@ class Alert
 {
 
     /**
-     * Alert level on scale
+     * Alert level
      *
      * @var int alert level
      */
     protected $level = 0;
 
     /**
-     * Start day of weather alert
+     * Start day
      *
-     * @var string start day of weather alert
+     * @var string start day
      */
     protected $start = "";
 
     /**
-     * End day of weather alert
+     * End day
      *
-     * @var string end day of weather alert
+     * @var string end day
      */
     protected $end = "";
 
     /**
      * New weather alert
      *
-     * @param $level level on alert scale
-     * @param $start start day of weather alert
-     * @param $end end day of weather alert
+     * @param $level alert level
+     * @param $start start day
+     * @param $end end day
      */
     public function __construct($level, $start, $end)
     {
@@ -51,10 +51,10 @@ class Alert
     }
 
     /**
-     * Get level on alert scale
+     * Get alert level
      *
      * @see https://burze.dzis.net/?page=mapa_ostrzezen Alert scale
-     * @return int level on alert scale
+     * @return int alert level
      */
     public function getLevel()
     {
@@ -62,9 +62,9 @@ class Alert
     }
 
     /**
-     * Get start day of weather alert
+     * Get start day
      *
-     * @return string start day of alert
+     * @return string start day
      */
     public function getStartDate()
     {
@@ -72,9 +72,9 @@ class Alert
     }
 
     /**
-     * Get end day of weather alert
+     * Get end day
      *
-     * @return string end day of alert
+     * @return string end day
      */
     public function getEndDate()
     {
