@@ -28,7 +28,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 #### Storm report
 
 ```php
-    $report = $burzeDzisNet->getStormReport($madrid);
+    $report = $burzeDzisNet->getStorm($madrid);
 ```
 
 #### Weather alert
