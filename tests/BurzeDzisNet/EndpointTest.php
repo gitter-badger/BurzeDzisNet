@@ -43,7 +43,6 @@ class EndpointTest extends PHPUnit_Framework_TestCase
         $client = $endpoint->getClient();
         $client2 = $endpoint->getClient();
         $this->assertInstanceOf("SoapClient", $client);
-        $this->assertEquals($client, $client2);
         $this->assertNotSame($client, $client2);
     }
 
