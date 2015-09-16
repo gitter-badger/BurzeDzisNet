@@ -1,6 +1,7 @@
 # BurzeDzisNet
 
-PHP client for [burze.dzis.net](https://burze.dzis.net)
+Fully immutable PHP client for [burze.dzis.net](https://burze.dzis.net)
+
 
 ## Resources
 - [Documentation](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/Index.md)
