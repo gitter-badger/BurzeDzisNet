@@ -6,21 +6,9 @@ Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
 # Access to aplication programming interface
 
-To get your credentials create free account on burze.dzis.net and request for API key.
+To access remote services you must create free account on burze.dzis.net and request for API key.
 
-# Remote calls
 
-##### boolean BurzeDzisNet::verifyApiKey(string $apiKey)
-checks if a given API key is authorized
-
-##### Point BurzeDzisNet::locate(string $localityName)
-get the point representing DMS coordinates for the specified locality according to the list of village on the site
-
-##### Storm BurzeDzisNet::getStorm(Point $locality, [int $monitoringRadius])
-checks if a given point with a specified radius of monitoring registered lightnings
-
-##### WeatherAlert BurzeDzisNet::getWeatherAlert(Point $locality)
-checks if a given point, issued weather warnings. __Only the Polish area__.
  
 #Example of usage 
 ```php
