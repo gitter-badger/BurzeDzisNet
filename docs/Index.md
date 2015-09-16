@@ -8,8 +8,12 @@ Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
 To access remote services you must create free account on burze.dzis.net and request for API key.
 
+#Instalation
 
- 
+```bash
+composer require krzysiekpiasecki/burzedzisnet
+```
+
 #Example of usage 
 ```php
 namespace BurzeDzisNet;
