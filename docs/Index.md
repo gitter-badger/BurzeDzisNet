@@ -11,7 +11,7 @@ To access remote services you must create free account on burze.dzis.net and req
 #Instalation
 
 ```bash
-composer require krzysiekpiasecki/burzedzisnet
+$ composer require krzysiekpiasecki/burzedzisnet
 ```
 
 #Example of usage 
