@@ -1,6 +1,6 @@
 {
   "name": "krzysiekpiasecki/burzedzisnet",
-  "description": "PHP client for burze.dzis.net API",
+  "description": "PHP client for burze.dzis.net",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
