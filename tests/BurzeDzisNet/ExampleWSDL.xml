@@ -45,13 +45,13 @@
     <portType name="serwerSOAPPort">
         <operation name="KeyAPI">
             <documentation>Uwierzytelnianie do uslugi API
-                Input 
+                Input
                 string klucz do uslugi API
                 Output
                 boolean
                 --- ENG ---
                 Authentication service API
-                Input 
+                Input
                 string klucz Key to the service API
                 Output
                 boolean</documentation>
@@ -64,7 +64,7 @@
                 string nazwa Nazwa miejscowosci
                 string klucz do uslugi API, parametr opcjonalny jezeli uwierzytelnienie wykonane poprzez naglowek.
                 Output
-                float x, 
+                float x,
                 float y Wspolrzedne (DMS) miejscowosci.
                 --- ENG ---
                 Sets the coordinates for the specified locality. According to the list of village on the site.
@@ -73,7 +73,7 @@
                 string klucz Key to the service API, optional parameter if the authentication header.
                 Output
                 float x
-                float y Coordinates of a point (DMS).</documentation>
+                float y Coordinates of a location (DMS).</documentation>
             <input message="tns:miejscowoscIn"/>
             <output message="tns:miejscowoscOut"/>
         </operation>
@@ -89,21 +89,21 @@
                 integer mroz,
                 string mroz_od_dnia Mroz ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
                 string mroz_do_dnia Mroz ostrzezenie do dnia (UTC),
-                integer upal, 
+                integer upal,
                 string upal_od_dnia Upal ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
                 string upal_do_dnia Upal ostrzezenie do dnia (UTC),
                 integer wiatr,
                 string wiatr_od_dnia Wiatr ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
                 string wiatr_do_dnia Wiatr ostrzezenie do dnia (UTC),
-                integer opad, 
+                integer opad,
                 string opad_od_dnia Opad ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
                 string opad_do_dnia Opad ostrzezenie do dnia (UTC),
-                integer burza, 
+                integer burza,
                 string burza_od_dnia Burza ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string burza_do_dnia Burza ostrzezenie do dnia (UTC), 
-                integer traba. 
+                string burza_do_dnia Burza ostrzezenie do dnia (UTC),
+                integer traba.
                 string traba_od_dnia Traba ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string traba_do_dnia Traba ostrzezenie do dnia (UTC), 
+                string traba_do_dnia Traba ostrzezenie do dnia (UTC),
                 Oznaczenie 0 - brak, 1 - I stopien, 2 - II stopien, 3 - III stopien.
                 ---- ENG ----
                 Checks if a given point, issued weather warnings. Only the Polish area.
@@ -116,29 +116,29 @@
                 string do_dnia Not used,
                 integer mroz Frost,
                 string mroz_od_dnia Warning frost of date (UTC) eg 2014-12-21 20:45:00,
-                string mroz_do_dnia Warning frost to day, 
-                integer upal Heat, 
+                string mroz_do_dnia Warning frost to day,
+                integer upal Heat,
                 string upal_od_dnia Warning heat of date (UTC) eg 2014-12-21 20:45:00,
-                string upal_do_dnia Warning heat to day, 
+                string upal_do_dnia Warning heat to day,
                 integer wiatr Wind,
                 string wiatr_od_dnia Warning wind of date (UTC) eg 2014-12-21 20:45:00,
-                string wiatr_do_dnia Warning wind to day,  
-                integer opad Precipitation, 
+                string wiatr_do_dnia Warning wind to day,
+                integer opad Precipitation,
                 string opad_od_dnia Warning precipitation of date (UTC) eg 2014-12-21 20:45:00,
-                string opad_do_dnia Warning precipitation to day, 
-                integer burza Storms, 
+                string opad_do_dnia Warning precipitation to day,
+                integer burza Storms,
                 string burza_od_dnia Warning storm of date (UTC) eg 2014-12-21 20:45:00,
-                string burza_do_dnia Warning storm to day, 
-                integer traba Tornados. 
+                string burza_do_dnia Warning storm to day,
+                integer traba Tornados.
                 string traba_od_dnia Warning tornados of date (UTC) eg 2014-12-21 20:45:00,
-                string traba_do_dnia Warning tornados to day, 
+                string traba_do_dnia Warning tornados to day,
                 Determination of 0 - no, 1 - first degree, 2 - second degree, 3 - third degree.</documentation>
             <input message="tns:ostrzezenia_pogodoweIn"/>
             <output message="tns:ostrzezenia_pogodoweOut"/>
         </operation>
         <operation name="szukaj_burzy">
             <documentation>Sprawdza czy dla danego punktu o wskazanym promieniu monitorowania. Zarejestrowano wyladowania atmosferyczne.
-                Input 
+                Input
                 string y Wspolrzedna y,
                 string x Wspolrzedna x,
                 integer promien Promien objety analiza, opcjonalne. Domyslnie 25 km,
@@ -156,10 +156,10 @@
                 integer promien The radius covered by point, optional. By default, 25 km
                 string klucz Key to the service API, optional parameter if the authentication header.
                 Output
-                integer liczba The lightnings of cloud-to-ground lightning in specified radius start a selected point
+                integer liczba The number of cloud-to-ground lightning in specified radius from a selected point
                 float odleglosc The distance to the nearest registered lightning
                 string kierunek The direction to the nearest lightning (E, E, N , NW, W, SW, S, SE). Description W - West, N - North, E - East, S - South.
-                integer okres - The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</documentation>
+                integer okres - The number of minutes of time period containing the data (10, 15, 20 minutes)</documentation>
             <input message="tns:szukaj_burzyIn"/>
             <output message="tns:szukaj_burzyOut"/>
         </operation>
@@ -205,7 +205,7 @@
     </binding>
     <service name="serwerSOAPService">
         <port name="serwerSOAPPort" binding="tns:serwerSOAPBinding">
-            <soap:address point="http://burze.dzis.net/soap.php"/>
+            <soap:address location="http://burze.dzis.net/soap.php"/>
         </port>
     </service>
     <message name="KeyAPIIn">

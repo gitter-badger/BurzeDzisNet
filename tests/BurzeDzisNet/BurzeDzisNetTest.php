@@ -317,4 +317,5 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->assertSame($alertTO->opad_od_dnia, $precipitation->getStartDate());
         $this->assertSame($alertTO->opad_do_dnia, $precipitation->getEndDate());
     }
+
 }
