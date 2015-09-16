@@ -4,51 +4,47 @@ The following website is created for users who seek for a solution, which can en
 
 Visit [burze.dzis.net](http://www.burze.dzis.net) for more details
 
-# Access to remote services
+# Access to aplication programming interface
 
 To get your credentials create free account on burze.dzis.net and request for API key.
 
-# Aplication programming interface
+# Remote calls
 
-####Remote client
-
-```php
-    namespace BurzeDzisNet;
-    
-    $burzeDzisNet = new BurzeDzisNet(new Endpoint('Your API key'));
-```
-
-
+#### Verification of Api Key
 #### Locality coordinates
+#### Storm information
+#### Weather aler
 
+#### Example of usage 
 ```php
+namespace BurzeDzisNet;
+
+try {
+
+    $burzeDzisNet = new BurzeDzisNet(
+        new Endpoint('Api Key')
+    );
+
     $madrid = $burzeDzisNet->locate("Madrid");
-```
 
-#### Storm report
+    $storm = $burzeDzisNet->getStorm($madrid);
+    $weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
+    $heat = $weatherAlert->getAlert('heat');
 
-```php
-    $report = $burzeDzisNet->getStorm($madrid);
-```
-
-#### Weather alert
-
-```php
-    $alert = $burzeDzisNet->getWeatherAlert($madrid);
+    echo \sprintf("Madrid: Point (%.2f, %.2f) Lightnings: %d Heat: %d",
+        $madrid->getX(),
+        $madrid->getY(),
+        $storm->getLightnings(),
+        $heat->getLevel()
+    );
     
-    $frost = $alert->getAlert('frost');
-    $heat = $alert->getAlert('heat');
-    $storm = $alert->getAlert('storm');
-    $wind = $alert->getAlert('wind');
-    $tornado = $alert->getAlert('tornado');
-    $precipitation = $alert->getAlert('precipitation');
+} catch (\Exception $e) {
+    \error_log($e);
+    throw $e;
+}
+
 ```
 
-#### API key validation
-
-```php
-    $verified = $burzeDzisNet->verifyApiKey("Api Key");
-```
 # Resources for programmers
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
 - [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/SoftwareMetrics.md)
