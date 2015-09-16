@@ -14,13 +14,13 @@ To get your credentials create free account on burze.dzis.net and request for AP
 checks if a given API key is authorized
 
 ##### Point BurzeDzisNet::locate(string $localityName)
-Get the point representing DMS coordinates for the specified locality according to the list of village on the site
+get the point representing DMS coordinates for the specified locality according to the list of village on the site
 
 ##### Storm BurzeDzisNet::getStorm(Point $locality, [int $monitoringRadius])
-Checks if a given point with a specified radius of monitoring registered lightnings
+checks if a given point with a specified radius of monitoring registered lightnings
 
 ##### WeatherAlert BurzeDzisNet::getWeatherAlert(Point $locality)
-Checks if a given point, issued weather warnings. __Only the Polish area__.
+checks if a given point, issued weather warnings. __Only the Polish area__.
  
 #Example of usage 
 ```php
