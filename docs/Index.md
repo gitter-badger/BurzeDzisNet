@@ -13,9 +13,9 @@ To get your credentials create free account on burze.dzis.net and request for AP
 #### Verification of Api Key
 #### Locality coordinates
 #### Storm information
-#### Weather aler
+#### Weather alert
 
-#### Example of usage 
+#Example of usage 
 ```php
 namespace BurzeDzisNet;
 
