@@ -19,7 +19,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 ```
 
 
-####Locality coordinates
+#### Locality coordinates
 
 ```php
     $madrid = $burzeDzisNet->locate("Madrid");
@@ -33,7 +33,6 @@ To get your credentials create free account on burze.dzis.net and request for AP
 
 #### Weather alert
 
-
 ```php
     $alert = $burzeDzisNet->getWeatherAlert($madrid);
     
@@ -45,6 +44,11 @@ To get your credentials create free account on burze.dzis.net and request for AP
     $precipitation = $alert->getAlert('precipitation');
 ```
 
+#### API key validation
+
+```php
+    $verified = $burzeDzisNet->verifyApiKey("Api Key");
+```
 # Resources for programmers
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
 - [Software metrics](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/SoftwareMetrics.md)

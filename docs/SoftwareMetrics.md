@@ -1,5 +1,12 @@
 # Software metrics 
 
+## Scrutinizer CI
+
+[![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/build.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/build-status/master)
+
+## phploc
 <pre>
 phploc 2.1.4 by Sebastian Bergmann.
 
@@ -61,12 +68,3 @@ Structure
     Global Constants                                 0 (0.00%)
     Class Constants                                  0 (0.00%)
 </pre>
-
-
-# Scrutinizer 
-
-[![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/build.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/build-status/master)
-
-See project on [Scrutinizer](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/)
