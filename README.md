@@ -1,6 +1,6 @@
 # BurzeDzisNet
 
-Fully immutable PHP client for [burze.dzis.net](https://burze.dzis.net)
+PHP client for [burze.dzis.net](https://burze.dzis.net)
 
 
 ## Resources
