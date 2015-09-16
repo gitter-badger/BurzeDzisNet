@@ -10,7 +10,7 @@ To get your credentials create free account on burze.dzis.net and request for AP
 
 # Remote calls
 
-#### Verification of Api Key
+#### Verification of Api key
 #### Locality coordinates
 #### Storm information
 #### Weather alert
