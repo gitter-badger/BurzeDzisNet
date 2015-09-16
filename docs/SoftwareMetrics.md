@@ -1,6 +1,6 @@
 # Software metrics 
 
-## Scrutinizer 
+## Scrutinizer CI
 
 [![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
