@@ -7,11 +7,6 @@ php:
 
 sudo: false
 
-before_install:
-  - rm -rf /temp
-  - composer self-update
-  - wget https://scrutinizer-ci.com/ocular.phar
-
 install:
   - travis_retry composer install --no-interaction --prefer-source
 
@@ -21,3 +16,15 @@ script:
 - rm -rf docs/api
 - vendor/bin/apigen generate --debug --config apigen.dist.neon
 - vendor/bin/phploc src
+
+before_install:
+  - rm -rf /temp
+  - composer self-update
+  - wget https://scrutinizer-ci.com/ocular.phar
+
+after_success:
+  - git status
+  - git commit -m "Update API"
+  - git push
+
+
