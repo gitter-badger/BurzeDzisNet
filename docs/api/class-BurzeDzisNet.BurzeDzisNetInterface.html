@@ -93,7 +93,7 @@
 
 
 	<div class="description">
-	<p>BurzeDzisNetInterface represents services provided by client of burze.dzis.net</p>
+	<p>BurzeDzisNetInterface represents client of burze.dzis.net</p>
 	</div>
 
 
@@ -189,7 +189,7 @@
 			<div class="description detailed hidden">
 				<p>Get point representing location coordinates</p>
 
-<p>If no location returns coordinates [0,0]</p>
+<p>If no location returns Point with coordinates [0,0].</p>
 
 
 					<h4>Parameters</h4>
@@ -213,7 +213,7 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getStormReport" id="_getStormReport">
+		<tr data-order="getStorm" id="_getStorm">
 
 			<td class="attributes"><code>
 				 public 
@@ -223,8 +223,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getStormReport">#</a>
-			<code><a href="source-class-BurzeDzisNet.BurzeDzisNetInterface.html#36-47" title="Go to source code">getStormReport</a>( <span><code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code> <var>$point</var></span>, <span>integer <var>$radius</var></span> )</code>
+			<a class="anchor" href="#_getStorm">#</a>
+			<code><a href="source-class-BurzeDzisNet.BurzeDzisNetInterface.html#36-47" title="Go to source code">getStorm</a>( <span><code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code> <var>$point</var></span>, <span>integer <var>$radius</var></span> )</code>
 
 			<div class="description short">
 				<p>Get storm report</p>
@@ -233,7 +233,7 @@
 			<div class="description detailed hidden">
 				<p>Get storm report</p>
 
-<p>Storm object provide information about registered lightnings with a specified radius of monitoring
+<p>Storm object provide information about registered lightnings and more with a specified radius of monitoring
 covered by the given location</p>
 
 
@@ -242,12 +242,12 @@ covered by the given location</p>
 						<dt><var>$point</var></dt>
 						<dd>monitored location</dd>
 						<dt><var>$radius</var></dt>
-						<dd>radius of monitoring (default 25 km)</dd>
+						<dd>radius of monitoring</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></code><br>information about registered lightnings
+						<code><a href="class-BurzeDzisNet.Storm.html">BurzeDzisNet\Storm</a></code><br>information about registered lightnings and more
 					</div>
 
 					<h4>Throws</h4>
@@ -274,11 +274,11 @@ covered by the given location</p>
 			<code><a href="source-class-BurzeDzisNet.BurzeDzisNetInterface.html#49-55" title="Go to source code">getWeatherAlert</a>( <span><code><a href="class-BurzeDzisNet.Point.html">BurzeDzisNet\Point</a></code> <var>$point</var></span> )</code>
 
 			<div class="description short">
-				<p>Get weather alert for the given point</p>
+				<p>Get set of weather alerts for the given point</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get weather alert for the given point</p>
+				<p>Get set of weather alerts for the given point</p>
 
 
 					<h4>Parameters</h4>
@@ -289,7 +289,7 @@ covered by the given location</p>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>weather alerts
+						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>set of weather alerts
 					</div>
 
 

@@ -97,10 +97,10 @@
 covered by the specified location</p>
 
 <p>Storm has properties describing:
-- lightnings (lightnings of cloud-to-ground lightning in specified radius start a selected location)
+- lightnings (number of cloud-end-ground lightning in specified radius for a selected location)
 - distance (distance to the nearest registered lightning in km)
 - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
-- period (lightnings of minutes of time period containing the data [10, 15, 20 minutes])
+- period (number of minutes of time period containing the data [10, 15, 20 minutes])
 - radius (radius covered by Point in km)</p>
 	</div>
 
@@ -153,13 +153,13 @@ covered by the specified location</p>
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$lightnings</var></dt>
-						<dd>lightnings of cloud-to-ground lightning in specified radius start a selected location</dd>
+						<dd>number of cloud-end-ground lightning in specified radius for a selected location</dd>
 						<dt><var>$distance</var></dt>
 						<dd>distance (km) to the nearest registered lightning</dd>
 						<dt><var>$direction</var></dt>
 						<dd>direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)</dd>
 						<dt><var>$period</var></dt>
-						<dd>lightnings of minutes of time period containing the data (10, 15, 20 minutes)</dd>
+						<dd>number of minutes of time containing the data (10, 15, 20 minutes)</dd>
 						<dt><var>$radius</var></dt>
 						<dd>radius covered by location</dd>
 					</dl></div>
@@ -171,7 +171,7 @@ covered by the specified location</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getNumber" id="_getNumber">
+		<tr data-order="getLightnings" id="_getLightnings">
 
 			<td class="attributes"><code>
 				 public 
@@ -181,21 +181,21 @@ covered by the specified location</p>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getNumber">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#77-87" title="Go to source code">getNumber</a>( )</code>
+			<a class="anchor" href="#_getLightnings">#</a>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#77-87" title="Go to source code">getLightnings</a>( )</code>
 
 			<div class="description short">
-				<p>Get the lightnings of cloud-to-ground lightning in specified radius start a selected location</p>
+				<p>Get the number of cloud-end-ground lightning in specified radius for a selected location</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get the lightnings of cloud-to-ground lightning in specified radius start a selected location</p>
+				<p>Get the number of cloud-end-ground lightning in specified radius for a selected location</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>lightnings of cloud-to-ground lightning in specified radius start a selected location
+						integer<br>number of cloud-end-ground lightning in specified radius for a selected location
 					</div>
 
 
@@ -275,7 +275,7 @@ covered by the specified location</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getPeriod" id="_getPeriod">
+		<tr data-order="getTimePeriod" id="_getTimePeriod">
 
 			<td class="attributes"><code>
 				 public 
@@ -285,21 +285,21 @@ covered by the specified location</p>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getPeriod">#</a>
-			<code><a href="source-class-BurzeDzisNet.Storm.html#109-117" title="Go to source code">getPeriod</a>( )</code>
+			<a class="anchor" href="#_getTimePeriod">#</a>
+			<code><a href="source-class-BurzeDzisNet.Storm.html#109-117" title="Go to source code">getTimePeriod</a>( )</code>
 
 			<div class="description short">
-				<p>Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
+				<p>Get the number of minutes of time containing the data (10, 15, 20 minutes)</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get the lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
+				<p>Get the number of minutes of time containing the data (10, 15, 20 minutes)</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer<br>lightnings of minutes of time period containing the data
+						integer<br>number of minutes of time containing the data
 					</div>
 
 
@@ -367,11 +367,11 @@ covered by the specified location</p>
 					<a href="source-class-BurzeDzisNet.Storm.html#24-29" title="Go to source code"><var>$lightnings</var></a>
 
 				<div class="description short">
-					<p>The lightnings of cloud-to-ground lightning in specified radius start a specified location</p>
+					<p>The number of cloud-end-ground lightning in specified radius for a specified location</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The lightnings of cloud-to-ground lightning in specified radius start a specified location</p>
+					<p>The number of cloud-end-ground lightning in specified radius for a specified location</p>
 
 				</div>
 			</td>
@@ -442,11 +442,11 @@ covered by the specified location</p>
 					<a href="source-class-BurzeDzisNet.Storm.html#45-50" title="Go to source code"><var>$period</var></a>
 
 				<div class="description short">
-					<p>The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
+					<p>The number of minutes of time containing the data (10, 15, 20 minutes)</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>The lightnings of minutes of time period containing the data (10, 15, 20 minutes)</p>
+					<p>The number of minutes of time containing the data (10, 15, 20 minutes)</p>
 
 				</div>
 			</td>

@@ -93,7 +93,7 @@
 
 
 	<div class="description">
-	<p>Single weather alert</p>
+	<p>Weather alert</p>
 	</div>
 
 
@@ -112,7 +112,9 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-BurzeDzisNet.Alert.html#9-43" title="Go to source code">BurzeDzisNet/Alert.php</a>
+				<b>See:</b>
+				https://burze.dzis.net/?page=severe_weather_alert_map_poland Alert scale<br>
+			<b>Located at</b> <a href="source-class-BurzeDzisNet.Alert.html#9-84" title="Go to source code">BurzeDzisNet/Alert.php</a>
 		<br>
 	</div>
 
@@ -132,16 +134,25 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.Alert.html#20-25" title="Go to source code">__construct</a>( <span> <var>$level</var></span>, <span> <var>$start</var></span>, <span> <var>$to</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#39-51" title="Go to source code">__construct</a>( <span> <var>$level</var></span>, <span> <var>$start</var></span>, <span> <var>$end</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>New weather alert</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>New weather alert</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$level</var></dt>
+						<dd>level</dd>
+						<dt><var>$start</var></dt>
+						<dd>day</dd>
+						<dt><var>$end</var></dt>
+						<dd>day</dd>
+					</dl></div>
 
 
 
@@ -154,24 +165,65 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getLevel">#</a>
-			<code><a href="source-class-BurzeDzisNet.Alert.html#27-30" title="Go to source code">getLevel</a>( )</code>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#53-62" title="Go to source code">getLevel</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Get alert level</p>
 			</div>
 
 			<div class="description detailed hidden">
+				<p>Get alert level</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>alert level
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							https://burze.dzis.net/?page=mapa_ostrzezen Alert scale<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getStartDate" id="_getStartDate">
+
+			<td class="attributes"><code>
+				 public 
+				string
 				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getStartDate">#</a>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#64-72" title="Go to source code">getStartDate</a>( )</code>
+
+			<div class="description short">
+				<p>Get start day</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get start day</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>start day
+					</div>
 
 
 
@@ -179,57 +231,32 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getFrom" id="_getFrom">
+		<tr data-order="getEndDate" id="_getEndDate">
 
 			<td class="attributes"><code>
 				 public 
-				
+				string
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getFrom">#</a>
-			<code><a href="source-class-BurzeDzisNet.Alert.html#32-35" title="Go to source code">getFrom</a>( )</code>
+			<a class="anchor" href="#_getEndDate">#</a>
+			<code><a href="source-class-BurzeDzisNet.Alert.html#74-82" title="Go to source code">getEndDate</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Get end day</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Get end day</p>
 
 
 
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getTo" id="_getTo">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getTo">#</a>
-			<code><a href="source-class-BurzeDzisNet.Alert.html#38-41" title="Go to source code">getTo</a>( )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>end day
+					</div>
 
 
 
@@ -260,14 +287,14 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Alert.html#16" title="Go to source code"><var>$level</var></a>
+					<a href="source-class-BurzeDzisNet.Alert.html#18-23" title="Go to source code"><var>$level</var></a>
 
 				<div class="description short">
-					
+					<p>Alert level</p>
 				</div>
 
 				<div class="description detailed hidden">
-					
+					<p>Alert level</p>
 
 				</div>
 			</td>
@@ -285,14 +312,14 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Alert.html#17" title="Go to source code"><var>$start</var></a>
+					<a href="source-class-BurzeDzisNet.Alert.html#25-30" title="Go to source code"><var>$start</var></a>
 
 				<div class="description short">
-					
+					<p>Start day</p>
 				</div>
 
 				<div class="description detailed hidden">
-					
+					<p>Start day</p>
 
 				</div>
 			</td>
@@ -303,27 +330,27 @@
 				</div>
 			</td>
 		</tr>
-		<tr data-order="to" id="$to">
+		<tr data-order="end" id="$end">
 			<td class="attributes"><code>
 				protected  
 				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-BurzeDzisNet.Alert.html#18" title="Go to source code"><var>$to</var></a>
+					<a href="source-class-BurzeDzisNet.Alert.html#32-37" title="Go to source code"><var>$end</var></a>
 
 				<div class="description short">
-					
+					<p>End day</p>
 				</div>
 
 				<div class="description detailed hidden">
-					
+					<p>End day</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$to" class="anchor">#</a>
+					<a href="#$end" class="anchor">#</a>
 					<code><span class="php-quote">&quot;&quot;</span></code>
 				</div>
 			</td>

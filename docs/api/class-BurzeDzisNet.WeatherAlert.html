@@ -93,7 +93,7 @@
 
 
 	<div class="description">
-	<p>Weather alerts</p>
+	<p>Weather alerts represents set of alerts</p>
 	</div>
 
 	<dl class="tree well">
@@ -141,7 +141,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#34-42" title="Go to source code">__construct</a>( <span><code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code> <var>$alerts</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#34-42" title="Go to source code">__construct</a>( <span><code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code> <var>$alert</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>New WeatherAlert</p>
@@ -153,8 +153,8 @@
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$alerts</var></dt>
-						<dd>weather alerts</dd>
+						<dt><var>$alert</var></dt>
+						<dd>set of alerts</dd>
 					</dl></div>
 
 
@@ -175,27 +175,27 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_withAlert">#</a>
-			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#44-60" title="Go to source code">withAlert</a>( <span><code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code> <var>$name</var></span>, <span><code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code> <var>$alert</var></span> )</code>
+			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#44-60" title="Go to source code">withAlert</a>( <span>string <var>$name</var></span>, <span><code><a href="class-BurzeDzisNet.Alert.html">BurzeDzisNet\Alert</a></code> <var>$alert</var></span> )</code>
 
 			<div class="description short">
-				<p>Get new WeatherAlert extended by the new alerts</p>
+				<p>Get WeatherAlert containing new alert</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get new WeatherAlert extended by the new alerts</p>
+				<p>Get WeatherAlert containing new alert</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$name</var></dt>
-						<dd>$alert alerts weather alerts</dd>
+						<dd>alert name</dd>
 						<dt><var>$alert</var></dt>
-						<dd>$name alert name</dd>
+						<dd></dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>new weather alerts extended by the new alerts
+						<code><a href="class-BurzeDzisNet.WeatherAlert.html">BurzeDzisNet\WeatherAlert</a></code><br>new instance of WeatherAlert containing specified alert
 					</div>
 
 
@@ -295,11 +295,11 @@
 			<code><a href="source-class-BurzeDzisNet.WeatherAlert.html#92-103" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
-				<p>Get all alerts as array</p>
+				<p>Get all alerts</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get all alerts as array</p>
+				<p>Get all alerts</p>
 
 
 

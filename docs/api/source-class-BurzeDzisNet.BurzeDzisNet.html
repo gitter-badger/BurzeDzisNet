@@ -122,7 +122,7 @@
 </span><span id="32" class="l"><a href="#32"> 32 </a>    <span class="php-comment">/**
 </span></span><span id="33" class="l"><a href="#33"> 33 </a><span class="php-comment">     * New Burze.Dzis.Net service
 </span></span><span id="34" class="l"><a href="#34"> 34 </a><span class="php-comment">     *
-</span></span><span id="35" class="l"><a href="#35"> 35 </a><span class="php-comment">     * @param EndpointInterface $endpoint entry point to a burze.dzis.net
+</span></span><span id="35" class="l"><a href="#35"> 35 </a><span class="php-comment">     * @param EndpointInterface $endpoint entry point to burze.dzis.net
 </span></span><span id="36" class="l"><a href="#36"> 36 </a><span class="php-comment">     */</span>
 </span><span id="37" class="l"><a href="#37"> 37 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(EndpointInterface <span class="php-var">$endpoint</span>)
 </span><span id="38" class="l"><a href="#38"> 38 </a>    {
@@ -163,15 +163,15 @@
 </span><span id="73" class="l"><a href="#73"> 73 </a>    <span class="php-comment">/**
 </span></span><span id="74" class="l"><a href="#74"> 74 </a><span class="php-comment">     * Get storm report
 </span></span><span id="75" class="l"><a href="#75"> 75 </a><span class="php-comment">     *
-</span></span><span id="76" class="l"><a href="#76"> 76 </a><span class="php-comment">     * Storm object provide information about registered lightnings with a specified radius of monitoring
+</span></span><span id="76" class="l"><a href="#76"> 76 </a><span class="php-comment">     * Storm object provide information about registered lightnings and more with a specified radius of monitoring
 </span></span><span id="77" class="l"><a href="#77"> 77 </a><span class="php-comment">     * covered by the given location
 </span></span><span id="78" class="l"><a href="#78"> 78 </a><span class="php-comment">     *
 </span></span><span id="79" class="l"><a href="#79"> 79 </a><span class="php-comment">     * @param Point $point monitored location
 </span></span><span id="80" class="l"><a href="#80"> 80 </a><span class="php-comment">     * @param int $radius radius of monitoring (default 25 km)
-</span></span><span id="81" class="l"><a href="#81"> 81 </a><span class="php-comment">     * @return Storm information about registered lightnings
+</span></span><span id="81" class="l"><a href="#81"> 81 </a><span class="php-comment">     * @return Storm information about registered lightnings and more
 </span></span><span id="82" class="l"><a href="#82"> 82 </a><span class="php-comment">     * @throws \SoapFault soap error
 </span></span><span id="83" class="l"><a href="#83"> 83 </a><span class="php-comment">     */</span>
-</span><span id="84" class="l"><a href="#84"> 84 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getStormReport(Point <span class="php-var">$point</span>, <span class="php-var">$radius</span> = <span class="php-num">25</span>)
+</span><span id="84" class="l"><a href="#84"> 84 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getStorm(Point <span class="php-var">$point</span>, <span class="php-var">$radius</span> = <span class="php-num">25</span>)
 </span><span id="85" class="l"><a href="#85"> 85 </a>    {
 </span><span id="86" class="l"><a href="#86"> 86 </a>        <span class="php-var">$dto</span> = <span class="php-var">$this</span>-&gt;client-&gt;szukaj_burzy(
 </span><span id="87" class="l"><a href="#87"> 87 </a>            <span class="php-var">$point</span>-&gt;getY(),
