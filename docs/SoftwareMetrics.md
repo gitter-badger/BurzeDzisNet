@@ -1,5 +1,14 @@
 # Software metrics 
 
+## Class design
+- Fully immutable,
+- Declarative,
+- No null references
+- No static dependencies
+- No global dependencies
+- Fully tested
+- Low complexity
+
 ## Scrutinizer CI
 
 [![Code Coverage](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krzysiekpiasecki/BurzeDzisNet/?branch=master)
