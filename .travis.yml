@@ -8,6 +8,7 @@ php:
 sudo: false
 
 before_install:
+  - rm -rf /temp
   - composer self-update
   - wget https://scrutinizer-ci.com/ocular.phar
 
