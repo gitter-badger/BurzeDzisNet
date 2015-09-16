@@ -49,7 +49,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     /**
      * @covers BurzeDzisNet\Endpoint::getClient
      *
-     * @expectedException SoapFault
+     * @expectedException \SoapFault
      */
     public function testGetClientInvalidWSDL()
     {
