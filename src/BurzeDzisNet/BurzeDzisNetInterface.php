@@ -36,12 +36,12 @@ interface BurzeDzisNetInterface
     /**
      * Get storm report
      *
-     * Storm object provide information about registered lightnings with a specified radius of monitoring
+     * Storm object provide information about registered lightnings and more with a specified radius of monitoring
      * covered by the given location
      *
      * @param Point $point monitored location
      * @param int $radius radius of monitoring
-     * @return Storm information about registered lightnings
+     * @return Storm information about registered lightnings and more
      * @throws \SoapFault soap error
      */
     public function getStorm(Point $point, $radius);
