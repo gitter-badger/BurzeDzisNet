@@ -1,8 +1,8 @@
 # Software metrics 
 
 ## Class design
-- Fully immutable,
-- Declarative,
+- Fully immutable
+- Declarative
 - No null references
 - No static dependencies
 - No global dependencies
