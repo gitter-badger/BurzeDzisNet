@@ -7,12 +7,7 @@
                     <xsd:element name="y" type="xsd:float" nillable="true"/>
                     <xsd:element name="x" type="xsd:float" nillable="true"/>
                 </xsd:all>
-            </xsd:complexType>
-            <xsd:complexType name="MyComplexTypeOstrzezenia">
-                <xsd:all>
-                    <xsd:element name="od_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="do_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="mroz" type="xsd:int" nillable="true"/>
+            </xsd:complex
                     <xsd:element name="mroz_od_dnia" type="xsd:string" nillable="true"/>
                     <xsd:element name="mroz_do_dnia" type="xsd:string" nillable="true"/>
                     <xsd:element name="upal" type="xsd:int" nillable="true"/>
@@ -24,137 +19,7 @@
                     <xsd:element name="opad" type="xsd:int" nillable="true"/>
                     <xsd:element name="opad_od_dnia" type="xsd:string" nillable="true"/>
                     <xsd:element name="opad_do_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="burza" type="xsd:int" nillable="true"/>
-                    <xsd:element name="burza_od_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="burza_do_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="traba" type="xsd:int" nillable="true"/>
-                    <xsd:element name="traba_od_dnia" type="xsd:string" nillable="true"/>
-                    <xsd:element name="traba_do_dnia" type="xsd:string" nillable="true"/>
-                </xsd:all>
-            </xsd:complexType>
-            <xsd:complexType name="MyComplexTypeBurza">
-                <xsd:all>
-                    <xsd:element name="liczba" type="xsd:int" nillable="true"/>
-                    <xsd:element name="odleglosc" type="xsd:float" nillable="true"/>
-                    <xsd:element name="kierunek" type="xsd:string" nillable="true"/>
-                    <xsd:element name="okres" type="xsd:int" nillable="true"/>
-                </xsd:all>
-            </xsd:complexType>
-        </xsd:schema>
-    </types>
-                string nazwa Name of the town
-                string klucz Key to the service API, optional parameter if the authentication header.
-                Output
-                float x
-                float y Coordinates of a point (DMS).</documentation>
-            <input message="tns:miejscowoscIn"/>
-            <output message="tns:miejscowoscOut"/>
-        </operation>
-        <operation name="ostrzezenia_pogodowe">
-            <documentation>Sprawdza czy dla danego punktu, wydano ostrzezenia pogodowe. Tylko obszar Polski.
-                Input
-                float y Wspolrzedna y
-                float x Wspolrzedna x
-                string klucz do uslugi API, parametr opcjonalny jezeli uwierzytelnienie wykonane poprzez naglowek.
-                Output
-                string od_dnia Nieuzywany
-                string do_dnia Nieuzywany
-                integer mroz,
-                string mroz_od_dnia Mroz ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string mroz_do_dnia Mroz ostrzezenie do dnia (UTC),
-                integer upal,
-                string upal_od_dnia Upal ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string upal_do_dnia Upal ostrzezenie do dnia (UTC),
-                integer wiatr,
-                string wiatr_od_dnia Wiatr ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string wiatr_do_dnia Wiatr ostrzezenie do dnia (UTC),
-                integer opad,
-                string opad_od_dnia Opad ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string opad_do_dnia Opad ostrzezenie do dnia (UTC),
-                integer burza,
-                string burza_od_dnia Burza ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string burza_do_dnia Burza ostrzezenie do dnia (UTC),
-                integer traba.
-                string traba_od_dnia Traba ostrzezenie od dnia (UTC), np. 2014-12-21 20:45:00,
-                string traba_do_dnia Traba ostrzezenie do dnia (UTC),
-                Oznaczenie 0 - brak, 1 - I stopien, 2 - II stopien, 3 - III stopien.
-                ---- ENG ----
-                Checks if a given point, issued weather warnings. Only the Polish area.
-                Input
-                float y Coordinate y
-                float x Coordinate x
-                string klucz Key to the service API, optional parameter if the authentication header.
-                Output
-                string od_dnia Not used,
-                string do_dnia Not used,
-                integer mroz Frost,
-                string mroz_od_dnia Warning frost of date (UTC) eg 2014-12-21 20:45:00,
-                string mroz_do_dnia Warning frost to day,
-                integer upal Heat,
-                string upal_od_dnia Warning heat of date (UTC) eg 2014-12-21 20:45:00,
-                string upal_do_dnia Warning heat to day,
-                integer wiatr Wind,
-                string wiatr_od_dnia Warning wind of date (UTC) eg 2014-12-21 20:45:00,
-                string wiatr_do_dnia Warning wind to day,
-                integer opad Precipitation,
-                string opad_od_dnia Warning precipitation of date (UTC) eg 2014-12-21 20:45:00,
-                string opad_do_dnia Warning precipitation to day,
-                integer burza Storms,
-                string burza_od_dnia Warning storm of date (UTC) eg 2014-12-21 20:45:00,
-                string burza_do_dnia Warning storm to day,
-                integer traba Tornados.
-                string traba_od_dnia Warning tornados of date (UTC) eg 2014-12-21 20:45:00,
-                string traba_do_dnia Warning tornados to day,
-                Determination of 0 - no, 1 - first degree, 2 - second degree, 3 - third degree.</documentation>
-            <input message="tns:ostrzezenia_pogodoweIn"/>
-            <output message="tns:ostrzezenia_pogodoweOut"/>
-        </operation>
-        <operation name="szukaj_burzy">
-            <documentation>Sprawdza czy dla danego punktu o wskazanym promieniu monitorowania. Zarejestrowano wyladowania atmosferyczne.
-                Input
-                string y Wspolrzedna y,
-                string x Wspolrzedna x,
-                integer promien Promien objety analiza, opcjonalne. Domyslnie 25 km,
-                string klucz do uslugi API, parametr opcjonalny jezeli uwierzytelnienie wykonane poprzez naglowek.
-                Output
-                integer liczba Liczba wyladowan w wskazanym promieniu od wybranego punktu,
-                float odleglosc Odleglosc do najblizszego zarejestrowanego wyladowania,
-                string kierunek Kierunek do najblizszego wyladowania (E, NE, N, NW, W, SW, S, SE). Opis W - zachod, N - polnoc, E - wschod, S - poludnie.
-                integer okres - liczba minut, okres czasu obejmujacy dane (10, 15, 20 minut).
-                --- ENG ---
-                Checks if a given point with a specified radius of monitoring. Registered lightnings.
-                Input
-                string y Coordinate y
-                string x Coordinate x
-                inte
-        </operation>
-    </binding>
-    <service name="serwerSOAPService">
-        <port name="serwerSOAPPort" binding="tns:serwerSOAPBinding">
-            <soap:address point="http://burze.dzis.net/soap.php"/>
-        </port>
-    </service>
-    <message name="KeyAPIIn">
-        <part name="klucz" type="xsd:string"/>
-    </message>
-    <message name="KeyAPIOut">
-        <part name="return" type="xsd:boolean"/>
-    </message>
-    <message name="miejscowoscIn">
-        <part name="nazwa" type="xsd:string"/>
-        <part name="klucz" type="xsd:string"/>
-    </message>
-    <message name="miejscowoscOut">
-        <part name="return" type="tns:MyComplexTypeMiejscowosc"/>
-    </message>
-    <message name="ostrzezenia_pogodoweIn">
-        <part name="y" type="xsd:float"/>
-        <part name="x" type="xsd:float"/>
-        <part name="klucz" type="xsd:string"/>
-    </message>
-    <message name="ostrzezenia_pogodoweOut">
-        <part name="return" type="tns:MyComplexTypeOstrzezenia"/>
-    </message>
+                    <x
     <message name="szukaj_burzyIn">
         <part name="y" type="xsd:string"/>
         <part name="x" type="xsd:string"/>
