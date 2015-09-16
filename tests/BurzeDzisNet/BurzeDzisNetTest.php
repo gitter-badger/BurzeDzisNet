@@ -7,6 +7,7 @@
 namespace BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
+use SoapClient;
 use SoapFault;
 use stdClass;
 
@@ -93,12 +94,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["miejscowosc"])
             ->getMock();
         $client->method("miejscowosc")->willThrowException($soapFault);
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient"])
-            ->getMock();
-        $endpoint->method("getClient")->willReturn($client);
-        (new BurzeDzisNet($endpoint))->locate("Wrocław");
+        (new BurzeDzisNet($this->getEndpoint($client)))->locate("Wrocław");
     }
 
     /**
@@ -139,13 +135,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->expects($this->once())->method("szukaj_burzy")->with(54.41, 25.17, 50, "4d36bcb5c40");
         $client->method("szukaj_burzy")->willThrowException($soapFault);
-        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
-            ->disableOriginalConstructor()
-            ->setMethods(["getClient", "getApiKey"])
-            ->getMock();
-        $endpoint->method("getClient")->willReturn($client);
-        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
-        (new BurzeDzisNet($endpoint))->getStorm(new Point(25.17, 54.41), 50);
+        (new BurzeDzisNet($this->getEndpoint($client)))->getStorm(new Point(25.17, 54.41), 50);
     }
 
     /**
@@ -193,7 +183,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $endpoint->method("getClient")->willReturn($client);
         $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
-        (new BurzeDzisNet($endpoint))->getWeatherAlert(new Point(25.17, 54.41));
+        (new BurzeDzisNet($this->getEndpoint($client)))->getWeatherAlert(new Point(25.17, 54.41));
     }
 
     /**
@@ -316,6 +306,23 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
         $this->assertSame($alertTO->opad, $precipitation->getLevel());
         $this->assertSame($alertTO->opad_od_dnia, $precipitation->getStartDate());
         $this->assertSame($alertTO->opad_do_dnia, $precipitation->getEndDate());
+    }
+
+    /**
+     * Get mocked endpoint with soap client
+     *
+     * @param SoapClient soap client
+     * @return \PHPUnit_Framework_MockObject_MockObject
+     */
+    protected function getEndpoint(SoapClient $client)
+    {
+        $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
+            ->disableOriginalConstructor()
+            ->setMethods(["getClient", "getApiKey"])
+            ->getMock();
+        $endpoint->method("getClient")->willReturn($client);
+        $endpoint->method("getApiKey")->willReturn("4d36bcb5c40");
+        return $endpoint;
     }
 
 }
