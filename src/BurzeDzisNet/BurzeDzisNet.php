@@ -107,8 +107,8 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     public function getWeatherAlert(Point $point)
     {
         $dto = $this->client->ostrzezenia_pogodowe(
-            $point->getX(),
             $point->getY(),
+            $point->getX(),
             $this->apiKey
         );
         return (new WeatherAlert())
