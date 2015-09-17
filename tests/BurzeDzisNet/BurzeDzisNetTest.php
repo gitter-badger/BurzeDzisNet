@@ -148,7 +148,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->setMethods(["ostrzezenia_pogodowe"])
             ->getMock();
         $client->method("ostrzezenia_pogodowe")->willReturn($this->getAlertTO());
-        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(25.17, 54.41, "4d36bcb5c40");
+        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(54.41, 25.17, "4d36bcb5c40");
         $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(["getClient", "getApiKey"])
@@ -175,7 +175,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->setMethods(["ostrzezenia_pogodowe"])
             ->getMock();
-        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(25.17, 54.41, "4d36bcb5c40");
+        $client->expects($this->once())->method("ostrzezenia_pogodowe")->with(54.41, 25.17, "4d36bcb5c40");
         $client->method("ostrzezenia_pogodowe")->willThrowException($soapFault);
         $endpoint = $this->getMockBuilder("BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()

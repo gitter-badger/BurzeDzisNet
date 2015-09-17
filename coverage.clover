@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442424725">
-  <project timestamp="1442424725">
+<coverage generated="1442519956">
+  <project timestamp="1442519956">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
@@ -98,7 +98,7 @@
         <line num="160" type="stmt" count="1"/>
         <line num="161" type="stmt" count="1"/>
         <line num="162" type="stmt" count="1"/>
-        <metrics loc="163" ncloc="106" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="70" elements="75" coveredelements="75"/>
+        <metrics loc="164" ncloc="107" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="70" elements="75" coveredelements="75"/>
       </file>
       <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/Endpoint.php">
         <class name="Endpoint" namespace="BurzeDzisNet">
@@ -200,6 +200,6 @@
     <file name="/Users/krzysztek/Documents/PhpStormProjects/php/BurzeDzisNet/src/BurzeDzisNet/EndpointInterface.php">
       <metrics loc="37" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="8" loc="746" ncloc="352" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="125" elements="155" coveredelements="155"/>
+    <metrics files="8" loc="747" ncloc="353" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="125" elements="155" coveredelements="155"/>
   </project>
 </coverage>
