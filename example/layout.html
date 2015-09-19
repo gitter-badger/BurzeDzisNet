@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BurzeDzisNet example</title>
+    <title>BurzeDzisNet example application</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center">BurzeDzisNet example</h1>
+    <h1 class="text-center">BurzeDzisNet example application</h1>
 
-    <h3 class="text-center"><?= $locality ?> <?= $point ?></h3>
+    <h3 class="text-center"> <?= MY_LOCATION ?> located at <span
+            class="glyphicon glyphicon-map-marker"><span> <?= $point ?></h3>
+
+    <div class="alert alert-info">Change the current location and monitoring radius in application file 'index.php'
+    </div>
 
     <div class="row">
         <div class="col-xs-12 col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Storm report</h3>
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-cloud-download"></span> Storm report</h3>
                 </div>
                 <div class="panel-body">
                     <table class="table table-responsive">
+                        <thead>
                         <tr>
-                            <td>Monitoring radius (km)</td>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td><span class="glyphicon glyphicon-eye-open"></span> Monitoring radius (km)</td>
                             <td><?= $storm->getRadius() ?></td>
                         </tr>
                         <tr>
-                            <td>Registred lightnings</td>
+                            <td><span class="glyphicon glyphicon-flash"></span> Registred lightnings</td>
                             <td>
                                 <span class="badge <?php echo ($storm->getLightnings() > 0) ? " badge-danger" :
                                 "badge-info"; ?>">
@@ -32,16 +46,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Distance (km)</td>
+                            <td><span class="glyphicon glyphicon-road"></span> Distance (km)</td>
                             <td><?= $storm->getDistance() ? : "-" ?></td>
                         </tr>
                         <tr>
 
-                            <td>Direction</td>
+                            <td><span class="glyphicon glyphicon-fullscreen"></span> Direction</td>
                             <td><?= $storm->getDirection() ? : "-" ?></td>
                         </tr>
                         <tr>
-                            <td>Time period</td>
+                            <td><span class="glyphicon glyphicon-time"></span> Time period</td>
                             <td><?= $storm->getTimePeriod() ?></td>
                         </tr>
                     </table>
@@ -51,7 +65,7 @@
         <div class="col-xs-12 col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Weather alert</h3>
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-bell"></span> Weather alert</h3>
                 </div>
                 <div class="panel-body">
                     <table class="table table-responsive">
@@ -63,10 +77,20 @@
                             <th>Ends</th>
                         </tr>
                         </thead>
-                        <?php foreach($weatherAlert as $name => $alert) { ?>
+                        <?php
+                            $map = [
+                                "frost" => "glyphicon glyphicon-asterisk",
+                                "heat" => "glyphicon glyphicon-fire",
+                                "wind" => "glyphicon glyphicon-flag",
+                                "storm" => "glyphicon glyphicon-cloud-download",
+                                "tornado" => "glyphicon glyphicon-refresh",
+                                "precipitation" => "glyphicon glyphicon-cloud"
+                            ];
+
+                            foreach($weatherAlert as $name => $alert) { ?>
                         <tr
                         <?php if ($alert->getlevel() > 0) echo 'class="danger"' ?>">
-                        <td><?= $name ?></td>
+                        <td><span class="<?= $map[$name]; ?>"></span> <?= \ucfirst($name) ?></td>
                         <td><?= $alert->getLevel() ? : "-" ?></td>
                         <td><?= $alert->getStartDate() ? : "-" ?></td>
                         <td><?= $alert->getEndDate() ? : "-" ?></td>
@@ -77,5 +101,9 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <small>Source: www.burze.dzis.net</small>
+    </div>
+</div>
 </body>
 </html>
