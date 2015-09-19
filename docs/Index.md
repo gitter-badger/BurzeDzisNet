@@ -20,12 +20,13 @@ To run the example application execute the commands:
 
 ``` bash
 $ git clone https://github.com/krzysiekpiasecki/BurzeDzisNet.git
-$ cd BurzeDzisNet/example
+$ cd BurzeDzisNet
 $ composer install --no-dev
+$ cd example
 $ php -S 127.0.0.1:8080
 ```
 
-Then make a browser request
+Make a browser request
 ```
 http://127.0.0.1:8080
 ```
