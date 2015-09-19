@@ -16,29 +16,19 @@ $ composer require krzysiekpiasecki/burzedzisnet
 
 # Example application
 
-Open terminal in your temp directory and clone this repository
+To run the example application execute the commands:
+
 ``` bash
 $ git clone https://github.com/krzysiekpiasecki/BurzeDzisNet.git
-```
-
-Change your current directory
-``` bash
 $ cd BurzeDzisNet/example
-```
- 
-Start server with the command
-```
+$ composer install --no-dev
 $ php -S 127.0.0.1:8080
-
 ```
-Make a browser request
+
+Then make a browser request
 ```
 http://127.0.0.1:8080
 ```
-
-
-
-See [example application](https://github.com/krzysiekpiasecki/BurzeDzisNet/tree/master/example) 
 
 # Resources for programmers
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
