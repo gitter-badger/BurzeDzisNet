@@ -11,7 +11,7 @@ define("MONITORING_RADIUS", 250);
 try {
 
     if (\API_KEY === "") {
-        require_once "warning.html";
+        require_once "apikey.html";
         exit();
     }
 
