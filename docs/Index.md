@@ -14,35 +14,31 @@ To access remote services you must create free account on burze.dzis.net and req
 $ composer require krzysiekpiasecki/burzedzisnet
 ```
 
-#Example of usage 
-```php
-namespace BurzeDzisNet;
+# Example application
 
-try {
+Open terminal in your temp directory and clone this repository
+``` bash
+$ git clone https://github.com/krzysiekpiasecki/BurzeDzisNet.git
+```
 
-    $burzeDzisNet = new BurzeDzisNet(
-        new Endpoint('Api key')
-    );
-
-    $madrid = $burzeDzisNet->locate("Madrid");
-
-    $storm = $burzeDzisNet->getStorm($madrid);
-    $weatherAlert = $burzeDzisNet->getWeatherAlert($madrid);
-    $heat = $weatherAlert->getAlert('heat');
-
-    echo \sprintf("Madrid: Point (%.2f, %.2f) Lightnings: %d Heat: %d",
-        $madrid->getX(),
-        $madrid->getY(),
-        $storm->getLightnings(),
-        $heat->getLevel()
-    );
-    
-} catch (\Exception $e) {
-    \error_log($e);
-    throw $e;
-}
+Change your current directory
+``` bash
+$ cd BurzeDzisNet/example
+```
+ 
+Start server with the command
+```
+$ php -S 127.0.0.1:8080
 
 ```
+Make a browser request
+```
+http://127.0.0.1:8080
+```
+
+
+
+See [example application](https://github.com/krzysiekpiasecki/BurzeDzisNet/tree/master/example) 
 
 # Resources for programmers
 - [Application programming interface](https://github.com/krzysiekpiasecki/BurzeDzisNet/blob/master/docs/api/API-documentation.zip)
