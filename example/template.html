@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BurzeDzisNet example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">BurzeDzisNet example</h1>
+
+    <h3 class="text-center"><?= $locality ?> <?= $point ?></h3>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Storm report</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-responsive">
+                        <tr>
+                            <td>Monitoring radius (km)</td>
+                            <td><?= $storm->getRadius() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Registred lightnings</td>
+                            <td>
+                                <span class="badge <?php echo ($storm->getLightnings() > 0) ? " badge-danger" :
+                                "badge-info"; ?>">
+                                <?= $storm->getLightnings() ?>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Distance (km)</td>
+                            <td><?= $storm->getDistance() ? : "-" ?></td>
+                        </tr>
+                        <tr>
+
+                            <td>Direction</td>
+                            <td><?= $storm->getDirection() ? : "-" ?></td>
+                        </tr>
+                        <tr>
+                            <td>Time period</td>
+                            <td><?= $storm->getTimePeriod() ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Weather alert</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-responsive">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Starts</th>
+                            <th>Ends</th>
+                        </tr>
+                        </thead>
+                        <?php foreach($weatherAlert as $name => $alert) { ?>
+                        <tr
+                        <?php if ($alert->getlevel() > 0) echo 'class="danger"' ?>">
+                        <td><?= $name ?></td>
+                        <td><?= $alert->getLevel() ? : "-" ?></td>
+                        <td><?= $alert->getStartDate() ? : "-" ?></td>
+                        <td><?= $alert->getEndDate() ? : "-" ?></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
