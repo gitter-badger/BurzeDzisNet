@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1442739680">
-  <project timestamp="1442739680">
+<coverage generated="1442742439">
+  <project timestamp="1442742439">
     <package name="BurzeDzisNet">
       <file name="/Users/krzysztek/Documents/Workspaces/PhpStorm/BurzeDzisNet/src/BurzeDzisNet/Alert.php">
         <class name="Alert" namespace="BurzeDzisNet">
@@ -102,18 +102,19 @@
       </file>
       <file name="/Users/krzysztek/Documents/Workspaces/PhpStorm/BurzeDzisNet/src/BurzeDzisNet/Endpoint.php">
         <class name="Endpoint" namespace="BurzeDzisNet">
-          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
+          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
         </class>
-        <line num="39" type="method" name="__construct" crap="1" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="51" type="method" name="getClient" crap="1" count="2"/>
-        <line num="53" type="stmt" count="2"/>
-        <line num="61" type="method" name="getWSDL" crap="1" count="1"/>
-        <line num="63" type="stmt" count="1"/>
-        <line num="71" type="method" name="getApiKey" crap="1" count="1"/>
-        <line num="73" type="stmt" count="1"/>
-        <metrics loc="75" ncloc="34" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
+        <line num="49" type="method" name="__construct" crap="1" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="63" type="method" name="getClient" crap="1" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="73" type="method" name="getWSDL" crap="1" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="83" type="method" name="getApiKey" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <metrics loc="87" ncloc="37" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
       </file>
       <file name="/Users/krzysztek/Documents/Workspaces/PhpStorm/BurzeDzisNet/src/BurzeDzisNet/Point.php">
         <class name="Point" namespace="BurzeDzisNet">
@@ -200,6 +201,6 @@
     <file name="/Users/krzysztek/Documents/Workspaces/PhpStorm/BurzeDzisNet/src/BurzeDzisNet/EndpointInterface.php">
       <metrics loc="37" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="8" loc="747" ncloc="353" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="125" coveredstatements="125" elements="155" coveredelements="155"/>
+    <metrics files="8" loc="759" ncloc="356" classes="6" methods="30" coveredmethods="30" conditionals="0" coveredconditionals="0" statements="126" coveredstatements="126" elements="156" coveredelements="156"/>
   </project>
 </coverage>
