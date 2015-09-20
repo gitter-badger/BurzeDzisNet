@@ -20,21 +20,21 @@ class Alert
      *
      * @var int alert level
      */
-    protected $level = 0;
+    private $level = 0;
 
     /**
      * Start day
      *
      * @var string start day
      */
-    protected $start = "";
+    private $start = "";
 
     /**
      * End day
      *
      * @var string end day
      */
-    protected $end = "";
+    private $end = "";
 
     /**
      * New weather alert

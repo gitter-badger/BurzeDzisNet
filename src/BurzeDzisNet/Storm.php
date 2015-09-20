@@ -26,35 +26,35 @@ class Storm
      *
      * @var int the number of cloud-end-ground lightning in specified radius for a specified location
      */
-    protected $lightnings = 0;
+    private $lightnings = 0;
 
     /**
      * The distance (km) to the nearest registered lightning
      *
      * @var float distance to the nearest registered lightning
      */
-    protected $distance = 0.0;
+    private $distance = 0.0;
 
     /**
      * The direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
      *
      * @var string direction to the nearest lightning
      */
-    protected $direction = "";
+    private $direction = "";
 
     /**
      * The number of minutes of time containing the data (10, 15, 20 minutes)
      *
      * @var int number of minutes of time containing the data
      */
-    protected $period = 0;
+    private $period = 0;
 
     /**
      * The radius covered by specified location
      *
      * @var int radius covered by specified location
      */
-    protected $radius = 0;
+    private $radius = 0;
 
     /**
      * New Storm

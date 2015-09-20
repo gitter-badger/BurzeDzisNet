@@ -20,14 +20,14 @@ class BurzeDzisNet implements BurzeDzisNetInterface
      *
      * @var \SoapClient Soap client
      */
-    protected $client = null;
+    private $client = null;
 
     /**
      * API key
      *
      * @var string API key
      */
-    protected $apiKey = null;
+    private $apiKey = null;
 
     /**
      * New Burze.Dzis.Net service

@@ -22,14 +22,14 @@ class WeatherAlert implements IteratorAggregate
      *
      * @var array Alerts
      */
-    protected $alerts = [];
+    private $alerts = [];
 
     /**
      * Weather alerts
      *
      * @var WeatherAlert|null set of alerts
      */
-    protected $weatherAlert = null;
+    private $weatherAlert = null;
 
     /**
      * New WeatherAlert

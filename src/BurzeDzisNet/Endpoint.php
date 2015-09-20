@@ -22,14 +22,14 @@ class Endpoint implements EndpointInterface
      *
      * @var string URI of WSDL file
      */
-    protected $wsdl = "https://burze.dzis.net/soap.php?WSDL";
+    private $wsdl = "https://burze.dzis.net/soap.php?WSDL";
 
     /**
      * API key
      *
      * @var string API key
      */
-    protected $apiKey = "";
+    private $apiKey = "";
 
     /**
      * Constructor

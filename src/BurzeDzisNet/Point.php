@@ -19,14 +19,14 @@ class Point
      *
      * @var float coordinate X
      */
-    protected $x = 0.0;
+    private $x = 0.0;
 
     /**
      * Coordinate Y
      *
      * @var float coordinate Y
      */
-    protected $y = 0.0;
+    private $y = 0.0;
 
     /**
      * Point represents the coordinates (DMS) for the specified locality
