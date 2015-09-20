@@ -3,7 +3,6 @@
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
  */
-
 namespace BurzeDzisNet;
 
 /**
@@ -34,7 +33,7 @@ class Point
      * @param float $x coordinate x
      * @param float $y coordinate y
      */
-    public function __construct($x, $y)
+    public function __construct(float $x, float $y)
     {
         $this->x = $x;
         $this->y = $y;
@@ -47,7 +46,7 @@ class Point
      *
      * @return string string representation
      */
-    public function __toString()
+    public function __toString(): string
     {
         return \sprintf("[%.2f, %.2f]", $this->getX(), $this->getY());
     }
@@ -57,7 +56,7 @@ class Point
      *
      * @return float coordinate X
      */
-    public function getX()
+    public function getX(): float
     {
         return $this->x;
     }
@@ -67,7 +66,7 @@ class Point
      *
      * @return float coordinate Y
      */
-    public function getY()
+    public function getY(): float
     {
         return $this->y;
     }
@@ -78,7 +77,7 @@ class Point
      * @param Point $point other point
      * @return bool true if this point is the equal to some other point; false otherwise
      */
-    public function equals(Point $point)
+    public function equals(Point $point): bool
     {
         return ($this->getX() == $point->getX()) && ($this->getY() == $point->getY());
     }
